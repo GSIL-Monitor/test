@@ -1,0 +1,136 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Handing-用户中心</title>
+    <link rel="shortcut icon" href="~/Content/image/H140.png" type="image/vnd.microsoft.icon">
+    <link href="~/Content/css/userinfo.css" rel="stylesheet" media="screen">
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <style>
+        .col-md-4 {
+            height: 580px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        ///用户登录状态
+        //window.onload = function () {
+
+        //}
+        ///显示个人信息2017.7.28
+        $(function () {
+
+            var username = sessionStorage.getItem("username");// null 获取session 的值 /UserAccount/UserLogin
+            var nickName = '@Session["nickName"]';
+
+            //var nickName_wx = sessionStorage.setItem("nickName000", nickName);//暂未
+
+            $("#nickName_").html(username || nickName);
+            //alert("1===" + username + "\n\n2=" + nickName)
+            if (nickName != "" || username != null) {
+                $.ajax({
+                    type: 'get',
+                    dataType: 'text',
+                    url: '/UserAccount/GetUserPerson',
+                    data: { username: username, nickName: nickName },
+                    success: function (data) {
+                        var json = eval("(" + data + ")");
+                        var balance = json[0];
+                        var city = json[1];
+                        var imgpath = "";
+                        //alert(json)
+                        if (json[2] == "3" || json[2] == "") {
+                            imgpath = "/Content/image/baby.png";
+                        }
+                        else {
+                            imgpath = json[2];
+                        }
+                        // alert(json)
+                        $("#myHb").html("剩余:<b>" + balance + "</b>");
+                        $("#myLocation").text(city);
+                        $("#tou").attr("src", imgpath);
+                    }
+                });
+            }
+            else {
+                $("html").remove();
+                alert("非法访问，请规范操作！");
+                window.location.href = "/Home/Index";
+            }
+        })
+    </script>
+    <div class="container top70" id="zt">
+        <!--左-->
+        <div class="col-md-4 myleft mym">
+            <div class="myleft-n">
+                <h6><b>个人中心</b></h6>
+                <a href="#" data-toggle="modal" data-target="#exampleModal2">
+                    <img id="tou" src="../Content/image/baby.png" class="f imgr20">
+                </a>
+                <div class="f imgf20">
+                    <font color="orange"><h4 id="nickName_">(1002110484@qq.com)</h4></font>
+                    <i class="fa icon-location "></i><span id="myLocation"></span>
+                </div>
+
+                <div class="df"></div>
+            </div>
+            <div class="df"></div>
+            <div class="myleft-n">
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+
+                        <i class="fa icon-user-tie"></i>&nbsp;第 <font color="blue"><b>289752</b></font> 位会员
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa icon-coin-pound  "></i>&nbsp;我的H币(个)
+                        <span class="badge act-img" id="myHb"></span>
+
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">0</span>
+                        <i class="fa icon-heart "></i>&nbsp;关注我的人数
+                    </li>
+                </ul>
+
+                <a class="btn btn-success" href="#buy" style="width: 100%"><i class="fa fa-jpy"></i>购买H币</a>
+                <a class="btn btn-info top10" href="#get" style="width: 100%">发布资源获得H币</a>
+
+                @*<div class="alert alert-warning top20" role="alert" style="background-color:#fefcee;padding-top:7px;padding-bottom:7px;font-size:13px;line-height: 24px;">
+                        <i class="fa fa-lightbulb-o"></i> 插件收藏加入分类功能！<br />
+                        <i class="fa fa-lightbulb-o"></i> 插件增加版本更新！<br />
+                        <i class="fa fa-lightbulb-o"></i> 修复连续签到移动端显示错误问题！<br />
+                        <i class="fa fa-lightbulb-o"></i> 签到功能完成，可以签到获得jq币！<br />
+                        <i class="fa fa-lightbulb-o"></i> 现在可以通过点击↑上方头像来修改头像了！<br />
+                    </div>*@
+
+            </div>
+            <div class="df"></div>
+        </div>
+        <!--end 左-->
+        <!--右-->
+        <div class="col-md-8 myright">
+            <div class="myright-n">
+                <div class="myNav row">
+                    <a href="javascript:void(0);" id="t1" onclick="getData('myhome-chajian.aspx');" class="mybut"><i class="fa icon-embed "></i> 发布的插件</a>
+                    <a href="javascript:void(0);" id="t2" onclick="getData('myhome-shoucang.aspx');" class="mybut"><i class="fa icon-heart "></i> 插件收藏</a>
+                    <a href="javascript:void(0);" id="t3" onclick="getData('myhome-daima.aspx');" class="mybut"><i class="fa icon-star-full "></i> 代码收藏</a>
+                    <a href="javascript:void(0);" id="t6" onclick="getData('myhome-people.aspx');" class="mybut"><i class="fa icon-user-tie"></i> 关注的人</a>
+                    <a href="#" data-toggle="modal" data-target="#exampleModal" class="mybut"><i class="fa icon-clipboard "></i> 签到</a>
+                </div>
+                <div class="row topx myMinh">
+                    <iframe src="/Content/HTML5/system0.html" id="ifrm" frameborder="0" width="100%" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
+            </div>
+        </div>
+        <!--end 右-->
+    </div>
+</body>
+</html>

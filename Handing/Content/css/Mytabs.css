@@ -1,0 +1,60 @@
+﻿/*tabs 按钮样式*/
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+    .nav > li {
+        position: relative;
+        display: block;
+    }
+    /* tabs 块大小*/
+        .nav > li > a {
+            position: relative;
+            display: block;
+            padding: 12px 18px;
+        }
+
+            .nav > li > a:focus, .nav > li > a:hover {
+                text-decoration: none;
+                background-color: #eee;
+            }
+/*bbbbbbbbbbbbbb*/
+.nav-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+}
+
+    .nav-tabs > li > a {
+        margin-right: 2px;
+        line-height: 1.42857143;
+        border: 1px solid transparent;
+        border-radius: 4px 4px 0 0;
+    }
+
+
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+        color: #555;
+        cursor: default;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+    }
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+
+    .fade.in {
+        opacity: 1;
+    }
+
+.nav-pills > li {
+    float: left;
+}
+
+

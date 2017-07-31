@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="loginModelStoreContainer" CdmEntityContainer="loginEntities">
+    <EntitySetMapping Name="login">
+      <EntityTypeMapping TypeName="loginModel.login">
+        <MappingFragment StoreEntitySet="login">
+          <ScalarProperty Name="yhm" ColumnName="yhm" />
+          <ScalarProperty Name="psw" ColumnName="psw" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="RegisterAuthority" ColumnName="RegisterAuthority" />
+          <ScalarProperty Name="priceAuthority" ColumnName="priceAuthority" />
+          <ScalarProperty Name="drawingAuthority" ColumnName="drawingAuthority" />
+          <ScalarProperty Name="countAuthority" ColumnName="countAuthority" />
+          <ScalarProperty Name="qrCodeAuthority" ColumnName="qrCodeAuthority" />
+          <ScalarProperty Name="productAuthority" ColumnName="productAuthority" />
+          <ScalarProperty Name="computerMAC" ColumnName="computerMAC" />
+          <ScalarProperty Name="computerIP" ColumnName="computerIP" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

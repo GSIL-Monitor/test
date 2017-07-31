@@ -1,0 +1,495 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Handing-稳定性计算</title>
+    <meta name="baidu-site-verification" content="2Lkh1N0Y9U" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script>
+        function openwin() {
+            var fu = $("#hidenx").val();
+            if (fu === "modle1") {
+                window.open("/Reports/StrengthModel1.aspx", "newwindow", "height=560, width=800") //写成一行
+
+            }
+            if (fu === "modle2") {
+                window.open("/Reports/StrengthModel2.aspx", "newwindow", "height=560, width=800")
+            }
+        }
+
+
+    </script>
+
+</head>
+<body data-spy="scroll" data-target="#navbar-example" style="position: relative;">
+    <div class="mobile-wrapper">
+
+        @***************产品中心-强度*****************@
+        <div class="submain-navbg"></div>
+        <div class="main">
+            <div class="sub-main product">
+                <div class="nav-wrap">
+                    <h2>设计开发<span class="en">DESIGN</span></h2>
+                    <ul class="main-nav">
+                        <li class="first-node father">
+                            通用计算
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 弯矩计算">
+                                    <a href="/Product/Stiffness">
+                                        <i class="icon-wanju"></i>
+                                        弯矩计算 Bending Moment
+                                    </a>
+                                </li>
+                                <li class="截面特性">
+                                    <a href="/Product/Strength">
+                                        <i class="icon-clear-formatting"></i>
+                                        截面特性 Section Property
+                                    </a>
+                                </li>
+                                <li class=" focus">
+                                    <a href="/Product/Stability">
+                                        <i class="icon-download"></i>
+                                        强度计算 Intensity
+                                    </a>
+                                </li>
+                                <li class=" 刚度计算">
+                                    <a href="/Product/Fatigue">
+                                        <i class="icon-download3"></i>
+                                        刚度计算 Stiffness
+                                    </a>
+                                </li>
+                                @*<li class=" 车轮计算">
+                                    <a href="/Product/Drum">
+                                        <i class="icon-spinner4"></i>
+                                        车轮计算 Wheel
+                                    </a>
+                                </li>*@
+                                <li class=" 轴承设计">
+                                    <a href="/Product/Bearing">
+                                        <i class="icon-bearing"></i>
+                                        轴承设计 Bearing
+                                    </a>
+                                </li>                               
+
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            模块设计
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 车轮组模块">
+                                    <a href="/Product/Drum">
+                                        <i class="icon-wheel"></i>
+                                        车轮组模块 Wheel Block
+                                    </a>
+                                </li>
+                                <li class=" 端梁模块">
+                                    <a href="/Product/Endbeam">
+                                        <i class="icon-endbeam"></i>
+                                        端梁模块 EndBeam Block
+                                    </a>
+                                </li>
+                                <li class=" 主梁模块">
+                                    <a href="/Product/Girder">
+                                        <i class="icon-girder"></i>
+                                        主梁模块 Girder Block
+                                    </a>
+                                </li>
+                                <li class=" 起升模块">
+                                    <a href="/Product/Lifting">
+                                        <i class="icon-lifting"></i>
+                                        起升模块 Lifting Block
+                                    </a>
+                                </li>
+                                <li class=" 葫芦模块">
+                                    <a href="/Product/Hoisting">
+                                        <i class="icon-hoist"></i>
+                                        葫芦模块 Hoist Block
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            产品设计
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 桥式起重机">
+                                    <a href="/Product/Bridge">
+                                        <i class="icon-brigecrane"></i>
+                                        桥式起重机 Bridge Crane
+                                    </a>
+                                </li>
+                                <li class=" 门式起重机">
+                                    <a href="/Product/Gantry">
+                                        <i class="icon-gantrycrane"></i>
+                                        门式起重机 Gantry Crane
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            软件开发
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" HD报价系统">
+                                    <a href="/Product/HDQuotation">                                        
+                                        <i class="icon-file-text"></i>
+                                        HD报价系统 HDQuotation
+                                    </a>
+                                </li>
+                                <li class=" 生产辅助设计系统">
+                                    <a href="/Product/HDProduce">
+                                        <i class="icon-produce"></i>
+                                        生产辅助设计系统 HDProduce
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        @*<li class="first-node father">
+                            数据采集
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 视频云">
+                                    <a href="/site/product/uvideo.html">
+                                        <i class="icon__uvideo prod"></i>
+                                        视频云 UVideo
+                                    </a>
+                                </li>
+                                <li class=" 直播云">
+                                    <a href="/site/product/ulive.html">
+                                        <i class="icon__ulive prod"></i>
+                                        直播云 ULive
+                                    </a>
+                                </li>
+                                <li class=" 移动应用加速">
+                                    <a href="/site/product/umaa.html">
+                                        <i class="icon__umaa prod"></i>
+                                        移动应用加速 UMAA
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            数据分析
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" AI在线服务">
+                                    <a href="/site/product/uaiservice.html">
+                                        <i class="icon__uai prod"></i>
+                                        AI在线服务 UAI-Service
+                                    </a>
+                                </li>
+                                <li class=" 数据仓库">
+                                    <a href="/site/product/udw.html">
+                                        <i class="icon__udw prod"></i>
+                                        数据仓库 UDW
+                                    </a>
+                                </li>
+                                <li class=" 分布式消息系统">
+                                    <a href="/site/product/ukafka.html">
+                                        <i class="icon__ukafka prod"></i>
+                                        分布式消息系统 UKafka
+                                    </a>
+                                </li>
+                                <li class=" 托管集群">
+                                    <a href="/site/product/uhadoop.html">
+                                        <i class="icon__uhadoop prod"></i>
+                                        托管集群 UHadoop
+                                    </a>
+                                </li>
+                                <li class=" 分布式数据处理">
+                                    <a href="/site/product/uddp.html">
+                                        <i class="icon__uddp prod"></i>
+                                        分布式数据处理 UDDP
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            管理&监控
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 基础安全服务">
+                                    <a href="/site/product/usec.html">
+                                        <i class="icon__usec prod"></i>
+                                        基础安全服务 USec
+                                    </a>
+                                </li>
+                                <li class=" 企业应用防火墙">
+                                    <a href="/site/product/uewaf.html">
+                                        <i class="icon__uewaf prod"></i>
+                                        企业应用防火墙 UEWAF
+                                    </a>
+                                </li>
+                                <li class=" 高防服务">
+                                    <a href="/site/product/uads.html">
+                                        <i class="icon__uads prod"></i>
+                                        高防服务 UADS
+                                    </a>
+                                </li>
+                                <li class=" 云加密服务">
+                                    <a href="/site/product/uencrypt.html">
+                                        <i class="icon__clock prod"></i>
+                                        云加密服务 UEncrypt
+                                    </a>
+                                </li>
+                                <li class=" 运维审计系统">
+                                    <a href="/site/product/uhas.html">
+                                        <i class="icon__uhas prod"></i>
+                                        运维审计系统 UHAS
+                                    </a>
+                                </li>
+                                <li class=" Web漏洞扫描">
+                                    <a href="/site/product/uws.html">
+                                        <i class="icon__uws prod"></i>
+                                        Web漏洞扫描 UWS
+                                    </a>
+                                </li>
+                                <li class=" SSL证书管理">
+                                    <a href="/site/product/ussl.html">
+                                        <i class="icon__ussl prod"></i>
+                                        SSL证书管理 USSL
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            黑匣子
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 开放API">
+                                    <a href="/site/product/api.html">
+                                        <i class="icon__apikey prod"></i>
+                                        开放API UAPI
+                                    </a>
+                                </li>
+                                <li class=" 云监控">
+                                    <a href="/site/product/umon.html">
+                                        <i class="icon__umon prod"></i>
+                                        云监控 UMon
+                                    </a>
+                                </li>
+                                <li class=" 账号与权限管理">
+                                    <a href="/site/product/uam.html">
+                                        <i class="icon__qr-code prod"></i>
+                                        账号与权限管理 UAM
+                                    </a>
+                                </li>
+                                <li class=" 自动伸缩">
+                                    <a href="/site/product/uas.html">
+                                        <i class="icon__uas prod"></i>
+                                        自动伸缩 UAS
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>*@
+                        <li class="first-node father">
+                            功能开发
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 自由开发">
+                                    <a href="/Product/FreeDevelopment">
+                                        <i class="icon-display"></i>
+                                        自由开发 Free Development
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <script>
+                    (function () {
+                        function foucs(i) {
+                            if (i != null) {
+                                $('.main-nav .first-node').eq(i).addClass('active').find('.nav li').hasClass('focus');
+                            } else {
+                                $('.main-nav .first-node').eq(i).addClass('focus')
+                            }
+                        }
+                        foucs({
+                            118: 0,
+                            229: 1,
+                            230: 2,
+                            119: 3,
+                            215: 4,
+                            120: 5,
+                            217: 6,
+                            121: 7,
+                            122: 8,
+                            123: 9,
+                            128: 10,
+                            307: 11
+                        }[118]);
+                    })();
+                </script>
+
+                <div class="content-wrap">
+                    <div class="product-dash">
+                        @*<div class="prod-img"><img src='/uploads/160919/5-1609191S0411M.png' /></div>*@
+                        <h2>
+                            <i class="icon-download"></i>
+                            强度计算 
+                            Intensity
+                        </h2>
+                        <hr />
+                        <p>
+                            强度计算（Intensity）：是指结构在受外力作用下抵抗破坏的能力，是衡量结构和工程安全经常使用的一个指标，国内常用安全系数法来保障结构和工程的安全，
+
+                            其值的大小严重影响起重机安全，是起重机设计的一个重要衡量指标，此计算由资深设计师编制，经专家校审，并与云数据对比，所提供的计算结果安全、可靠。
+                        </p>
+                        <hr />
+                        <p>
+                            欢迎您进入我们的论坛，针对此功能提供您的宝贵建议，我们将为您提供所需服务！                            
+                        </p>
+                        <div class="prod-operating">
+                            <a href="http://192.168.0.188:8078/forum.php?mod=viewthread&tid=10&extra=page%3D1" target="_blank" class='button1 white'>立即进入</a>
+                        </div>
+                    </div>
+                    <form class="form-horizontal" role="form" id="form1" action="Strength" method="post" autocomplete="off">
+
+                        <div id="navbar-example">
+                            <ul class="sub-tabs-x anchor nav nav-tabs" role="tablist">
+                                <li>
+                                    <a href='#odds'>强度选择</a>
+                                </li>
+
+                                <li>
+                                    <a href='#jiage'>参数输入</a>
+                                </li>
+
+                                <li>
+                                    <a href='#docs-log'>计算报告</a>
+                                </li>
+
+                                <li>
+                                    <a href='#case'>更新说明</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <script>
+                            $('.sub-tabs-x li:eq(0)').addClass('active');
+                        </script>
+                        <div class="tab-content sub-tab-cont">
+                            <div id="odds">
+                                <h2 class="h2">
+                                    强度选择
+                                </h2>
+                                <!--箱型梁输入参数计算-->
+                                <img src="../Content/image/5aa02f4b68d20c9d8ed9caf527e3ba.png" width="166" height="246" align="right" />
+                                <div class="form-group">
+
+                                    <section class="bendingcal-1">
+                                        <div>
+                                            <select onchange="iconshowsti()" id="select1">
+                                                <option value="0" class="bendingcal-option">请选择强度类型</option>
+                                                <option value="1" class="bendingcal-option">弯曲强度</option>
+                                                @*<option value="2" class="bendingcal-option">扭转强度</option>*@
+                                            </select>
+                                            <span id="select_1" class=""></span><span id="s_tips" class=""></span>
+                                        </div>
+                                    </section>
+                                    <section class="bendingcal-1">
+                                        <div>
+                                            <select onchange="sticreateTable();" id="select2">
+                                                <option value="0" class="bendingcal-option">请选择输入参数</option>
+                                                <option value="1" class="bendingcal-option">截面系数已知</option>
+                                                <option value="2" class="bendingcal-option">截面系数未知</option>
+                                            </select>
+                                            <span id="select_2" class=""></span><span id="s_tips1" class=""></span>
+                                        </div>
+                                    </section>
+                                    <br />
+                                    @*<div>
+                                        <ul class="sti_button">
+                                            <li>
+                                                <a class="button small button-ghost login tologin" id="btn_search" onclick="bjxxl()" href='#config'>提交</a>
+                                            </li>
+                                        </ul>
+                                    </div>*@
+                                </div>
+
+                            </div>
+                            <br />
+
+                            <div id="jiage">
+                                <h2 class="h2">
+                                    参数输入
+                                </h2>
+                                <img src="../Content/image/5aa02f4b68d20c9d8ed9caf527e3ba.png" width="200" height="250" align="right" id="img-sticanshu" />
+                                <div class="form-group">
+                                    <div id="div1">
+
+                                    </div>
+
+                                    <br />
+                                    @*<div>
+                                        <ul class="sti_button">
+                                            <li>
+                                                <a href='#docs-log' class="button small button-ghost login tologin" onclick="model2()">提交</a>
+                                            </li>
+                                        </ul>
+                                    </div>*@
+                                </div>
+                            </div>
+                            <br />
+                            <script>
+
+                                //$("#txt_showresult").oninput(function () {
+                                    //alert("zxczxczxczxc");
+                                //});
+                            </script>
+                            <div id="docs-log">
+                                <h2 class="h2">
+                                    计算报告
+                                </h2>
+                                <div class="form-group">
+                                        <table>
+                                            <tr>
+                                                <th>弯曲强度：</th>
+                                                <th><input id="txt_showresult" style="font-weight:800" type="text" name="txt_showresult" placeholder="N/mm²" /></th>
+                                            </tr>
+                                        </table>
+                                        <br />
+                                        <!------报表预览-->
+                                        @*<input class="button small button-ghost login tologin" type="submit" value="预览报表" onclick="openwin();" />*@
+                                </div>
+
+
+
+                            </div>
+                            <br />
+
+                            <div id="jiage">
+                                <h2 class="h2">
+                                    更新说明
+                                </h2>
+                                <div class="prod-anchor">
+                                    <p class="text">
+                                        暂未更新，敬请期待。
+                                    </p>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,343 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!-- 加入 jq 类库-->
+    <link rel="stylesheet" href="~/Content/css/jquery.slider.css" />
+    <script src="~/Content/js/jquery/jquery-2.1.1.min.js"></script>
+    <script src="~/Content/js/jquery/jquery.cookie.js"></script>
+    <script src="~/Content/js/jquery.slider.min.js"></script>
+    <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    <title>用户登录</title>
+    <link rel="shortcut icon" href="~/Content/image/H140.png" type="image/vnd.microsoft.icon">
+    <style>
+        body {
+            font-family: inherit;
+            font-size: 14px;
+            color: rgb(200,200,200);
+        }
+
+        p {
+            text-align: center;
+            font-family: inherit;
+            font-size: 25px;
+            color: #0f0f0f;
+        }
+
+        input {
+            width: 250px;
+            height: 40px;
+            font-size:larger;
+            border-radius: 2px;
+            border: 1px solid rgb(200,200,200);
+            padding-left: 5px;
+        }
+
+        #table1 td {
+            padding-top: 10px;
+        }
+
+        #div1 {
+            text-align: center;
+            margin: 0 auto;
+            width: 45%;
+            height: 50%;
+        }
+
+        #div2 {
+            text-align: center;
+            margin: 0 auto;
+            width: 45%;
+            height: 50%;
+        }
+
+        #btn_login {
+            width: 258px;
+            height: 40px;
+            font-size:larger;
+            border: 1px solid rgb(200,200,200);
+            border-radius: 3px;
+            background-color: #007acc;
+            color: white;
+            cursor: pointer;
+        }
+
+        .inputimage2 {
+            border: 0;
+            width: 50px;
+            height: 50px;
+            margin-left: 660px;
+            outline: none;
+            display: inline;
+        }
+
+        .inputimage1 {
+            border: 0;
+            width: 50px;
+            height: 50px;
+            margin-left: 100px;
+            outline: none;
+            display: inline;
+        }
+
+        #image2 {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+            margin-left: 660px;
+            display: inline;
+        }
+
+        #slider2 {
+            margin-left: 218px;
+        }
+    </style>
+</head>
+
+<body id="myboby">
+
+    <script>
+        $(function () {
+            $("#tuodong").css("display", "none");//初始化提示 tuodong
+
+            ///文本框验证输入合肥
+            function Check_Txt() {
+                var UserName = $("#UserName").val().trim();
+                var UserPassword = $("#UserPassword").val().trim();
+                var result2 = $("#result2").text().trim();
+                //if (UserName == "") {
+                //    $(".UserName").css("borderColor", "red");
+                //    return false;
+                //}
+                //else {
+                //    $(".UserName").css("borderColor", "blue");
+                //    return true;
+                //}
+
+                if (UserPassword == "" || UserName == "" || result2 == "" || result2 == "false") {
+                    $(".UserName").css("borderColor", "red");
+                    $(".UserPassword").css("borderColor", "red");
+                    $("#tuodong").css("color", "red");
+                    $("#tuodong").css("display", "block");
+                    $("#tuodong").text("请拖动滑动验证码");
+
+                    return false;
+                }
+                else {
+                    $(".UserName").css("borderColor", "");
+                    $(".UserPassword").css("borderColor", "");
+
+                    $("#btn_login").attr('disabled', 'disabled').find('span').html("loading...please wait");
+
+                    return true;//必须为true 往下执行
+
+                }
+            }
+
+            //$("#UserName").keydown(function () {//给输入框绑定按键事件
+            //    if (event.keyCode == "13") {//判断如果按下的是回车键则执行下面的代码
+            //        $("#result1").text(result);
+            //    }
+            //});2017.7.27 加
+            $("#myboby").keydown(function () {
+                if (event.keyCode == "13") {
+                    $("#btn_login").click();
+                }
+            });
+            ///滑块拖动验证码
+            $("#slider1").slider({
+                callback: function (result) {
+                    $("#result1").text(result);
+                }
+            });
+
+            $("#slider2").slider({
+                width: 258, // width
+                height: 40, // height
+                sliderBg: "#e5e5d4", // 滑块背景颜色
+                color: "#333", // 文字颜色
+                fontSize: 14, // 文字大小
+                bgColor: "#33CC00", // 背景颜色
+                textMsg: "按住滑块，拖拽到最右边", // 提示文字
+                successMsg: "验证通过", // 验证成功提示文字
+                successColor: "white", // 滑块验证成功提示文字颜色
+                time: 400, // 返回时间
+                callback: function (result) { // 回调函数，true(成功),false(失败)
+                    $("#result2").text(result);
+
+                    $("#tuodong").css("color", "");
+                    $("#tuodong").css("display", "none");
+
+                }
+            });
+            ///文本框事件绑定
+            //$("#UserName").focus(function () {
+            //    Check_Txt()
+            //})
+            //$("#UserPassword").focus(function () {
+            //    Check_Txt();
+            //})
+            //$("#UserName").blur(function () {
+            //    Check_Txt()
+            //})
+            //$("#UserPassword").blur(function () {
+            //    Check_Txt();
+            //})
+            ///点击登录，触发事件
+            $("#btn_login").click(function loginUser() {
+                var UserName = $("#UserName").val().trim();
+                var UserPassword = $("#UserPassword").val().trim();
+                //$("#btn_login").attr('disabled', 'disabled').find('span').html("loading...");
+
+                if (Check_Txt()) {
+
+                    $.ajax({
+                        type: 'get',
+                        dataType: 'text',
+                        url: '/UserAccount/UserLogin_Me',
+                        data: { UserName: UserName, UserPassword: UserPassword },
+                        success: function (data) {
+                            var json = eval("(" + data + ")");
+                            // var value = new Array();
+                            //var val = user1[1];
+                            //alert(json)
+                            var state = json[0];
+                            if (state == "success") {
+
+                                $("#btn_login").find('span').html("登录成功，正在跳转...");
+                                window.setTimeout(function () {
+                                    window.location.href = "/Home/Index";
+                                }, 500);
+
+                                sessionStorage.setItem('username', json[1]);//var total = sessionStorage.getItem( "" );记录用户名
+
+                                //$.cookie('ck_user_name', user);//存储cookie
+                                //alert($.cookie('ck_user_name'));
+                                //window.location.href = "/Home/Index";
+                                $("#tuodong").css("color", "");
+                                $("#tuodong").css("display", "none");
+                                $("#tuodong").html("");
+                            }
+                            else {
+                                $("#btn_login").removeAttr('disabled').find('span').html("登&nbsp;&nbsp;录");
+                                $("#slider2").slider("restore");
+                                $("#result2").text("false");
+
+                                $("#tuodong").css("color", "red");
+                                $("#tuodong").css("display", "block");
+                                $("#tuodong").html("账号或密码错误！");
+
+                                //alert("登录失败，用户账号或密码错误");
+                            }
+                        },
+                        error: function () {
+                            //$("#btn_login").removeAttr('disabled').find('span').html("登&nbsp;&nbsp;录");
+                            //$("#slider2").slider("restore");
+                            //$("#result2").text("false");
+                            //$("#tuodong").css("color", "");
+                            //$("#tuodong").css("display", "");
+                            //$("#tuodong").text("");
+                            //alert("温馨提示：\n\n登录失败，账号或密码错误!");
+                        }
+                    });
+                }
+            });
+            ///邮箱登陆
+            $("#inputimage1").click(function () {
+                document.getElementById("div1").hidden = "";
+                document.getElementById("div2").hidden = "hidden";
+            });
+            ///微信登陆
+            $("#inputimage2").click(function () {
+                document.getElementById("div1").hidden = "hidden";
+                document.getElementById("div2").hidden = "";
+                //window.open("https://open.weixin.qq.com/connect/qrconnect?appid=wx0d9a0bfa8fe63c7c&redirect_uri=http://www.hdmes.com/&response_type=code&scope=snsapi_login&state=STATE#wechat_redirect");
+            });
+        });
+
+    </script>
+    <a href="/Home/Index">
+        <img src="../Content/image/handinglogo.png" width="120" height="30" style="padding-top:10px;padding-left:20px;" />
+    </a>
+    <hr />
+    <div id="div1">
+        <form name="form_reg" action="" method="post" target="_self" autocomplete="off">
+            <p>
+                @*<a href="/Home/Index">
+                        <img src="../Content/image/handinglogo.png" width="120" height="30" style="padding-top:10px;padding-left:20px;" />
+                    </a>*@
+                登录
+            </p>
+            <table width="700" border="0" id="table1">
+                <tr>
+                    @*<td width="50%" align="right" height="25"><font face="Arial, Helvetica, sans-serif">用户名：</font></td>*@
+                    <td>
+                        <input type="text" class="UserName" id="UserName" name="UserName" placeholder="邮箱/用户名">
+                    </td>
+                </tr>
+                <tr>
+                    @*<td width="50%" align="right" height="25">密码：</td>*@
+                    <td>
+                        <input type="password" class="UserPassword" id="UserPassword" name="UserPassword" placeholder="密码">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div id="slider2" class="slider"></div><span id="tuodong">请拖动滑动验证码</span>
+                        <span id="result2" hidden="hidden"></span>
+                        @*<input type="text" class="UserPassword0" id="UserPassword0" name="UserPassword0" placeholder="验证码">*@
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @*<input type="button" id="btn_login" name="btn_login" value="">*@
+                        <button id="btn_login" name="btn_login" type="button"><span>登&nbsp;&nbsp;录</span></button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/UserAccount/GetUserPass">忘记密码</a>
+                        &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+                        <a href="/UserAccount/UserReg">没有账号</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div id="div2" hidden="hidden">
+        @*<p>
+                登陆
+            </p>*@
+        @*<img src="" id="image2" />*@
+        @*<p style="font-size:14px;">请使用微信扫描二维码登陆</p>*@
+    </div>
+    <br />
+    @*<hr style="width:38%;margin-left:220px;"/>*@
+    <img src="../Content/image/morelogin.png" width="300" height="30" style="padding-top:10px;padding-left:620px;" />
+    <br />
+    <input class="inputimage2" id="inputimage2" type="image" src="../Content/image/morelogin-weixin.png" />
+    <input class="inputimage1" id="inputimage1" type="image" src="../Content/image/morelogin-email.png" />
+    <script>
+
+        var obj = new WxLogin({
+            id: "div2",
+            appid: "wx0d9a0bfa8fe63c7c",
+            scope: "snsapi_login",
+            //redirect_uri: "http://www.hdmes.com",
+            redirect_uri: "http://www.hdmes.com/UserAccount/OAuthSnsApiUserInfo",
+            state: "STATE",
+            style: "black",
+            href: ""
+        });
+
+    </script>
+</body>
+</html>

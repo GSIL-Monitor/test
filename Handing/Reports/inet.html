@@ -1,0 +1,938 @@
+﻿<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="gb2312">
+<head onload="mmk12313123">
+    <title> 获取table中的rowIndex和cellIndex </title>
+    <meta http-equiv="content-type" content="text/html; charset=gb2312" />
+    <meta name="generator" content="editplus" />
+    <meta name="author" content="枫岩,cnlei.y.l@gmail.com" />
+    <meta name="keywords" content="rowIndex,cellIndex" />-->
+
+    <!--<script type="text/javascript">
+      
+        function mmk() {
+            if (!document.getElementsByTagName || !document.createTextNode) return;
+            var rows = document.getElementById('MyTable').getElementsByTagName('tr');
+            //alert(rows)
+            var cols;
+            for (i = 0; i < rows.length; i++) {
+                rows[i].onclick = function () {
+                    alert("行:" + eval(this.rowIndex + 1));
+                    var b =  eval(this.rowIndex);
+                    var tu = $("#MyTable").find("tr");
+                    alert(tu[b].rowIndex+1)
+                }
+                //cols = rows[i].getElementsByTagName('td');
+                //for (j = 0; j < cols.length; j++) {
+                //    cols[j].onclick = function () {
+                //        alert("列:" + eval(this.cellIndex + 1));
+                //    }
+                //}
+            }
+        }
+    </script>-->
+<style>
+    #drag {
+        position: relative;
+        background-color: #e8e8e8;
+        width: 300px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+    }
+
+        #drag .handler {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 40px;
+            height: 32px;
+            border: 1px solid #ccc;
+            cursor: move;
+        }
+
+    .handler_bg {
+        background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo0ZDhlNWY5My05NmI0LTRlNWQtOGFjYi03ZTY4OGYyMTU2ZTYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTEyNTVEMURGMkVFMTFFNEI5NDBCMjQ2M0ExMDQ1OUYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTEyNTVEMUNGMkVFMTFFNEI5NDBCMjQ2M0ExMDQ1OUYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2MTc5NzNmZS02OTQxLTQyOTYtYTIwNi02NDI2YTNkOWU5YmUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NGQ4ZTVmOTMtOTZiNC00ZTVkLThhY2ItN2U2ODhmMjE1NmU2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+YiRG4AAAALFJREFUeNpi/P//PwMlgImBQkA9A+bOnfsIiBOxKcInh+yCaCDuByoswaIOpxwjciACFegBqZ1AvBSIS5OTk/8TkmNEjwWgQiUgtQuIjwAxUF3yX3xyGIEIFLwHpKyAWB+I1xGSwxULIGf9A7mQkBwTlhBXAFLHgPgqEAcTkmNCU6AL9d8WII4HOvk3ITkWJAXWUMlOoGQHmsE45ViQ2KuBuASoYC4Wf+OUYxz6mQkgwAAN9mIrUReCXgAAAABJRU5ErkJggg==") no-repeat center;
+    }
+
+    .handler_ok_bg {
+        background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo0ZDhlNWY5My05NmI0LTRlNWQtOGFjYi03ZTY4OGYyMTU2ZTYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDlBRDI3NjVGMkQ2MTFFNEI5NDBCMjQ2M0ExMDQ1OUYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDlBRDI3NjRGMkQ2MTFFNEI5NDBCMjQ2M0ExMDQ1OUYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDphNWEzMWNhMC1hYmViLTQxNWEtYTEwZS04Y2U5NzRlN2Q4YTEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NGQ4ZTVmOTMtOTZiNC00ZTVkLThhY2ItN2U2ODhmMjE1NmU2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+k+sHwwAAASZJREFUeNpi/P//PwMyKD8uZw+kUoDYEYgloMIvgHg/EM/ptHx0EFk9I8wAoEZ+IDUPiIMY8IN1QJwENOgj3ACo5gNAbMBAHLgAxA4gQ5igAnNJ0MwAVTsX7IKyY7L2UNuJAf+AmAmJ78AEDTBiwGYg5gbifCSxFCZoaBMCy4A4GOjnH0D6DpK4IxNSVIHAfSDOAeLraJrjgJp/AwPbHMhejiQnwYRmUzNQ4VQgDQqXK0ia/0I17wJiPmQNTNBEAgMlQIWiQA2vgWw7QppBekGxsAjIiEUSBNnsBDWEAY9mEFgMMgBk00E0iZtA7AHEctDQ58MRuA6wlLgGFMoMpIG1QFeGwAIxGZo8GUhIysmwQGSAZgwHaEZhICIzOaBkJkqyM0CAAQDGx279Jf50AAAAAABJRU5ErkJggg==") no-repeat center;
+    }
+
+    #drag .drag_bg {
+        background-color: #7ac23c;
+        height: 34px;
+        width: 0px;
+    }
+
+    #drag .drag_text {
+        position: absolute;
+        top: 0px;
+        width: 300px;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -o-user-select: none;
+        -ms-user-select: none;
+    }
+</style>
+<script>
+
+    /*
+     * drag 1.0
+     * create by tony@jentian.com
+     * date 2015-08-18
+     * 拖动滑块
+     */
+    (function ($) {
+        $.fn.drag = function (options) {
+            var x, drag = this, isMove = false, defaults = {
+            };
+            var options = $.extend(defaults, options);
+            //添加背景，文字，滑块
+            var html = '<div class="drag_bg"></div>' +
+                        '<div class="drag_text" onselectstart="return false;" unselectable="on">拖动滑块验证</div>' +
+                        '<div class="handler handler_bg"></div>';
+            this.append(html);
+
+            var handler = drag.find('.handler');
+            var drag_bg = drag.find('.drag_bg');
+            var text = drag.find('.drag_text');
+            var maxWidth = drag.width() - handler.width();  //能滑动的最大间距
+
+            //鼠标按下时候的x轴的位置
+            handler.mousedown(function (e) {
+                isMove = true;
+                x = e.pageX - parseInt(handler.css('left'), 10);
+            });
+
+            //鼠标指针在上下文移动时，移动距离大于0小于最大间距，滑块x轴位置等于鼠标移动距离
+            $(document).mousemove(function (e) {
+                var _x = e.pageX - x;
+                if (isMove) {
+                    if (_x > 0 && _x <= maxWidth) {
+                        handler.css({ 'left': _x });
+                        drag_bg.css({ 'width': _x });
+                    } else if (_x > maxWidth) {  //鼠标指针移动距离达到最大时清空事件
+                        dragOk();
+                    }
+                }
+            }).mouseup(function (e) {
+                isMove = false;
+                var _x = e.pageX - x;
+                if (_x < maxWidth) { //鼠标松开时，如果没有达到最大距离位置，滑块就返回初始位置
+                    handler.css({ 'left': 0 });
+                    drag_bg.css({ 'width': 0 });
+                }
+            });
+
+            //清空事件
+            function dragOk() {
+                handler.removeClass('handler_bg').addClass('handler_ok_bg');
+                text.text('验证通过');
+                drag.css({ 'color': '#fff' });
+                handler.unbind('mousedown');
+                $(document).unbind('mousemove');
+                $(document).unbind('mouseup');
+            }
+        };
+    })(jQuery);
+
+</script>
+
+
+<!--</head>
+<body onload="mmk()">
+    <table id="MyTable" border="1">
+            <tr><td>行1列１</td><td>行1列２</td><td>行1列3</td></tr>
+            <tr><td>行2列１</td><td>行2列２</td><td>行2列3</td></tr>
+            <tr><td>行3列１</td><td>行3列２</td><td>行3列3</td></tr>
+    </table>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />-->
+    <!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <!--<link rel="stylesheet" href="/Scripts/bootstrap.min.css" />-->
+    <script src="/Content/js/jquery/jquery-2.1.1.min.js"></script>
+    <!--<script src="/Scripts/bootstrap.min.js"></script>-->
+
+</head>
+
+<body onload="mmk()">
+    <center><br><br><br><div id="drag"></div></center>
+
+
+    <script type="text/javascript">
+        $('#drag').drag();
+    </script>
+
+
+    <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+    </div>
+    <!--弹出框    
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        弹出框
+    </button>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        弹出模式展示1
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <table id="MyTable" border="1" align="center">
+                        <tr><td>00行1列１</td><td>行1列２</td><td>行1列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td></tr>
+                        <tr><td>行2列１</td><td>行2列２</td><td>行2列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td></tr>
+                        <tr><td>行3列１</td><td>行3列２</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td></tr>
+                        <tr><td>行1列１</td><td>行1列２</td><td>行1列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td></tr>
+                        <tr><td>行2列１</td><td>行2列２</td><td>行2列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td></tr>
+                        <tr><td>行3列１</td><td>行3列２</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td></tr>
+                        <tr><td>行1列１</td><td>行1列２</td><td>行1列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td></tr>
+                        <tr><td>行2列１</td><td>行2列２</td><td>行2列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td></tr>
+                        <tr><td>行3列１</td><td>行3列２</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td></tr>
+                        <tr><td>行1列１</td><td>行1列２</td><td>行1列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td></tr>
+                        <tr><td>行2列１</td><td>行2列２</td><td>行2列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td></tr>
+                        <tr><td>行3列１</td><td>行3列２</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td><td>行3列3</td></tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!--<embed src="/Content/image/Drawing2.dwg" width="400" height="333" pluginspage="http://www.softsource.com/plugins/plugins.html">-->
+    <!--<object classid="clsid:A662DA7E-CCB7-4743-B71A-D817F6D575DF"
+            codebase=http://www.autodesk.com/global/dwfviewer/installer/
+            dwfviewersetup.cab#version=7,0,0,928
+            width="640" height="480">
+        <param name="Src"
+               value="http://www.autodesk.com/global/dwf/samples/multiple_layouts_large.dwf">
+    </object>--> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>windows</title>
+    <style>
+        #main {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+        }
+
+        #title {
+            width: 500px;
+            height: 19px;
+            border-top: #85ABE4 1px solid;
+            border-right: #222 1px solid;
+            border-left: #85ABE4 1px solid;
+            border-bottom: none;
+            background: #5B8BD9;
+        }
+
+        #content {
+            border: #85ABE4 1px solid;
+            border-top: none;
+            width: 500px;
+            height: 300px;
+        }
+
+            #content img {
+                width: 500px;
+                height: 300px;
+            }
+
+        #off {
+            float: right;
+            cursor: pointer;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+
+        #open {
+            background: #fff;
+            border: #555 1px solid;
+            height: 13px;
+            width: 50px;
+            position: absolute;
+            left: 50px;
+            top: 400px;
+            cursor: pointer;
+        }
+
+            #open marquee {
+                font-size: 12px;
+                color: #555;
+            }
+
+        #img {
+            background: url(/jscss/demoimg/201311/s.jpg) no-repeat;
+            float: right;
+            width: 49px;
+            height: 19px;
+        }
+
+            #img: hover {
+                background: url(/jscss/demoimg/201311/sh.jpg) no-repeat;
+            }
+
+        #ten {
+            float: left;
+            width: 400px;
+        }
+    </style>
+    <script src="/Content/js/jquery/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //设置标题栏
+            document.title = "0.0 WINDOW";
+            //窗口的拖动
+            var bool = false;
+            var offsetX = 0;
+            var offsetY = 0;
+            $("#main").mousedown(function () {
+                bool = true;
+                offsetX = event.offsetX;
+                offsetY = event.offsetY;
+                $("#ten").css('cursor', 'move');
+            })
+                    .mouseup(function () {
+                        bool = false;
+                    })
+            $(document).mousemove(function (e) {
+                if (!bool)
+                    return;
+                var x = event.clientX - offsetX;
+                var y = event.clientY - offsetY;
+                $("#main").css("left", x);
+                $("#main").css("top", y);
+            })
+            //窗口的关闭
+            $("#img").click(function () {
+                $("#main").removeClass("show");
+                $("#main").addClass("none");
+                $("#open").addClass("show");
+            });
+            $("#open").click(function () {
+                $("#main").removeClass("none");
+                $("#main").addClass("show");
+                $("#open").removeClass("show");
+                $("#open").addClass("none");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="main" class="show">
+        <div id="title">
+            <div id="ten"></div>
+            <div id="img" title="close"></div>
+        </div>
+        <div id="content">
+
+            <table id="MyTable" border="1">
+                <tr><td>行1列１</td><td>行1列２</td><td>行1列3</td></tr>
+                <tr><td>行2列１</td><td>行2列２</td><td>行2列3</td></tr>
+                <tr><td>行3列１</td><td>行3列２</td><td>行3列3</td></tr>
+            </table>
+        </div>
+    </div>
+    <div id="open" class="none" title="">
+        点击弹出窗口
+    </div>
+</body>
+</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+    <title>点击文字弹出一个DIV层窗口代码</title>
+    <style>
+        .black_overlay {
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=88);
+        }
+
+        .white_content {
+            display: none;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 55%;
+            height: 55%;
+            padding: 20px;
+            border: 10px solid orange;
+            background-color: white;
+            z-index: 1002;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <p>示例弹出层：<a href="JavaScript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade000').style.display='block'">请点这里</a></p>
+    <div id="light" class="white_content">
+        这是一个层窗口示例程序.
+        <a href="javascript:void(0)"onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">关闭本窗口</a>
+
+        <table id="tb" border="1"align="center" onselect="GetTdValue()">
+            <tr onclick="GetTdValue()">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>22</td>
+                <td>33</td>
+                <td>44</td>
+                <td>55</td>
+            </tr>
+            <tr>
+                <td>111</td>
+                <td>222</td>
+                <td>333</td>
+                <td>444</td>
+                <td>555</td>
+            </tr>
+        </table>
+    </div>
+    <div id="fade" class="black_overlay">
+
+    </div>
+    <script language="javascript" type="text/javascript">
+        function GetTdValue() {
+            //Javascript 取得table 中TD的值
+            var VAL = document.getElementById("tb").rows[0].cells[0];
+            alert(VAL.innerHTML);
+        }
+    </script>
+    
+</body>
+</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jQuery实现分步注册向导</title>
+
+
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        a, img {
+            border: 0;
+        }
+
+        body {
+            font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+        }
+
+
+        #wizard {
+            border: 5px solid #789;
+            font-size: 12px;
+            height: 400px;
+            margin: 20px auto;
+            width: 570px;
+            overflow: hidden;
+            position: relative;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+
+            #wizard .items {
+                width: 20000px;
+                clear: both;
+                position: absolute;
+            }
+
+            #wizard .right {
+                float: right;
+            }
+
+            #wizard #status {
+                height: 35px;
+                background: #123;
+                padding-left: 25px !important;
+            }
+
+        #status li {
+            float: left;
+            color: #fff;
+            padding: 10px 30px;
+        }
+
+            #status li.active {
+                background-color: #369;
+                font-weight: normal;
+            }
+
+        .input {
+            width: 240px;
+            height: 18px;
+            margin: 10px auto;
+            line-height: 20px;
+            border: 1px solid #d3d3d3;
+            padding: 2px;
+        }
+
+        .page {
+            padding: 20px 30px;
+            width: 500px;
+            float: left;
+        }
+
+            .page h3 {
+                height: 42px;
+                font-size: 16px;
+                border-bottom: 1px dotted #ccc;
+                margin-bottom: 20px;
+                padding-bottom: 5px;
+            }
+
+                .page h3 em {
+                    font-size: 12px;
+                    font-weight: 500;
+                    font-style: normal;
+                }
+
+            .page p {
+                line-height: 24px;
+            }
+
+                .page p label {
+                    font-size: 14px;
+                    display: block;
+                }
+
+        .btn_nav {
+            height: 36px;
+            line-height: 36px;
+            margin: 20px auto;
+        }
+
+        .prev, .next {
+            width: 100px;
+            height: 32px;
+            line-height: 32px;
+            border: 1px solid #d3d3d3;
+            cursor: pointer;
+        }
+    </style>
+
+    <script src="../Content/js/jquery/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../Content/js/scrollable.js"></script>
+
+</head>
+<body>
+    <form action="#" method="post">
+        <div id="wizard">
+            <ul id="status">
+                <li class="active"><strong>1.</strong>创建账户</li>
+                <li><strong>2.</strong>填写联系信息</li>
+                <li><strong>3.</strong>完成</li>
+            </ul>
+            <div class="items">
+                <div class="page">
+                    <h3>创建一个账户<br /><em>请填写您的注册账户信息，用于登录。</em></h3>
+                    <p><label>用户名：</label><input type="text" class="input" id="user" name="username" /></p>
+                    <p><label>密码：</label><input type="password" class="input" id="pass" name="password" /></p>
+                    <p><label>确认密码：</label><input type="password" class="input" id="pass1" name="password1" /></p>
+                    <div class="btn_nav">
+                        <input type="button" class="next right" value="下一步&raquo;" />
+                    </div>
+                </div>
+                <div class="page">
+                    <h3>填写联系信息<br /><em>请告诉我们您的联系方式。</em></h3>
+                    <p><label>E-mail：</label><input type="text" class="input" name="email" /></p>
+                    <p><label>QQ：</label><input type="text" class="input" name="qq" /></p>
+                    <p><label>手机号码：</label><input type="text" class="input" name="mobile" /></p>
+                    <div class="btn_nav">
+                        <input type="button" class="prev" style="float:left" value="&laquo;上一步" />
+                        <input type="button" class="next right" value="下一步&raquo;" />
+                    </div>
+                </div>
+                <div class="page">
+                    <h3>完成注册<br /><em>点击确定完成注册。</em></h3>
+                    <h4>Txcomcom欢迎您！</h4>
+                    <p>请点击“确定”按钮完成注册。</p>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="btn_nav">
+                        <input type="button" class="prev" style="float:left" value="&laquo;上一步" />
+                        <input type="button" class="next right" id="sub" value="确定" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        $(function () {
+
+            $("#wizard").scrollable({
+                onSeek: function (event, i) {
+                    $("#status li").removeClass("active").eq(i).addClass("active");
+                },
+                onBeforeSeek: function (event, i) {
+                    if (i == 1) {
+                        var user = $("#user").val();
+                        if (user == "") {
+                            alert("请输入用户名！");
+                            return false;
+                        }
+                        var pass = $("#pass").val();
+                        var pass1 = $("#pass1").val();
+                        if (pass == "") {
+                            alert("请输入密码！");
+                            return false;
+                        }
+                        if (pass1 != pass) {
+                            alert("两次密码不一致！");
+                            return false;
+                        }
+                    }
+                }
+            });
+
+            $("#sub").click(function () {
+                var data = $("form").serialize();
+                alert(data);
+            });
+
+        });
+    </script>
+
+</body>
+</html>-->
+<!--              tabs 标签   <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>Bootstrap 实例 - 标签页（Tab）插件方法</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<ul id="myTab" class="nav nav-tabs">
+	<li class="active">
+		<a href="#home" data-toggle="tab">菜鸟教程</a>
+	</li>
+	<li><a href="#ios" data-toggle="tab">iOS</a></li>
+	<li class="dropdown">
+		<a href="#" id="myTabDrop1" class="dropdown-toggle" 
+		   data-toggle="dropdown">Java <b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+			<li><a href="#jmeter" tabindex="-1" data-toggle="tab">
+				jmeter</a>
+			</li>
+			<li><a href="#ejb" tabindex="-1" data-toggle="tab">
+				ejb</a>
+			</li>
+		</ul>
+	</li>
+</ul>
+<div id="myTabContent" class="tab-content">
+	<div class="tab-pane fade in active" id="home">
+		<p>菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
+	</div>
+	<div class="tab-pane fade" id="ios">
+		<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
+			TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+	</div>
+	<div class="tab-pane fade" id="jmeter">
+		<p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+	</div>
+	<div class="tab-pane fade" id="ejb">
+		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+		</p>
+	</div>
+</div>
+<script>
+	$(function () {
+		$('#myTab li:eq(1) a').tab('show');
+	});
+</script>
+
+</body>
+</html>                                      -->

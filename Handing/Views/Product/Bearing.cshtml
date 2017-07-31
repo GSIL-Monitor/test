@@ -1,0 +1,682 @@
+﻿@{
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Handing-中国首个起重机械开放性服务平台</title>
+        <meta name="baidu-site-verification" content="2Lkh1N0Y9U" />
+        <meta name="keywords" content="安全检测、云数据、智能报价、云计算" />
+        <meta name="description" content="Handing是中国最先建立的监控服务商,专注于提供可靠的起重监控,数据采集、载荷分析等服务。" />*@
+
+@*<link rel="stylesheet" href="/Scripts/bootstrap.min.css" />*@
+@*<link rel="stylesheet" href="~/Content/css/Mytabs.css">*@
+<link rel="stylesheet" href="~/Content/css/jquery-labelauty.css">
+@*寿命选择单选按钮样式*@
+<style>
+    #radioseleck {
+        list-style-type: none;
+    }
+
+    .radio-li {
+        display: inline-block;
+    }
+
+    .radio-li {
+        margin: 10px 10px;
+    }
+
+    input.labelauty + label {
+        font: 14px "Microsoft Yahei";
+    }
+</style>
+<body id="bd08" data-spy="scroll" data-target="#navbar-example" style="position: relative;">
+    <div class="mobile-wrapper">
+
+        @***************产品中心-卷筒*****************@
+        <div class="submain-navbg"></div>
+        <div class="main">
+            <div class="sub-main product">
+                <div class="nav-wrap">
+                    <h2>设计开发<span class="en">DESIGN</span></h2>
+                    <ul class="main-nav">
+                        <li class="first-node father">
+                            通用计算
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 弯矩计算">
+                                    <a href="/Product/Stiffness">
+                                        <i class="icon-wanju"></i>
+                                        弯矩计算 Bending Moment
+                                    </a>
+                                </li>
+                                <li class="截面特性">
+                                    <a href="/Product/Strength">
+                                        <i class="icon-clear-formatting"></i>
+                                        截面特性 Section Property
+                                    </a>
+                                </li>
+                                <li class=" 强度计算">
+                                    <a href="/Product/Stability">
+                                        <i class="icon-download"></i>
+                                        强度计算 Intensity
+                                    </a>
+                                </li>
+                                <li class=" 刚度计算">
+                                    <a href="/Product/Fatigue">
+                                        <i class="icon-download3"></i>
+                                        刚度计算 Stiffness
+                                    </a>
+                                </li>
+                                @*<li class=" 车轮计算">
+                                    <a href="/Product/Drum">
+                                        <i class="icon-spinner4"></i>
+                                        车轮计算 Wheel
+                                    </a>
+                                </li>*@
+                                <li class=" focus">
+                                    <a href="/Product/Bearing">
+                                        <i class="icon-bearing"></i>
+                                        轴承设计 Bearing
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            模块设计
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 车轮组模块">
+                                    <a href="/Product/Drum">
+                                        <i class="icon-wheel"></i>
+                                        车轮组模块 Wheel Block
+                                    </a>
+                                </li>
+                                <li class=" 端梁模块">
+                                    <a href="/Product/Endbeam">
+                                        <i class="icon-endbeam"></i>
+                                        端梁模块 EndBeam Block
+                                    </a>
+                                </li>
+                                <li class=" 主梁模块">
+                                    <a href="/Product/Girder">
+                                        <i class="icon-girder"></i>
+                                        主梁模块 Girder Block
+                                    </a>
+                                </li>
+                                <li class=" 起升模块">
+                                    <a href="/Product/Lifting">
+                                        <i class="icon-lifting"></i>
+                                        起升模块 Lifting Block
+                                    </a>
+                                </li>
+                                <li class=" 葫芦模块">
+                                    <a href="/Product/Hoisting">
+                                        <i class="icon-hoist"></i>
+                                        葫芦模块 Hoist Block
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            产品设计
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 桥式起重机">
+                                    <a href="/Product/Bridge">
+                                        <i class="icon-brigecrane"></i>
+                                        桥式起重机 Bridge Crane
+                                    </a>
+                                </li>
+                                <li class=" 门式起重机">
+                                    <a href="/Product/Gantry">
+                                        <i class="icon-gantrycrane"></i>
+                                        门式起重机 Gantry Crane
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            软件开发
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" HD报价系统">
+                                    <a href="/Product/HDQuotation">
+                                        <i class="icon-file-text"></i>
+                                        HD报价系统 HDQuotation
+                                    </a>
+                                </li>
+                                <li class=" 生产辅助设计系统">
+                                    <a href="/Product/HDProduce">
+                                        <i class="icon-produce"></i>
+                                        生产辅助设计系统 HDProduce
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        @*<li class="first-node father">
+                                数据采集
+                                <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                                <ul class="nav">
+                                    <li class=" 视频云">
+                                        <a href="/site/product/uvideo.html">
+                                            <i class="icon__uvideo prod"></i>
+                                            视频云 UVideo
+                                        </a>
+                                    </li>
+                                    <li class=" 直播云">
+                                        <a href="/site/product/ulive.html">
+                                            <i class="icon__ulive prod"></i>
+                                            直播云 ULive
+                                        </a>
+                                    </li>
+                                    <li class=" 移动应用加速">
+                                        <a href="/site/product/umaa.html">
+                                            <i class="icon__umaa prod"></i>
+                                            移动应用加速 UMAA
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="first-node father">
+                                数据分析
+                                <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                                <ul class="nav">
+                                    <li class=" AI在线服务">
+                                        <a href="/site/product/uaiservice.html">
+                                            <i class="icon__uai prod"></i>
+                                            AI在线服务 UAI-Service
+                                        </a>
+                                    </li>
+                                    <li class=" 数据仓库">
+                                        <a href="/site/product/udw.html">
+                                            <i class="icon__udw prod"></i>
+                                            数据仓库 UDW
+                                        </a>
+                                    </li>
+                                    <li class=" 分布式消息系统">
+                                        <a href="/site/product/ukafka.html">
+                                            <i class="icon__ukafka prod"></i>
+                                            分布式消息系统 UKafka
+                                        </a>
+                                    </li>
+                                    <li class=" 托管集群">
+                                        <a href="/site/product/uhadoop.html">
+                                            <i class="icon__uhadoop prod"></i>
+                                            托管集群 UHadoop
+                                        </a>
+                                    </li>
+                                    <li class=" 分布式数据处理">
+                                        <a href="/site/product/uddp.html">
+                                            <i class="icon__uddp prod"></i>
+                                            分布式数据处理 UDDP
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="first-node father">
+                                管理&监控
+                                <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                                <ul class="nav">
+                                    <li class=" 基础安全服务">
+                                        <a href="/site/product/usec.html">
+                                            <i class="icon__usec prod"></i>
+                                            基础安全服务 USec
+                                        </a>
+                                    </li>
+                                    <li class=" 企业应用防火墙">
+                                        <a href="/site/product/uewaf.html">
+                                            <i class="icon__uewaf prod"></i>
+                                            企业应用防火墙 UEWAF
+                                        </a>
+                                    </li>
+                                    <li class=" 高防服务">
+                                        <a href="/site/product/uads.html">
+                                            <i class="icon__uads prod"></i>
+                                            高防服务 UADS
+                                        </a>
+                                    </li>
+                                    <li class=" 云加密服务">
+                                        <a href="/site/product/uencrypt.html">
+                                            <i class="icon__clock prod"></i>
+                                            云加密服务 UEncrypt
+                                        </a>
+                                    </li>
+                                    <li class=" 运维审计系统">
+                                        <a href="/site/product/uhas.html">
+                                            <i class="icon__uhas prod"></i>
+                                            运维审计系统 UHAS
+                                        </a>
+                                    </li>
+                                    <li class=" Web漏洞扫描">
+                                        <a href="/site/product/uws.html">
+                                            <i class="icon__uws prod"></i>
+                                            Web漏洞扫描 UWS
+                                        </a>
+                                    </li>
+                                    <li class=" SSL证书管理">
+                                        <a href="/site/product/ussl.html">
+                                            <i class="icon__ussl prod"></i>
+                                            SSL证书管理 USSL
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="first-node father">
+                                黑匣子
+                                <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                                <ul class="nav">
+                                    <li class=" 开放API">
+                                        <a href="/site/product/api.html">
+                                            <i class="icon__apikey prod"></i>
+                                            开放API UAPI
+                                        </a>
+                                    </li>
+                                    <li class=" 云监控">
+                                        <a href="/site/product/umon.html">
+                                            <i class="icon__umon prod"></i>
+                                            云监控 UMon
+                                        </a>
+                                    </li>
+                                    <li class=" 账号与权限管理">
+                                        <a href="/site/product/uam.html">
+                                            <i class="icon__qr-code prod"></i>
+                                            账号与权限管理 UAM
+                                        </a>
+                                    </li>
+                                    <li class=" 自动伸缩">
+                                        <a href="/site/product/uas.html">
+                                            <i class="icon__uas prod"></i>
+                                            自动伸缩 UAS
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>*@
+                        <li class="first-node father">
+                            功能开发
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 自由开发">
+                                    <a href="/Product/FreeDevelopment">
+                                        <i class="icon-display"></i>
+                                        自由开发 Free Development
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <script>
+                    (function () {
+                        function foucs(i) {
+                            if (i != null) {
+                                $('.main-nav .first-node').eq(i).addClass('active').find('.nav li').hasClass('focus');
+                            } else {
+                                $('.main-nav .first-node').eq(i).addClass('focus')
+                            }
+                        }
+                        foucs({
+                            118: 0,
+                            229: 1,
+                            230: 2,
+                            119: 3,
+                            215: 4,
+                            120: 5,
+                            217: 6,
+                            121: 7,
+                            122: 8,
+                            123: 9,
+                            128: 10,
+                            307: 11
+                        }[118]);
+                    })();
+                </script>              
+                <div class="content-wrap">
+                    <div class="product-dash">                       
+                        <h2 >
+                            <i class="icon-bearing"></i>
+                            轴承计算
+                            Bearing
+                        </h2>
+
+                        @*<div class="prod-img"><img src='/uploads/160919/5-1609191S0411M.png' /></div>*@
+
+                        <hr />
+                        <p>
+                            轴承计算（Bearing）：是任何结构或工程设计中不可缺少的重要环节，但在设计时往往因使用安全系数导致寿命无法准确计算，从而使结构和工程部件造成浪费。
+
+                            无法实现“寿命共同体”，此计算旨在通过理论计算将实际数据结合，从而验证设计和改正设计，趋欲实现等寿命。
+                        </p>
+                        <hr />
+                        <p >
+                            欢迎您进入我们的论坛，针对此功能提供您的宝贵建议，我们将为您提供所需服务！
+                        </p>
+                        <div class="prod-operating">
+                            @*<a href=https://consolev3.ucloud.cn/uhost/uhost class='button1 blue'>立即使用</a>*@
+                            <a href="http://192.168.0.188:8078/forum.php?mod=viewthread&tid=8&extra=page%3D1" class='button1 white'>立即进入</a>
+                        </div>
+                    </div>
+                    <form class="form-horizontal" role="form" id="form1" autocomplete="off" action="Strength" method="post" >
+
+                        <div id="navbar-example">
+                            <ul class="sub-tabs-x anchor nav nav-tabs" role="tablist">
+                                <li>
+                                    <a href='#odds'>计算选择</a>
+                                </li>
+
+                                <li>
+                                    <a href='#inputType'>参数输入</a>
+                                </li>
+
+                                <li>
+                                    <a href='#result'>计算结果</a>
+                                </li>
+
+                                <li>
+                                    <a href='#imgForm'>更新说明</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <script>
+                            $('.sub-tabs-x li:eq(0)').addClass('active');
+
+                            //$('#myTab li:eq(0) a').tab('show');
+                        </script>
+
+                        <div class="tab-content sub-tab-cont">
+                            <div class="odds">
+                                <h2 class="h2">
+                                    计算选择
+                                </h2>
+                                <!--轴承计算参数计算-->
+                                <div class="form-group">
+                                    <ul class="dowebok" id="radioseleck">
+                                        <li class="radio-li"><input type="radio" value="li_0" name="radio" data-labelauty="当量动载荷" id="li_0" onclick="showtext_li_0(),showtext_li_lifeh()"></li>
+                                        <li class="radio-li"><input type="radio" value="li_1" name="radio" data-labelauty="寿命计算" id="li_1" onclick="showtext_li_1(),showtext_li_life()"></li>
+                                    </ul>
+                                    @*<ul class="dowebok" id="radioseleck">
+                            <li class="radio-li"><input type="radio" name="radio" disabled data-labelauty="车轮设计寿命" id="li_3"></li>
+                            <li class="radio-li"><input type="radio" name="radio" disabled data-labelauty="电气寿命" id="li_4"></li>
+                        </ul>*@
+
+                                    @*<script src="~/Content/js/jquery-1.8.3.min.js"></script>*@
+                                    <script src="~/Content/js/jquery-labelauty.js"></script>
+                                    <script>
+                                        $(function () {
+                                            $(':input').labelauty();
+                                        });
+                                        function showtext_li_0() {
+                                            var a = document.getElementById("li_0").value;
+                                            document.getElementById("tr_Type").hidden = "";
+                                            document.getElementById("tr_Rad").hidden = "";
+                                            document.getElementById("tr_Axi").hidden = "";
+                                            document.getElementById("tr_Sel").hidden = "";
+                                            document.getElementById("tr_X").hidden = "";
+                                            document.getElementById("tr_Y1").hidden = "";
+                                            document.getElementById("tr_Y2").hidden = "";
+                                            document.getElementById("tr_P").hidden = "";
+                                        }
+                                        function showtext_li_1() {
+                                            var a = document.getElementById("li_0").value;
+                                            document.getElementById("tr_Type").hidden = "hidden";
+                                            document.getElementById("tr_Rad").hidden = "hidden";
+                                            document.getElementById("tr_Axi").hidden = "hidden";
+                                            document.getElementById("tr_Sel").hidden = "hidden";
+                                            document.getElementById("tr_X").hidden = "hidden";
+                                            document.getElementById("tr_Y1").hidden = "hidden";
+                                            document.getElementById("tr_Y2").hidden = "hidden";
+                                            document.getElementById("table-right").hidden = "hidden";
+                                            //document.getElementById("tr_P").hidden = "hidden";
+                                            //document.getElementById("wheel_1").hidden = "hidden";
+                                            //document.getElementById("tr_c").hidden = "hidden";
+
+                                        }
+                                        function showtext_li_life() {
+                                            var a = document.getElementById("li_0").value;
+                                            //document.getElementById("tr_Y").hidden = "";
+                                            document.getElementById("tr_v").hidden = "";
+                                            document.getElementById("tr_c").hidden = "";
+                                            document.getElementById("tr_Pmax").hidden = "";
+                                            document.getElementById("tr_life").hidden = "";
+                                            //document.getElementById("wheel_2").hidden = "";
+
+                                        }
+                                        function showtext_li_lifeh() {
+                                            var a = document.getElementById("li_0").value;
+                                            document.getElementById("tr_v").hidden = "hidden";
+                                            document.getElementById("tr_Pmax").hidden = "hidden";
+                                            document.getElementById("tr_life").hidden = "hidden";
+                                            //document.getElementById("wheel_2").hidden = "hidden";
+                                            document.getElementById("tr_c").hidden = "hidden";
+                                        }
+                                    </script>
+                                    <label></label><input type="text" id="hidenx" name="hidenx" hidden="hidden" />
+                                </div>
+                            </div>
+
+                            <div id="inputType">
+                                <h2 class="h2">
+                                    参数输入
+                                </h2>
+                                <img src="../Content/image/wheel_1.png" width="162" height="300" align="right" id="wheel_1" hidden="hidden" />
+                                <img src="../Content/image/wheel_2.png" width="300" height="162" align="right" id="wheel_2" hidden="hidden" />
+                                <div class="form-group">
+                                    <table id="table-left">
+                                        @*当量动载荷*@
+                                        <tr id="tr_Type" hidden="hidden">
+                                            <td> 轴承类型&nbsp;:</td>
+                                            <td>
+                                                @*<input oninput="chelun(); createLifeOption();"  class="form-control" onblur="chelun(); " id="sti_Y" name="sti_Y" type="text" placeholder="mm,请输入车轮踏面直径" />*@
+                                                <select class="form-control" onblur="Bearing_();" onchange="    Bearing_(); showtable1();" id="sti_Type" name="sti_Type" style="width:173px;">
+                                                    <option value="0">---请选择轴承类型---</option>
+                                                    <option value="1">深沟球轴承</option>
+                                                    <option value="2">调心球轴承</option>
+                                                    <option value="3">圆柱滚子轴承</option>
+                                                    <option value="4">调心滚子轴承</option>
+                                                </select>
+                                            </td>
+                                            <td><i id="in_1" class=""></i></td>
+                                        </tr>
+                                        <tr id="tr_Rad" hidden="hidden">
+                                            <td>径向载荷&nbsp;Fr：</td>
+                                            <td>
+                                                <input oninput="Bearing_()" class="form-control" onblur="    Bearing_()" id="sti_Rad" name="sti_Rad" type="text" placeholder="N,请输入径向载荷" />
+                                            </td>
+                                            <td><i id="in_2" class=""></i></td>
+                                        </tr>
+                                        <tr id="tr_Axi" hidden="hidden">
+                                            <td>轴向载荷&nbsp;Fa：&nbsp;&nbsp;&nbsp;</td>
+                                            <td>
+                                                <input oninput="Bearing_();" class="form-control" onblur="    Bearing_()" id="sti_Axi" name="sti_Axi" type="text" placeholder="N,请输入轴向载荷" />
+                                            </td>
+                                            <td><i id="in_3" class=""></i></td>
+                                        </tr>
+                                        <tr id="tr_Sel" hidden="hidden">
+                                            <td>选择系数&nbsp;e：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>
+                                                <input oninput="Bearing_();" class="form-control" onblur="    Bearing_()" id="sti_Sel" name="sti_Sel" type="text" placeholder="请输入选择系数" />
+                                            </td>
+                                            <td><i id="in_4" class=""></i></td>
+                                        </tr>
+                                        <tr id="tr_X" hidden="hidden">
+                                            <td>径向载荷系数&nbsp;X：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>
+                                                <input oninput="Bearing_();" class="form-control" onblur="    Bearing_()" id="sti_X" name="sti_X" type="text" placeholder="请输入径向载荷系数" />
+                                            </td>
+                                            <td><i id="in_4" class=""></i></td>
+                                        </tr>
+                                        <tr id="tr_Y1" hidden="hidden">
+                                            <td>轴向载荷系数&nbsp;Y1：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>
+                                                <input oninput="Bearing_();" class="form-control" onblur="    Bearing_()" id="sti_Y1" name="sti_Y1" type="text" placeholder="请输入轴向载荷系数" />
+                                            </td>
+                                            <td><i id="in_4" class=""></i></td>
+                                        </tr>
+                                        <tr id="tr_Y2" hidden="hidden">
+                                            <td>轴向载荷系数&nbsp;Y2：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>
+                                                <input oninput="Bearing_();" class="form-control" onblur="    Bearing_()" id="sti_Y2" name="sti_Y2" type="text" placeholder="请输入轴向载荷系数" />
+                                            </td>
+                                            <td><i id="in_4" class=""></i></td>
+                                        </tr>
+                                        @*轴承寿命计算*@
+                                        <tr id="tr_v" hidden="hidden">
+                                            <td>最大转速&nbsp;n：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>
+                                                <input oninput="Bearing_();" onblur="    Bearing_()" class="form-control" id="sti_v" name="sti_T" type="text" placeholder="r/min,请输入轴承转速" />
+                                            </td>
+                                            <td><i id="in_4" class=""></i></td>
+                                        </tr>
+                                        <tr id="tr_c" hidden="hidden">
+                                            <td>额定动载荷&nbsp;c：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>
+                                                <input oninput="Bearing_();" onblur="    Bearing_()" class="form-control" id="sti_c" name="sti_C" type="text" placeholder="N,请输入额定载荷" />
+
+                                            </td>
+                                            <td><i id="in_4" class=""></i></td>
+                                        </tr>
+                                        <tr id="tr_Pmax" hidden="hidden">
+                                            <td>最大温度&nbsp;：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>
+                                                @*<input oninput="chelun();" onblur="chelun()" class="form-control" id="sti_Pmax" name="sti_T" type="text" placeholder="°C，请输入最大温度" />*@
+                                                <select class="form-control" id="sti_Pmax" name="sti_T" style="width:173px;">
+                                                    <option value="1.00" label="<120℃">1.00</option>
+                                                    <option value="0.95" label="<125℃">1.00</option>
+                                                    <option value="0.90" label="<150℃">1.00</option>
+                                                    <option value="0.85" label="<175℃">1.00</option>
+                                                    <option value="0.80" label="<200℃">1.00</option>
+                                                    <option value="0.75" label="<225℃">1.00</option>
+                                                    <option value="0.70" label="<250℃">1.00</option>
+                                                    <option value="0.60" label="<300℃">1.00</option>
+                                                </select>
+                                            </td>
+                                            <td><i id="in_4" class=""></i></td>
+                                        </tr>
+                                    </table>
+                                    <!-- 模（Modal） -->
+                                    @*<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+                        <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+                        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                            开始演示
+                        </button>
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                            &times;
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabel">
+                                            Lie Biao Content
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            关闭
+                                        </button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal -->
+                        </div>*@
+                                    <div id="div35" hidden>
+                                        <table id="table-right" hidden="hidden" onmousemove='GetTr()'></table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="result">
+                                <h2 class="h2">
+                                    计算结果
+                                </h2>
+                                <div class="prod-anchor">
+                                    <div class="form-group">
+                                        <table>
+                                            <tr id="tr_P">
+                                                <th>当量动载荷 Pc：</th>
+                                                <th><input id="txt_showresult" readonly="readonly" type="text" style="font:800" name="txt_showresult" placeholder="N" /></th>
+                                            </tr>
+                                            <tr id="tr_life">
+                                                <th>基本额定寿命 Lh：</th>
+                                                <th><input id="txt_showresult_life" readonly="readonly" type="text" name="txt_showresult_life" placeholder="h" /></th>
+                                            </tr>
+                                        </table>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="imgForm">
+                                <h2 class="h2">
+                                    更新说明
+                                </h2>
+                                <div class="prod-anchor">
+                                    <p class="text">
+                                        暂未更新，敬请期待。
+                                    </p>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <style>
+        #table-right {
+            position: relative;
+            margin-left: 400px;
+            margin-top: -300px;
+            float: right;
+            border: 1px solid #ccc;
+            font-size: 12px;
+            width: 50%;
+            border-width: 1px;
+            border-collapse: collapse;
+        }
+
+            #table-right th {
+                border-style: solid;
+                border-color: #ccc;
+                border-width: 1px;
+                background-color: #dedede;
+            }
+
+            #table-right td {
+                border-style: solid;
+                border-color: #ccc;
+                border-width: 1px;
+                padding: 0px;
+            }
+
+            #table-right tr:hover {
+                background: #ccc;
+                cursor: pointer;
+                -o-transition: all 0.1s ease-in-out;
+                -webkit-transition: all 0.1s ease-in-out;
+                -moz-transition: all 0.1s ease-in-out;
+                -ms-transition: all 0.1s ease-in-out;
+                transition: all 0.1s ease-in-out;
+            }
+    </style>
+</body>
+

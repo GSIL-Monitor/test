@@ -1,0 +1,132 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Content/js/jquery/jquery-2.1.1.min.js"></script>
+    <title>找回密码</title>
+    <link rel="shortcut icon" href="~/Content/image/H140.png" type="image/vnd.microsoft.icon">
+    <style>
+        body {
+            font-family: inherit;
+            font-size: 14px;
+            color: rgb(200,200,200);
+        }
+
+        p {
+            text-align: center;
+            font-family: inherit;
+            font-size: 25px;
+            color: #0f0f0f;
+        }
+
+        input {
+            width: 250px;
+            height: 40px;
+            border-radius: 2px;
+            border: 1px solid rgb(200,200,200);
+            padding-left: 5px;
+        }
+
+        #div1 {
+            text-align: center;
+            margin: 0 auto;
+            width: 50%;
+            height: 50%;
+        }
+
+        #table1 td {
+            padding-top: 10px;
+        }
+        #newButton {
+            width: 260px;
+            height: 40px;
+            border: 1px solid rgb(200,200,200);
+            border-radius: 3px;
+            background-color: #007acc;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+
+        // 调用方法
+        //alert(GetQueryString("email"));
+
+        $(function () {
+            $("#newButton").click(function () {
+                var Email = GetQueryString("email");//获取url 参数email 的值
+
+                var Userpass = $("#newpass").val().trim();
+                var newPass2 = $("#newpass2").val().trim();
+                if (Userpass == "") {
+                    alert("请输入密码！");
+                    return false;
+                }
+                if (Userpass != newPass2) {
+                    alert("两次密码不一致");
+                    return false
+                }
+                else
+                {
+                    $.ajax({
+                        type: 'get',
+                        dataType: 'text',
+                        url: '/UserAccount/ReSetUserPass',
+                        data: { Userpass: Userpass, Email: Email },
+                        success: function (data) {
+                            //var json = eval("(" + data + ")");
+                            if (data == "") {
+                                alert("密码重置成功!\n请牢记密码！");
+                                window.location.href = "/UserAccount/UserLogin";
+                            }
+                            else
+                            {
+                                alert("系统异常:密码重置失败！")
+                            }
+
+                        }
+                    });
+                }
+               
+            });
+        })
+    </script>
+    <a href="/Home/Index">
+        <img src="../Content/image/handinglogo.png" width="120" height="30" style="padding-top:10px;padding-left:20px;" />
+    </a>
+    <hr />
+    <div id="div1">
+    <p>更改密码</p>
+    <table align="center" id="table1">
+        <tr>
+            <td>
+                新密码:
+            </td>
+            <td><input id="newpass" type="password"/></td>
+        </tr>
+        <tr>
+            <td>确认密码:</td>
+            <td><input id="newpass2" type="password" /></td>
+        </tr>
+       <tr>
+           <td></td>
+           <td><input id="newButton" type="button" value="确定更改"/></td>
+       </tr>
+    </table>
+    </div>
+   
+</body>
+</html>

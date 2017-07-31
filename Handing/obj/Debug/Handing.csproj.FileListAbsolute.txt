@@ -1,0 +1,479 @@
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Handing.dll.config
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Handing.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Handing.pdb
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Antlr3.Runtime.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\EntityFramework.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\EntityFramework.SqlServer.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.AspNet.Identity.Core.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.AspNet.Identity.Owin.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Cookies.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Facebook.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Google.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.OAuth.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Twitter.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Web.Infrastructure.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Newtonsoft.Json.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Owin.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.Helpers.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.Optimization.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.Razor.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.WebPages.Deployment.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.WebPages.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.WebPages.Razor.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\WebGrease.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.Helpers.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.Optimization.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.Razor.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.WebPages.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.WebPages.Deployment.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.WebPages.Razor.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Newtonsoft.Json.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Antlr3.Runtime.pdb
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\EntityFramework.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\EntityFramework.SqlServer.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.AspNet.Identity.Core.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.AspNet.Identity.Owin.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Host.SystemWeb.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Facebook.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Cookies.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.OAuth.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Google.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Twitter.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\System.Web.Helpers.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\System.Web.Optimization.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\System.Web.Razor.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\System.Web.WebPages.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\EntityFramework.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.Core.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Host.SystemWeb.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.Facebook.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.Google.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.Twitter.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\obj\Debug\Handing.csprojResolveAssemblyReference.cache
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\obj\Debug\Handing.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\obj\Debug\Handing.pdb
+E:\C#web\控制台001\Handing\bin\Handing.dll.config
+E:\C#web\控制台001\Handing\bin\Handing.dll
+E:\C#web\控制台001\Handing\bin\Handing.pdb
+E:\C#web\控制台001\Handing\bin\Antlr3.Runtime.dll
+E:\C#web\控制台001\Handing\bin\EntityFramework.dll
+E:\C#web\控制台001\Handing\bin\EntityFramework.SqlServer.dll
+E:\C#web\控制台001\Handing\bin\Microsoft.AspNet.Identity.Core.dll
+E:\C#web\控制台001\Handing\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\C#web\控制台001\Handing\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.dll
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Cookies.dll
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.dll
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Facebook.dll
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Google.dll
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.OAuth.dll
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Twitter.dll
+E:\C#web\控制台001\Handing\bin\Microsoft.Web.Infrastructure.dll
+E:\C#web\控制台001\Handing\bin\Newtonsoft.Json.dll
+E:\C#web\控制台001\Handing\bin\Owin.dll
+E:\C#web\控制台001\Handing\bin\System.Web.Helpers.dll
+E:\C#web\控制台001\Handing\bin\System.Web.Optimization.dll
+E:\C#web\控制台001\Handing\bin\System.Web.Razor.dll
+E:\C#web\控制台001\Handing\bin\System.Web.WebPages.Deployment.dll
+E:\C#web\控制台001\Handing\bin\System.Web.WebPages.dll
+E:\C#web\控制台001\Handing\bin\System.Web.WebPages.Razor.dll
+E:\C#web\控制台001\Handing\bin\WebGrease.dll
+E:\C#web\控制台001\Handing\bin\System.Web.Helpers.xml
+E:\C#web\控制台001\Handing\bin\System.Web.Optimization.xml
+E:\C#web\控制台001\Handing\bin\System.Web.Razor.xml
+E:\C#web\控制台001\Handing\bin\System.Web.WebPages.xml
+E:\C#web\控制台001\Handing\bin\System.Web.WebPages.Deployment.xml
+E:\C#web\控制台001\Handing\bin\System.Web.WebPages.Razor.xml
+E:\C#web\控制台001\Handing\bin\Newtonsoft.Json.xml
+E:\C#web\控制台001\Handing\bin\Antlr3.Runtime.pdb
+E:\C#web\控制台001\Handing\bin\EntityFramework.xml
+E:\C#web\控制台001\Handing\bin\EntityFramework.SqlServer.xml
+E:\C#web\控制台001\Handing\bin\Microsoft.AspNet.Identity.Core.xml
+E:\C#web\控制台001\Handing\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\C#web\控制台001\Handing\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.xml
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.xml
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Facebook.xml
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Cookies.xml
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.OAuth.xml
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Google.xml
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.Twitter.xml
+E:\C#web\控制台001\Handing\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\C#web\控制台001\Handing\bin\zh-Hans\System.Web.Helpers.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\System.Web.Optimization.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\System.Web.Razor.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\System.Web.WebPages.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\EntityFramework.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.Core.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Host.SystemWeb.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.Facebook.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.Google.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.Twitter.resources.dll
+E:\C#web\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+E:\C#web\控制台001\Handing\obj\Debug\Handing.csprojResolveAssemblyReference.cache
+E:\C#web\控制台001\Handing\obj\Debug\Handing.dll
+E:\C#web\控制台001\Handing\obj\Debug\Handing.pdb
+E:\C#web\控制台001\Handing\bin\MySql.Data.Entity.EF5.dll
+E:\C#web\控制台001\Handing\bin\MySql.Data.Entity.EF6.dll
+E:\C#web\控制台001\Handing\bin\MySql.Fabric.Plugin.dll
+E:\C#web\控制台001\Handing\bin\MySql.Data.Entity.EF5.xml
+E:\C#web\控制台001\Handing\bin\MySql.Data.Entity.EF6.xml
+E:\C#web\控制台001\Handing\bin\Handing.data.dll
+E:\C#web\控制台001\Handing\bin\NFine.Application.dll
+E:\C#web\控制台001\Handing\bin\NFine.Code.dll
+E:\C#web\控制台001\Handing\bin\NFine.Domain.dll
+E:\C#web\控制台001\Handing\bin\NFine.Mapping.dll
+E:\C#web\控制台001\Handing\bin\NFine.Repository.dll
+E:\C#web\控制台001\Handing\bin\NFine.Data.dll
+E:\C#web\控制台001\Handing\bin\log4net.dll
+E:\C#web\控制台001\Handing\bin\NPOI.dll
+E:\C#web\控制台001\Handing\bin\ICSharpCode.SharpZipLib.dll
+E:\C#web\控制台001\Handing\bin\Handing.data.pdb
+E:\C#web\控制台001\Handing\bin\NFine.Application.pdb
+E:\C#web\控制台001\Handing\bin\NFine.Code.pdb
+E:\C#web\控制台001\Handing\bin\NFine.Domain.pdb
+E:\C#web\控制台001\Handing\bin\NFine.Mapping.pdb
+E:\C#web\控制台001\Handing\bin\NFine.Repository.pdb
+E:\C#web\控制台001\Handing\bin\NFine.Data.pdb
+E:\C#web\控制台001\Handing\bin\log4net.xml
+E:\C#web\控制台001\Handing\bin\NPOI.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Handing.data.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NFine.Application.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NFine.Code.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NFine.Domain.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NFine.Mapping.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NFine.Repository.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NFine.Data.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\log4net.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NPOI.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\ICSharpCode.SharpZipLib.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\Handing.data.pdb
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NFine.Application.pdb
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NFine.Code.pdb
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NFine.Domain.pdb
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NFine.Mapping.pdb
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NFine.Repository.pdb
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NFine.Data.pdb
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\log4net.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\NPOI.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.Mvc.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\System.Web.Mvc.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\zh-Hans\System.Web.Mvc.resources.dll
+E:\C#web\控制台001\Handing\bin\System.Web.Mvc.dll
+E:\C#web\控制台001\Handing\bin\System.Web.Mvc.xml
+E:\C#web\控制台001\Handing\bin\zh-Hans\System.Web.Mvc.resources.dll
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\MySql.Data.Entity.EF5.xml
+\\KCGBGIWRQGI8VS1\C#web\控制台001\Handing\bin\MySql.Data.Entity.EF6.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Handing.dll.config
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Handing.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Handing.pdb
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Antlr3.Runtime.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\EntityFramework.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\EntityFramework.SqlServer.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Handing.data.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.Google.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Web.Infrastructure.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\MySql.Data.Entity.EF5.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\MySql.Data.Entity.EF6.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\MySql.Fabric.Plugin.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NFine.Application.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NFine.Code.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NFine.Data.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NFine.Domain.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NFine.Mapping.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NFine.Repository.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Owin.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\System.Web.Helpers.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\System.Web.Optimization.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\System.Web.Razor.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\System.Web.WebPages.Deployment.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\System.Web.WebPages.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\System.Web.WebPages.Razor.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\WebGrease.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Newtonsoft.Json.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\log4net.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NPOI.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\ICSharpCode.SharpZipLib.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Handing.data.pdb
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NFine.Application.pdb
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NFine.Code.pdb
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NFine.Data.pdb
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NFine.Domain.pdb
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NFine.Mapping.pdb
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NFine.Repository.pdb
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\MySql.Data.Entity.EF5.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\MySql.Data.Entity.EF6.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\System.Web.Helpers.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\System.Web.Optimization.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\System.Web.Razor.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\System.Web.WebPages.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\System.Web.WebPages.Deployment.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\System.Web.WebPages.Razor.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Antlr3.Runtime.pdb
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\EntityFramework.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\EntityFramework.SqlServer.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.Google.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\Newtonsoft.Json.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\log4net.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\NPOI.xml
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\System.Web.Helpers.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\System.Web.Optimization.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\System.Web.Razor.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\System.Web.WebPages.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\EntityFramework.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.Core.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.Facebook.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.Google.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.Twitter.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\obj\Debug\Handing.csprojResolveAssemblyReference.cache
+D:\Program Files\feiq\Recv Files\控制台001\Handing\obj\Debug\Handing.dll
+D:\Program Files\feiq\Recv Files\控制台001\Handing\obj\Debug\Handing.pdb
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Handing.dll.config
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Handing.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Handing.pdb
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Antlr3.Runtime.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\EntityFramework.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\EntityFramework.SqlServer.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Handing.data.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.AspNet.Identity.Core.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.AspNet.Identity.Owin.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Cookies.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Facebook.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Google.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.OAuth.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Twitter.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Web.Infrastructure.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Application.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Code.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Data.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Domain.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Mapping.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Repository.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Owin.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Helpers.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Mvc.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Optimization.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Razor.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.WebPages.Deployment.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.WebPages.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.WebPages.Razor.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\WebGrease.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Newtonsoft.Json.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\log4net.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NPOI.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\ICSharpCode.SharpZipLib.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Handing.data.pdb
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Application.pdb
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Code.pdb
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Data.pdb
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Domain.pdb
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Mapping.pdb
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Repository.pdb
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Mvc.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Helpers.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Optimization.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Razor.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.WebPages.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.WebPages.Deployment.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.WebPages.Razor.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Antlr3.Runtime.pdb
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\EntityFramework.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\EntityFramework.SqlServer.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.AspNet.Identity.Core.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.AspNet.Identity.Owin.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Host.SystemWeb.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Facebook.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Cookies.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.OAuth.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Google.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Twitter.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Newtonsoft.Json.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\log4net.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NPOI.xml
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\System.Web.Mvc.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\System.Web.Helpers.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\System.Web.Optimization.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\System.Web.Razor.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\System.Web.WebPages.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\EntityFramework.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.Core.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.Host.SystemWeb.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.Security.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.Security.Facebook.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.Security.Google.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.Security.Twitter.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\obj\Debug\Handing.csprojResolveAssemblyReference.cache
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\obj\Debug\Handing.dll
+\\CM18VQGQ1G9666S\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\obj\Debug\Handing.pdb
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Handing.dll.config
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Handing.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Handing.pdb
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Antlr3.Runtime.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\EntityFramework.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\EntityFramework.SqlServer.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Handing.data.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.AspNet.Identity.Core.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Cookies.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Facebook.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Google.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.OAuth.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Twitter.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Web.Infrastructure.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Application.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Code.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Data.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Domain.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Mapping.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Repository.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Owin.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Helpers.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Optimization.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Razor.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.WebPages.Deployment.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.WebPages.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.WebPages.Razor.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\WebGrease.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Newtonsoft.Json.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\log4net.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NPOI.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\ICSharpCode.SharpZipLib.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Handing.data.pdb
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Application.pdb
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Code.pdb
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Data.pdb
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Domain.pdb
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Mapping.pdb
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NFine.Repository.pdb
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Helpers.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Optimization.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.Razor.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.WebPages.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.WebPages.Deployment.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\System.Web.WebPages.Razor.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Antlr3.Runtime.pdb
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\EntityFramework.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\EntityFramework.SqlServer.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.AspNet.Identity.Core.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Facebook.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Cookies.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.OAuth.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Google.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.Twitter.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Newtonsoft.Json.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\log4net.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\NPOI.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\System.Web.Helpers.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\System.Web.Optimization.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\System.Web.Razor.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\System.Web.WebPages.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\EntityFramework.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.Core.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.Host.SystemWeb.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.Security.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.Security.Facebook.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.Security.Google.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.Security.Twitter.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\obj\Debug\Handing.csprojResolveAssemblyReference.cache
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\obj\Debug\Handing.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\obj\Debug\Handing.pdb
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Senparc.Weixin.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Senparc.Weixin.MP.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\WeChat.dll
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Senparc.Weixin.pdb
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Senparc.Weixin.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Senparc.Weixin.MP.pdb
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\Senparc.Weixin.MP.xml
+E:\(阶段)汉鼎平台v2017\git汉鼎开发管理服务平台\Handing\bin\WeChat.pdb

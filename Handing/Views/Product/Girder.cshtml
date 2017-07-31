@@ -1,0 +1,1001 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Handing-中国首个起重机械开放性服务平台</title>
+    <meta name="baidu-site-verification" content="2Lkh1N0Y9U" />
+    <meta name="keywords" content="安全检测、云数据、智能报价、云计算" />
+    <meta name="description" content="Handing是中国最先建立的监控服务商,专注于提供可靠的起重监控,数据采集、载荷分析等服务。" />
+    <link rel="stylesheet" href="~/Content/css/jquery-labelauty.css">  
+
+    <script>
+        function openwin() {
+            var fu = $("#hidenx").val();
+            if (fu === "xiangxing") {
+                window.open("/Reports/StiffnessBox.aspx", "newwindow", "height=560, width=800") //写成一行
+
+            }
+            if (fu === "juxing") {
+                window.open("/Reports/StiffnessRec.aspx", "newwindow", "height=560, width=800")
+            }
+        }
+
+    </script>
+    @*寿命选择单选按钮样式*@
+    <style>
+        #radioseleck {
+            list-style-type: none;
+        }
+
+        .radio-li {
+            display: inline-block;
+        }
+
+        .radio-li {
+            margin: 10px 10px;
+        }
+
+        input.labelauty + label {
+            font: 14px "Microsoft Yahei";
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target="#navbar-example" style="position: relative;">
+    <div class="mobile-wrapper">
+
+        @***************产品中心-卷筒*****************@
+        <div class="submain-navbg"></div>
+        <div class="main">
+            <div class="sub-main product">
+                <div class="nav-wrap">
+                    <h2>设计开发<span class="en">DESIGN</span></h2>
+                    <ul class="main-nav">
+                        <li class="first-node father">
+                            通用计算
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 弯矩计算">
+                                    <a href="/Product/Stiffness">
+                                        <i class="icon-wanju"></i>
+                                        弯矩计算 Bending Moment
+                                    </a>
+                                </li>
+                                <li class="截面特性">
+                                    <a href="/Product/Strength">
+                                        <i class="icon-clear-formatting"></i>
+                                        截面特性 Section Property
+                                    </a>
+                                </li>
+                                <li class=" 强度计算">
+                                    <a href="/Product/Stability">
+                                        <i class="icon-download"></i>
+                                        强度计算 Intensity
+                                    </a>
+                                </li>
+                                <li class=" 刚度计算">
+                                    <a href="/Product/Fatigue">
+                                        <i class="icon-download3"></i>
+                                        刚度计算 Stiffness
+                                    </a>
+                                </li>
+                                @*<li class=" focus">
+                                        <a href="/Product/Drum">
+                                            <i class="icon-spinner4"></i>
+                                            车轮计算 Wheel
+                                        </a>
+                                    </li>*@
+                                <li class=" 轴承设计">
+                                    <a href="/Product/Bearing">
+                                        <i class="icon-bearing"></i>
+                                        轴承设计 Bearing
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            模块设计
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 车轮组模块">
+                                    <a href="/Product/Drum">
+                                        <i class="icon-wheel"></i>
+                                        车轮组模块 Wheel Block
+                                    </a>
+                                </li>
+                                <li class=" 端梁模块">
+                                    <a href="/Product/Endbeam">
+                                        <i class="icon-endbeam"></i>
+                                        端梁模块 EndBeam Block
+                                    </a>
+                                </li>
+                                <li class=" focus">
+                                    <a href="/Product/Girder">
+                                        <i class="icon-girder"></i>
+                                        主梁模块 Girder Block
+                                    </a>
+                                </li>
+                                <li class=" 起升模块">
+                                    <a href="/Product/Lifting">
+                                        <i class="icon-lifting"></i>
+                                        起升模块 Lifting Block
+                                    </a>
+                                </li>
+                                <li class=" 葫芦模块">
+                                    <a href="/Product/Hoisting">
+                                        <i class="icon-hoist"></i>
+                                        葫芦模块 Hoist Block
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            产品设计
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 桥式起重机">
+                                    <a href="/Product/Bridge">
+                                        <i class="icon-brigecrane"></i>
+                                        桥式起重机 Bridge Crane
+                                    </a>
+                                </li>
+                                <li class=" 门式起重机">
+                                    <a href="/Product/Gantry">
+                                        <i class="icon-gantrycrane"></i>
+                                        门式起重机 Gantry Crane
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            软件开发
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" HD报价系统">
+                                    <a href="/Product/HDQuotation">
+                                        <i class="icon-file-text"></i>
+                                        HD报价系统 HDQuotation
+                                    </a>
+                                </li>
+                                <li class=" 生产辅助设计系统">
+                                    <a href="/Product/HDProduce">
+                                        <i class="icon-produce"></i>
+                                        生产辅助设计系统 HDProduce
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        @*<li class="first-node father">
+                                数据采集
+                                <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                                <ul class="nav">
+                                    <li class=" 视频云">
+                                        <a href="/site/product/uvideo.html">
+                                            <i class="icon__uvideo prod"></i>
+                                            视频云 UVideo
+                                        </a>
+                                    </li>
+                                    <li class=" 直播云">
+                                        <a href="/site/product/ulive.html">
+                                            <i class="icon__ulive prod"></i>
+                                            直播云 ULive
+                                        </a>
+                                    </li>
+                                    <li class=" 移动应用加速">
+                                        <a href="/site/product/umaa.html">
+                                            <i class="icon__umaa prod"></i>
+                                            移动应用加速 UMAA
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="first-node father">
+                                数据分析
+                                <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                                <ul class="nav">
+                                    <li class=" AI在线服务">
+                                        <a href="/site/product/uaiservice.html">
+                                            <i class="icon__uai prod"></i>
+                                            AI在线服务 UAI-Service
+                                        </a>
+                                    </li>
+                                    <li class=" 数据仓库">
+                                        <a href="/site/product/udw.html">
+                                            <i class="icon__udw prod"></i>
+                                            数据仓库 UDW
+                                        </a>
+                                    </li>
+                                    <li class=" 分布式消息系统">
+                                        <a href="/site/product/ukafka.html">
+                                            <i class="icon__ukafka prod"></i>
+                                            分布式消息系统 UKafka
+                                        </a>
+                                    </li>
+                                    <li class=" 托管集群">
+                                        <a href="/site/product/uhadoop.html">
+                                            <i class="icon__uhadoop prod"></i>
+                                            托管集群 UHadoop
+                                        </a>
+                                    </li>
+                                    <li class=" 分布式数据处理">
+                                        <a href="/site/product/uddp.html">
+                                            <i class="icon__uddp prod"></i>
+                                            分布式数据处理 UDDP
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="first-node father">
+                                管理&监控
+                                <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                                <ul class="nav">
+                                    <li class=" 基础安全服务">
+                                        <a href="/site/product/usec.html">
+                                            <i class="icon__usec prod"></i>
+                                            基础安全服务 USec
+                                        </a>
+                                    </li>
+                                    <li class=" 企业应用防火墙">
+                                        <a href="/site/product/uewaf.html">
+                                            <i class="icon__uewaf prod"></i>
+                                            企业应用防火墙 UEWAF
+                                        </a>
+                                    </li>
+                                    <li class=" 高防服务">
+                                        <a href="/site/product/uads.html">
+                                            <i class="icon__uads prod"></i>
+                                            高防服务 UADS
+                                        </a>
+                                    </li>
+                                    <li class=" 云加密服务">
+                                        <a href="/site/product/uencrypt.html">
+                                            <i class="icon__clock prod"></i>
+                                            云加密服务 UEncrypt
+                                        </a>
+                                    </li>
+                                    <li class=" 运维审计系统">
+                                        <a href="/site/product/uhas.html">
+                                            <i class="icon__uhas prod"></i>
+                                            运维审计系统 UHAS
+                                        </a>
+                                    </li>
+                                    <li class=" Web漏洞扫描">
+                                        <a href="/site/product/uws.html">
+                                            <i class="icon__uws prod"></i>
+                                            Web漏洞扫描 UWS
+                                        </a>
+                                    </li>
+                                    <li class=" SSL证书管理">
+                                        <a href="/site/product/ussl.html">
+                                            <i class="icon__ussl prod"></i>
+                                            SSL证书管理 USSL
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="first-node father">
+                                黑匣子
+                                <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                                <ul class="nav">
+                                    <li class=" 开放API">
+                                        <a href="/site/product/api.html">
+                                            <i class="icon__apikey prod"></i>
+                                            开放API UAPI
+                                        </a>
+                                    </li>
+                                    <li class=" 云监控">
+                                        <a href="/site/product/umon.html">
+                                            <i class="icon__umon prod"></i>
+                                            云监控 UMon
+                                        </a>
+                                    </li>
+                                    <li class=" 账号与权限管理">
+                                        <a href="/site/product/uam.html">
+                                            <i class="icon__qr-code prod"></i>
+                                            账号与权限管理 UAM
+                                        </a>
+                                    </li>
+                                    <li class=" 自动伸缩">
+                                        <a href="/site/product/uas.html">
+                                            <i class="icon__uas prod"></i>
+                                            自动伸缩 UAS
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>*@
+                        <li class="first-node father">
+                            功能开发
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 自由开发">
+                                    <a href="/Product/FreeDevelopment">
+                                        <i class="icon-display"></i>
+                                        自由开发 Free Development
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <script>
+                    (function () {
+                        function foucs(i) {
+                            if (i != null) {
+                                $('.main-nav .first-node').eq(i).addClass('active').find('.nav li').hasClass('focus');
+                            } else {
+                                $('.main-nav .first-node').eq(i).addClass('focus')
+                            }
+                        }
+                        foucs({
+                            118: 0,
+                            229: 1,
+                            230: 2,
+                            119: 3,
+                            215: 4,
+                            120: 5,
+                            217: 6,
+                            121: 7,
+                            122: 8,
+                            123: 9,
+                            128: 10,
+                            307: 11
+                        }[229]);
+                    })();
+                </script>
+                <script type="text/javascript">
+                    $(function () {
+                        $("#css_j").click(function () {
+                            $("#p1").toggle(1500);
+                            $("#p2").toggle(1500);
+                            $("hr").fadeToggle(1500);
+                            jQuery("#div2").fadeToggle(1500);
+                            jQuery("#div3").toggle(1500);
+
+                            jQuery("#div201").toggle(1500);
+                        });
+
+                    });
+                </script>
+                <div class="content-wrap">
+                    <h2 id="css_j">
+                        <i class="icon-girder"></i>
+                        主梁模块
+                        Girder Block
+                    </h2>
+                    <div class="product-dash" id="div201">
+                        @*<div class="prod-img"><img src='../Content/image/wheel-125.gif' /></div>*@
+                        <div class="prod-img" id="div3">
+                            <img src="../Content/image/girder170729.png" width="220" height="120" align="right" id="wheel_125" />
+                        </div>
+
+                        <hr />
+                        <p id="p1">
+                            主梁模块（Girder Blook）：是起重机械设计中不可缺少的重要部件，通常采用钢板焊接成高宽比不大于3的箱型结构，此计算根据相关标准，并参考实际情况，经由资深设计师编制，安全可靠。
+                        </p>
+                        <hr />
+                        <p id="p2">
+                            欢迎您进入我们的论坛，针对此功能提供您的宝贵建议，我们将为您提供所需服务！
+                        </p>
+                        <div class="prod-operating" id="div2">
+                            @*<a href=https://consolev3.ucloud.cn/uhost/uhost class='button1 blue'>立即使用</a>*@
+                            <a href="http://192.168.0.188:8078/forum.php?mod=viewthread&tid=8&extra=page%3D1" class='button1 white'>立即进入</a>
+                        </div>
+                    </div>
+                    <form class="form-horizontal" role="form" id="form1" action="Strength" method="post">
+
+                        <div id="">
+                            <ul id="myTab" class="nav nav-tabs" role="tablist">
+                                <li>
+                                    <a href='#odds' data-toggle="tab">标准设计</a>
+                                </li>
+
+                                <li>
+                                    <a href='#inputType' data-toggle="tab">标准图库</a>
+                                </li>
+
+                                @*<li>
+                                        <a href='#result' data-toggle="tab">非标定制</a>
+                                    </li>*@
+
+                                @*<li>
+                                        <a href='#imgForm' data-toggle="tab">在线支持</a>
+                                    </li>*@
+
+                            </ul>
+                        </div>
+                        <script>
+                            //$('.sub-tabs-x li:eq(0)').addClass('active');之前
+                            $('#myTab li:eq(0) a').tab('show');
+                        </script>
+                        @*标准图库*@
+                        <div class="tab-pane fade" id="inputType">
+                            <div class="tab-content sub-tab-cont">
+                                <h2 class="h2">
+                                    优质品牌
+                                </h2>
+                                @*<img src="../Content/image/wheel-125.gif" width="250" height="150" align="right" id="wheel_125" hidden="hidden" />*@
+                                <div class="form-group">
+                                    <ul class="dowebok" id="radioseleck">
+                                        <li class="radio-li"><input type="radio" value="wheel_125_0" name="radio" data-labelauty="SOVEWEL" id="wheel_125_0" onclick="show_sovewel()"></li>
+                                        <li class="radio-li"><input type="radio" value="wheel_125_1" name="radio" data-labelauty="HANDING" id="wheel_125_1" onclick="show_handing()"></li>
+                                    </ul>
+                                </div>
+                                <script>
+                                    function show_sovewel() {
+                                        document.getElementById("sovewel").hidden = "";
+                                        document.getElementById("handing").hidden = "hidden";
+                                        document.getElementById("selectbrand").hidden = "hidden";
+
+                                    }
+                                    function show_handing() {
+                                        document.getElementById("sovewel").hidden = "hidden";
+                                        document.getElementById("selectbrand").hidden = "hidden";
+                                        document.getElementById("handing").hidden = "";
+
+                                    }
+                                    function adClick(ad, site) { window.open(ad); window.location = site; }
+
+                                </script>
+                                <div id="jiage">
+                                    <h2 class="h2">
+                                        图纸下载
+                                    </h2>
+
+                                    <div class="form-group">
+                                        @*<ul class="dowebok" id="radioseleck">
+                                                <li class="radio-li"><input type="radio" value="wheel_125_0" name="radio" data-labelauty="HANDING" id="wheel_125_0" onclick=""></li>
+                                            </ul>
+                                            <ul class="dowebok" id="radioseleck"><li class="radio-li"><input type="radio" value="wheel_125_1" name="radio" data-labelauty="160" id="wheel_125_1" onclick=""></li></ul>
+                                            <ul class="dowebok" id="radioseleck"><li class="radio-li"><input type="radio" value="wheel_125_2" name="radio" data-labelauty="200" id="wheel_125_2" onclick=""></li></ul>
+                                            <ul class ="dowebok" id="radioseleck"><li class="radio-li"><input type="radio" value="wheel_125_3" name="radio" data-labelauty="250" id="wheel_125_3" onclick=""></li></ul>
+                                            <ul class="dowebok" id="radioseleck"><li class="radio-li"><input type="radio" value="wheel_125_4" name="radio" data-labelauty="315" id="wheel_125_4" onclick=""></li></ul>
+                                            <ul class="dowebok" id="radioseleck"><li class="radio-li"><input type="radio" value="wheel_125_5" name="radio" data-labelauty="400" id="wheel_125_5" onclick=""></li></ul>
+                                            <ul class="dowebok" id="radioseleck"><li class="radio-li"><input type="radio" value="wheel_125_6" name="radio" data-labelauty="500" id="wheel_125_6" onclick=""></li></ul>*@
+                                        <p id="selectbrand">请先选择品牌！</p>
+                                        <br />
+                                        @*sovewel*@
+                                        <table id="sovewel" style="width:60%;border-bottom:1px solid #777;border-top:1px solid #777" hidden="hidden">
+                                            <tr style="border-bottom:1px solid #777">
+                                                <td>SWA125</td>
+                                                <td><a href="/download/sovewel/PDF/SWA125.pdf" target="_blank">PDF</a></td>
+                                                <td><a href="/download/sovewel/DWG/SWA125.rar">DWG</a></td>
+                                                <td><a href="/download/sovewel/IGES/SWA125.rar">IGES</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>SWA140</td>
+                                                <td><a href="/download/sovewel/PDF/SWA140.pdf" target="_blank">PDF</a></td>
+                                                <td><a href="/download/sovewel/DWG/SWA140.rar">DWG</a></td>
+                                                <td><a>IGES</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>SWA200</td>
+                                                <td><a href="/download/sovewel/PDF/SWA200.pdf" target="_blank">PDF</a></td>
+                                                <td><a href="/download/sovewel/DWG/SWA200.rar">DWG</a></td>
+                                                <td><a>IGES</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>SWA250</td>
+                                                <td><a href="/download/sovewel/PDF/SWA250.pdf" target="_blank">PDF</a></td>
+                                                <td><a href="/download/sovewel/DWG/SWA250.rar">DWG</a></td>
+                                                <td><a>IGES</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>SWA315</td>
+                                                <td><a href="/download/sovewel/PDF/SWA320.pdf" target="_blank">PDF</a></td>
+                                                <td><a href="/download/sovewel/DWG/SWA320.rar">DWG</a></td>
+                                                <td><a>IGES</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>SWA400</td>
+                                                <td><a href="/download/sovewel/PDF/SWA400.pdf" target="_blank">PDF</a></td>
+                                                <td><a href="/download/sovewel/DWG/SWA400.rar">DWG</a></td>
+                                                <td><a>IGES</a></td>
+                                            </tr>
+                                            @*<tr>
+                                                    <td>SWA450</td>
+                                                    <td><a href="/download/sovewel/PDF/SWA450.pdf" target="_blank">PDF</a></td>
+                                                    <td><a>DWG</a></td>
+                                                    <td><a>IGES</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SWA500</td>
+                                                    <td><a href="/download/sovewel/PDF/SWA500.pdf" target="_blank">PDF</a></td>
+                                                    <td><a>DWG</a></td>
+                                                    <td><a>IGES</a></td>
+                                                </tr>*@
+                                        </table>
+                                        @*handing*@
+                                        <table id="handing" style="width:60%;border-bottom:1px solid #777;border-top:1px solid #777" hidden="hidden">
+                                            <tr style="border-bottom:1px solid #777">
+                                                <td>BW125</td>
+                                                <td><a href="/download/handing/PDF/BW125.00.pdf" target="_blank">PDF</a></td>
+                                                <td><a href="/download/handing/DWG/BW125.00.rar">DWG</a></td>
+                                                <td><a href="">IGES</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>BW160</td>
+                                                <td><a href="/download/handing/PDF/BW160.00.pdf" target="_blank">PDF</a></td>
+                                                <td><a href="/download/handing/DWG/BW160.00.rar">DWG</a></td>
+                                                <td><a>IGES</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>BW200</td>
+                                                <td><a href="/download/handing/PDF/BW200.00.pdf" target="_blank">PDF</a></td>
+                                                <td><a href="/download/handing/DWG/BW200.00.rar">DWG</a></td>
+                                                <td><a>IGES</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>BW250</td>
+                                                <td><a href="/download/handing/PDF/BW250.00.pdf" target="_blank">PDF</a></td>
+                                                <td><a href="/download/handing/DWG/BW250.00.rar">DWG</a></td>
+                                                <td><a>IGES</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>BW315</td>
+                                                <td><a href="/download/handing/PDF/BW315.00.pdf" target="_blank">PDF</a></td>
+                                                <td><a href="/download/handing/DWG/BW315.00.rar">DWG</a></td>
+                                                <td><a>IGES</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>BW400</td>
+                                                <td><a href="/download/handing/PDF/BW400.00.pdf" target="_blank">PDF</a></td>
+                                                <td><a href="/download/handing/DWG/BW400.00.rar">DWG</a></td>
+                                                <td><a>IGES</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>BW500</td>
+                                                <td><a href="/download/handing/PDF/BW500.00.pdf" target="_blank">PDF</a></td>
+                                                <td><a href="/download/handing/DWG/BW500.00.rar">DWG</a></td>
+                                                <td><a>IGES</a></td>
+                                            </tr>
+                                            @*<tr>
+                                                    <td>SWA450</td>
+                                                    <td><a href="/download/sovewel/PDF/SWA450.pdf" target="_blank">PDF</a></td>
+                                                    <td><a>DWG</a></td>
+                                                    <td><a>IGES</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SWA500</td>
+                                                    <td><a href="/download/sovewel/PDF/SWA500.pdf" target="_blank">PDF</a></td>
+                                                    <td><a>DWG</a></td>
+                                                    <td><a>IGES</a></td>
+                                                </tr>*@
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div id="docs-log">
+                                    <h2 class="h2">
+                                        在线询价
+                                    </h2>
+                                    <br />
+                                    <ul>
+                                        <li>
+                                            <img src="../Content/image/handing1.jpg" width="150" height="150" id="wheel_125" style="padding-left:10px;" />
+                                        </li>
+                                        @*<li>
+                                                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3202944407&site=qq&menu=yes">
+                                                    <img border="0" src="http://wpa.qq.com/pa?p=2:3202944407:41" alt="点击这里给我发消息" title="点击这里给我发消息" style="padding-left:20px;" />
+                                                </a>
+                                            </li>*@
+                                    </ul>
+
+                                    @*<textarea rows="5" cols="50" style="font-size:14px;" placeholder="请键入您的要求"></textarea>
+
+                                        <br/>
+                                        <br />
+                                        <input class="form-control" id="takemes" name="takemes" type="text" placeholder="请输入您接受信息的手机号" />*@
+
+                                </div>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                        @*非标采购*@
+                        <div class="tab-pane fade" id="result">
+                            <p>
+                                333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+                                333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+                            </p>
+                        </div>
+                        @*在线支持*@
+                        <div class="tab-pane fade" id="imgForm">
+                            <br />
+                            <br />
+                            <ul>
+                                <li>
+                                    <p style="font-size:14px;">1.王鑫：资深工程师，专业从事起重机设计，具备丰富的起重机设计经验。</p>
+                                    <p style="font-size:14px;padding-left:10px;">扫一扫微信二维码，向他咨询关于车轮的问题。</p>
+                                    <img src="../Content/image/wangxin.png" width="100" height="100" id="wheel_125" style="padding-left:10px;" />
+                                </li>
+                                <li>
+                                    <p style="font-size:14px;">2.孙超：资深工程师，专业从事起重机设计，具备丰富的起重机设计经验。</p>
+                                    <p style="font-size: 14px; padding-left: 10px;">扫一扫微信二维码，向他咨询关于车轮的问题。</p>
+                                    <img src="../Content/image/zhanglefei.jpg" width="100" height="100" id="wheel_125" style="padding-left:10px;" />
+                                </li>
+                                <li>
+                                    <p style="font-size:14px;">3.张乐飞：资深工程师，专业从事起重机设计，具备丰富的起重机设计经验。</p>
+                                    <p style="font-size: 14px; padding-left: 10px;">扫一扫微信二维码，向他咨询关于车轮的问题。</p>
+                                    <img src="../Content/image/zhanglefei.jpg" width="100" height="100" id="wheel_125" style="padding-left:10px;" />
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="tab-pane fade in active" id="odds">
+                            <div class="tab-content sub-tab-cont">
+                                <h2 class="h2">
+                                    结构选择
+                                </h2>
+                                <!--卷筒计算参数计算-->
+                                <div class="form-group">
+                                    <img src="../Content/image/girder-s.png" width="300" height="120" align="right" id="endbeam2" hidden="hidden" />
+                                    <img src="../Content/image/girder-d.png" width="300" height="120" align="right" id="endbeam4" hidden="hidden" />
+                                    <ul class="dowebok" id="radioseleck">
+                                        <li class="radio-li"><input type="radio" value="li_0" name="radio" data-labelauty="单主梁结构" id="li_0" onclick="showtext_li_0()"></li>
+                                        <li class="radio-li"><input type="radio" value="li_1" name="radio" data-labelauty="双主梁结构" id="li_1" onclick="showtext_li_1()"></li>
+
+                                    </ul>
+                                    <script src="~/Content/js/jquery-labelauty.js"></script>
+                                    <script>
+                                        $(function () {
+                                            $(':input').labelauty();
+                                        });
+                                        function showtext_li_0() {
+                                            document.getElementById("tr_Pq").hidden = "";                //额定起升载荷
+                                            document.getElementById("tr_Pj").hidden = "";                //葫芦小车自重
+                                            document.getElementById("tr_q").hidden = "";                 //主梁单位重量
+                                            document.getElementById("tr_Ix").hidden = "";                //主梁垂直惯性矩
+                                            document.getElementById("tr_Iy").hidden = "";                //主梁水平惯性矩
+                                            document.getElementById("tr_B").hidden = "";                 //端梁轮距
+                                            document.getElementById("tr_Ibx").hidden = "";               //端梁水平惯性矩
+                                            document.getElementById("endbeam2").hidden = "";             //单主梁示意图
+                                            document.getElementById("tr_f").hidden = "";                 //跨中刚度
+                                            document.getElementById("tr_sigma").hidden = "";             //跨中弯曲强度
+                                            document.getElementById("tr_Psigma").hidden = "";            //允许强度
+
+                                            document.getElementById("endbeam4").hidden = "hidden";       //双主梁示意图
+                                            document.getElementById("tr_P1").hidden = "hidden";          //小车最大轮压
+                                            document.getElementById("tr_P2").hidden = "hidden";          //小车同侧轮压
+                                            document.getElementById("tr_b").hidden = "hidden";          //小车同侧轮压
+                                        }
+                                        function showtext_li_1() {
+                                            document.getElementById("tr_P1").hidden = "";                //小车最大轮压
+                                            document.getElementById("tr_P2").hidden = "";                //小车同侧轮压
+                                            document.getElementById("tr_q").hidden = "";                 //主梁单位重量
+                                            document.getElementById("tr_Ix").hidden = "";                //主梁垂直惯性矩
+                                            document.getElementById("tr_Iy").hidden = "";                //主梁水平惯性矩
+                                            document.getElementById("tr_B").hidden = "";                 //端梁轮距
+                                            document.getElementById("tr_f").hidden = "";                 //跨中刚度
+                                            document.getElementById("tr_sigma").hidden = "";             //跨中弯曲强度
+                                            document.getElementById("tr_Psigma").hidden = "";            //允许强度
+                                            document.getElementById("tr_b").hidden = "";                //小车同侧轮压
+                                            document.getElementById("endbeam4").hidden = "";            //双主梁示意图
+
+
+                                            document.getElementById("endbeam2").hidden = "hidden";       //单主梁示意图
+                                            document.getElementById("tr_Pq").hidden = "hidden";          //额定起升载荷
+                                            document.getElementById("tr_Pj").hidden = "hidden";          //葫芦小车自重
+                                        }
+                                    </script>
+                                    <label></label><input type="text" id="hidenx" name="hidenx" hidden="hidden" />
+                                </div>
+
+                                <div id="jiage">
+                                    <h2 class="h2">
+                                        参数输入
+                                    </h2>
+                                    <div class="form-group">
+                                        <table>
+                                            @*单主梁结构*@
+                                            <tr id="tr_Pq" hidden="hidden">
+                                                <td>额定起升载荷&nbsp;Pq：</td>
+                                                <td>
+                                                    <input oninput="Drum_(); createLifeOption();" class="form-control" onblur="Drum_(); " id="sti_Pq" name="sti_Pq" type="text" placeholder="kg,请输入额定起升载荷" />
+                                                </td>
+                                                <td><i id="in_1" class=""></i></td>
+                                            </tr>
+                                            <tr id="tr_Pj" hidden="hidden">
+                                                <td>葫芦小车自重&nbsp;Pj：</td>
+                                                <td>
+                                                    <input oninput="Drum_()" class="form-control" onblur="Drum_()" id="sti_Pj" name="sti_Pj" type="text" placeholder="mm⁴,请输入葫芦小车自重" />
+                                                </td>
+                                                <td><i id="in_2" class=""></i></td>
+                                            </tr>
+                                            @*双主梁结构*@
+                                            <tr id="tr_P1" hidden="hidden">
+                                                <td>小车最大轮压&nbsp;P1：</td>
+                                                <td>
+                                                    <input oninput="Drum_(); createLifeOption();" class="form-control" onblur="Drum_(); " id="sti_P1" name="sti_P1" type="text" placeholder="N,请输入小车最大轮压" />
+                                                </td>
+                                                <td><i id="in_1" class=""></i></td>
+                                            </tr>
+                                            <tr id="tr_P2" hidden="hidden">
+                                                <td>小车同侧轮压&nbsp;P2：</td>
+                                                <td>
+                                                    <input oninput="Drum_(); createLifeOption();" class="form-control" onblur="Drum_(); " id="sti_P2" name="sti_P2" type="text" placeholder="N,请输入小车同侧轮压" />
+                                                </td>
+                                                <td><i id="in_1" class=""></i></td>
+                                            </tr>
+                                            <tr id="tr_q" hidden="hidden">
+                                                <td>主梁单位重量&nbsp;q：&nbsp;&nbsp;&nbsp;</td>
+                                                <td>
+                                                    <input oninput="Drum_();" class="form-control" onblur="Drum_()" id="sti_q" name="sti_q" type="text" placeholder="kg/mm,请输入水平抗弯模量" />
+                                                </td>
+                                                <td><i id="in_3" class=""></i></td>
+                                            </tr>
+                                            <tr id="tr_Ix" hidden="hidden">
+                                                <td>主梁垂直惯性矩&nbsp;Ix：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                <td>
+                                                    <input oninput="Drum_();" class="form-control" onblur="Drum_()" id="sti_Ix" name="sti_Ix" type="text" placeholder="mm⁴,请输入主梁垂直惯性矩" />
+                                                </td>
+                                                <td><i id="in_4" class=""></i></td>
+                                            </tr>
+                                            <tr id="tr_Iy" hidden="hidden">
+                                                <td>主梁水平惯性矩&nbsp;Iy：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                <td>
+                                                    <input oninput="Drum_();" class="form-control" onblur="Drum_()" id="sti_Iy" name="sti_Iy" type="text" placeholder="mm⁴,请输入主梁水平惯性矩" />
+                                                </td>
+                                                <td><i id="in_4" class=""></i></td>
+                                            </tr>
+                                            <tr id="tr_B" hidden="hidden">
+                                                <td>端梁轮距&nbsp;B：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                <td>
+                                                    <input oninput="Drum_();" class="form-control" onblur="Drum_()" id="sti_B" name="sti_B" type="text" placeholder="mm,请输入端梁轮距" />
+                                                </td>
+                                                <td><i id="in_4" class=""></i></td>
+                                            </tr>
+                                            <tr id="tr_Ibx" hidden="hidden">
+                                                <td>端梁水平惯性矩&nbsp;Ibx：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                <td>
+                                                    <input oninput="Drum_();" class="form-control" onblur="Drum_()" id="sti_Ibx" name="sti_Ibx" type="text" placeholder="mm⁴,请输入端梁水平惯性矩" />
+                                                </td>
+                                                <td><i id="in_4" class=""></i></td>
+                                            </tr>
+                                            @*双梁结构*@
+                                            <tr id="tr_b" hidden="hidden">
+                                                <td>小车轮距&nbsp;b：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                <td>
+                                                    <input oninput="chelun();" onblur="chelun()" class="form-control" id="sti_b" name="sti_b" type="text" placeholder="mm,请输入小车轨距" />
+                                                </td>
+                                                <td><i id="in_4" class=""></i></td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div id="docs-log">
+                                    <h2 class="h2">
+                                        计算结果
+                                    </h2>
+                                    <div class="prod-anchor">
+                                        <div class="form-group">
+                                            <table>
+                                                <tr id="tr_f">
+                                                    <th>跨中刚度 f：</th>
+                                                    <th><input readonly="readonly" id="txt_f" type="text" name="txt_f" placeholder="例如:1/800" /></th>
+                                                </tr>
+                                                <tr id="tr_sigma">
+                                                    <th>跨中弯曲强度 σ：</th>
+                                                    <th><input readonly="readonly" id="txt_sigma" type="text" name="txt_sigma" placeholder="Mpa" /></th>
+                                                </tr>
+                                                <tr id="tr_Psigma">
+                                                    <th>许用应力 [σ]：</th>
+                                                    <th><input readonly="readonly" id="txt_Psigma" type="text" style="font:800" name="txt_Psigma" placeholder="140Mpa(Q235B)" /></th>
+                                                </tr>
+                                            </table>
+                                            <br />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="jiage">
+                                    <h2 class="h2">
+                                        更新说明
+                                    </h2>
+                                    <div class="prod-anchor">
+                                        <p class="text">
+                                            * HD17073109--增加主梁单双梁结构模型计算。*                                     
+                                        </p>
+                                        <p class="text">
+                                            * HD17073115--增加主梁跨中截面的垂直刚度。*
+                                        </p>
+                                        <p class="text">
+
+                                            * HD17073116--增加主梁跨中截面的弯曲强度。*
+                                        </p>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<style>
+    .nav {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+        .nav > li {
+            position: relative;
+            display: block;
+        }
+
+            .nav > li > a {
+                position: relative;
+                display: block;
+                padding: 10px 15px;
+            }
+
+                .nav > li > a:focus, .nav > li > a:hover {
+                    text-decoration: none;
+                    background-color: #eee;
+                }
+
+            .nav > li.disabled > a {
+                color: #777;
+            }
+
+                .nav > li.disabled > a:focus, .nav > li.disabled > a:hover {
+                    color: #777;
+                    text-decoration: none;
+                    cursor: not-allowed;
+                    background-color: transparent;
+                }
+
+        .nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+            background-color: #eee;
+            border-color: #337ab7;
+        }
+
+        .nav .nav-divider {
+            height: 1px;
+            margin: 9px 0;
+            overflow: hidden;
+            background-color: #e5e5e5;
+        }
+
+        .nav > li > a > img {
+            max-width: none;
+        }
+
+    .nav-tabs {
+        border-bottom: 1px solid #ddd;
+    }
+
+        .nav-tabs > li {
+            float: left;
+            margin-bottom: -1px;
+        }
+
+            .nav-tabs > li > a {
+                margin-right: 2px;
+                line-height: 1.42857143;
+                border: 1px solid transparent;
+                border-radius: 4px 4px 0 0;
+                font-size: 14px;
+            }
+
+                .nav-tabs > li > a:hover {
+                    border-color: #eee #eee #ddd;
+                }
+
+            .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+                color: #555;
+                cursor: default;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-bottom-color: transparent;
+            }
+
+        .nav-tabs.nav-justified {
+            width: 100%;
+            border-bottom: 0;
+        }
+
+            .nav-tabs.nav-justified > li {
+                float: none;
+            }
+
+                .nav-tabs.nav-justified > li > a {
+                    margin-bottom: 5px;
+                    text-align: center;
+                }
+
+            .nav-tabs.nav-justified > .dropdown .dropdown-menu {
+                top: auto;
+                left: auto;
+            }
+
+            .nav-tabs.nav-justified > li > a {
+                margin-bottom: 0;
+            }
+
+
+
+            .nav-tabs.nav-justified > li > a {
+                margin-right: 0;
+                border-radius: 4px;
+            }
+
+            .nav-tabs.nav-justified > .active > a, .nav-tabs.nav-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:hover {
+                border: 1px solid #ddd;
+            }
+
+    .fade {
+        opacity: 0;
+        -webkit-transition: opacity .15s linear;
+        -o-transition: opacity .15s linear;
+        transition: opacity .15s linear;
+    }
+
+        .fade.in {
+            opacity: 1;
+        }
+
+
+    .nav-tabs.nav-justified > li > a {
+        margin-right: 0;
+        border-radius: 4px;
+    }
+
+    .nav-tabs .dropdown-menu {
+        margin-top: -1px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .navbar {
+        position: relative;
+        min-height: 50px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+    }
+
+    .nav-tabs-justified > li > a {
+        border-bottom: 1px solid #ddd;
+        border-radius: 4px 4px 0 0;
+    }
+
+    .nav-tabs-justified > .active > a, .nav-tabs-justified > .active > a:focus, .nav-tabs-justified > .active > a:hover {
+        border-bottom-color: #fff;
+    }
+
+    .tab-content > .tab-pane {
+        display: none;
+    }
+
+    .tab-content > .active {
+        display: block;
+    }
+
+    .nav-pills > li {
+        float: left;
+    }
+
+    .nav-pills > li {
+        float: left;
+    }
+</style>

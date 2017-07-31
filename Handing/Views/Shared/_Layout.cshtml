@@ -1,0 +1,1561 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Handing-中国首个起重机械开放性服务平台</title>
+    <meta name="baidu-site-verification" content="2Lkh1N0Y9U" />
+    <meta name="keywords" content="安全检测、云数据、智能报价、云计算" />
+    <meta name="description" content="Handing是中国最先建立的监控服务商,专注于提供可靠的起重监控,数据采集、载荷分析等服务。" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7;  IE=EDGE">
+    <script>
+        //!function (a) { var b = /iPhone/i, c = /iPod/i, d = /iPad/i, e = /(?=.*\bAndroid\b)(?=.*\bMobile\b)/i, f = /Android/i, g = /(?=.*\bAndroid\b)(?=.*\bSD4930UR\b)/i, h = /(?=.*\bAndroid\b)(?=.*\b(?:KFOT|KFTT|KFJWI|KFJWA|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|KFARWI|KFASWI|KFSAWI|KFSAWA)\b)/i, i = /IEMobile/i, j = /(?=.*\bWindows\b)(?=.*\bARM\b)/i, k = /BlackBerry/i, l = /BB10/i, m = /Opera Mini/i, n = /(CriOS|Chrome)(?=.*\bMobile\b)/i, o = /(?=.*\bFirefox\b)(?=.*\bMobile\b)/i, p = new RegExp("(?:Nexus 7|BNTV250|Kindle Fire|Silk|GT-P1000)", "i"), q = function (a, b) { return a.test(b) }, r = function (a) { var r = a || navigator.userAgent, s = r.split("[FBAN"); return "undefined" != typeof s[1] && (r = s[0]), s = r.split("Twitter"), "undefined" != typeof s[1] && (r = s[0]), this.apple = { phone: q(b, r), ipod: q(c, r), tablet: !q(b, r) && q(d, r), device: q(b, r) || q(c, r) || q(d, r) }, this.amazon = { phone: q(g, r), tablet: !q(g, r) && q(h, r), device: q(g, r) || q(h, r) }, this.android = { phone: q(g, r) || q(e, r), tablet: !q(g, r) && !q(e, r) && (q(h, r) || q(f, r)), device: q(g, r) || q(h, r) || q(e, r) || q(f, r) }, this.windows = { phone: q(i, r), tablet: q(j, r), device: q(i, r) || q(j, r) }, this.other = { blackberry: q(k, r), blackberry10: q(l, r), opera: q(m, r), firefox: q(o, r), chrome: q(n, r), device: q(k, r) || q(l, r) || q(m, r) || q(o, r) || q(n, r) }, this.seven_inch = q(p, r), this.any = this.apple.device || this.android.device || this.windows.device || this.other.device || this.seven_inch, this.phone = this.apple.phone || this.android.phone || this.windows.phone, this.tablet = this.apple.tablet || this.android.tablet || this.windows.tablet, "undefined" == typeof window ? this : void 0 }, s = function () { var a = new r; return a.Class = r, a }; "undefined" != typeof module && module.exports && "undefined" == typeof window ? module.exports = r : "undefined" != typeof module && module.exports && "undefined" != typeof window ? module.exports = s() : "function" == typeof define && define.amd ? define("isMobile", [], a.isMobile = s()) : a.isMobile = s() }(this);
+
+        //(function () {
+        //    var MOBILE_SITE = 'http://192.168.0.188:8098';
+
+        //    //if (isMobile.phone || isMobile.seven_inch) {
+        //        location.href = MOBILE_SITE;
+        //    //}
+        //})();
+
+        ///用户登录状态，展示
+        window.onload = function () {
+            var username = sessionStorage.getItem("username");//获取session 的值 /UserAccount/UserLogin
+            var nickName = '@Session["nickName"]';
+            var nickName_wx = sessionStorage.setItem("nickName000", nickName);
+
+            //alert(sessionStorage.setItem("nickName000", nickName))
+            //1
+            if (username == "" || username == null) {
+                document.getElementById('loginuser').innerHTML = "";
+                document.getElementById("login_btn").innerHTML = "登录"
+
+            }
+            else {
+                document.getElementById('loginuser').innerHTML = "<span style='color:#CC99CC'>欢迎:&nbsp;<b>" + username + "</b></span>";
+                $("#userName_").css("display", "");
+                document.getElementById("login_btn").innerHTML = "退出"
+                return false
+            }
+            //2
+            if (nickName == "" || nickName == null) {
+                document.getElementById('loginuser').innerHTML = "";
+                document.getElementById("login_btn").innerHTML = "登录"
+            }
+            else {
+                $("#userName_").css("display", "");
+
+                document.getElementById('loginuser').innerHTML = "<span style='color:#CC99CC'>欢迎:&nbsp;<b>" + nickName + "</b></span>";
+                document.getElementById("login_btn").innerHTML = "退出"
+            }
+        }
+    </script>
+    <link rel="shortcut icon" href="~/Content/image/H140.png" type="image/vnd.microsoft.icon">
+    <link href="~/Content/css/mob.css?v=2017050802" rel="stylesheet">
+    <link href="~/Content/css/common.css?v=2017050802" rel="stylesheet">
+    <script type="text/javascript" src="~/Content/js/main.min.js?v=2017050802"></script>
+    <script type="text/javascript" src="~/Content/js/common.min.js?v=2017050802"></script>
+    <script type="text/javascript" src="~/Content/js/XDomainRequest.js?v=2017050802"></script>
+    <script type="text/javascript" src="~/Content/js_sunfa/suanfa1.js"></script>
+</head>
+<body data-spy="scroll" data-target="#navbar-example" style="position: relative;overflow-x:hidden">
+    @*模板标题导航*@
+    <div class="mobile-wrapper">
+        <div class="page-header ">
+            <div class="main">
+                <div class="top-wear-left">
+                    <a class="logo icon__logo-handing" href="/home/Index">
+                        <img src="../Content/image/handinglogo.png" width="130" height="30">
+                    </a>
+                </div>
+                <div class="top-wear-middle">
+                    <ul id="topmenu">
+                        <li class="submenu  dropdownshow homepagehover J_homelink selected">
+                            <a href="/home/Index">首页</a>
+                        </li>
+                        <li class="submenu  dropdownshow" data-href="nav-design">设计开发</li>
+                        <li class="submenu  dropdownshow" data-href="nav-product">产品中心</li>
+                        <li class="submenu  dropdownshow" data-href="nav-solution">行业案例</li>
+                        <li class="submenu  dropdownshow" data-href="nav-safe">大数据</li>
+                        <li class="submenu  dropdownshow" data-href="nav-information">资讯动态</li>
+                        <li class="submenu  dropdownshow" data-href="nav-umarket">生态社区</li>
+                        <li class="submenu  dropdownshow" data-href="nav-service">服务支持</li>
+                        <li class="submenu  dropdownshow" data-href="nav-aboutus">关于</li>
+                    </ul>
+                </div>
+
+                <div class="top-wear-right">
+                   
+                    <ul class="nologin">
+                        <li id="userName_" style="display:none">
+                            @*<a href="#" class="button small button-general">立即注册</a>*@
+                            <a href="/UserAccount/UserInfo" id="loginuser" style="border:none" class="buttonlabel"></a>
+                        </li>
+                        <li>
+                            @*<a class="button small button-ghost login tologin">登录</a>*@
+                            <a href="#" id="login_btn" style="border:none" class="button small button-ghost login">登录</a>
+                        </li>
+                        <li>
+                            @*<a href="#" class="button small button-general">立即注册</a>*@
+                            <a href="#" id="see_weixin" class="button small button-general"> 关注微信</a>
+                        </li>&nbsp;&nbsp;&nbsp;
+
+                    </ul>
+
+                    @*<ul class="logined dn">
+                        <li class="login">
+                        <a href="https://accountv2.ucloud.cn/userinfo" class="user-name link-style">zhaoyufeng@ucloud.cn</a>
+                        <a href="https://account.ucloud.cn/cas/logout" class="link-style ">退出</a>
+                        </li>
+                        </ul>*@
+
+                </div>
+                <!--                微信二维码样式-->
+                <style type="text/css">
+                    .weixindiag {
+                        position: absolute;
+                        height: auto;
+                        z-index: 90001;
+                        padding: 1px;
+                        display: none;
+                        width: 235px;
+                        background-color: none;
+                    }
+
+                        .weixindiag img {
+                            border-radius: 5px;
+                        }
+
+                    .weixinclose {
+                        background: url(/Content/image/weixinclose.png) no-repeat;
+                        width: 38px;
+                        height: 38px;
+                        display: inline-block;
+                        margin-bottom: -50px;
+                        cursor: pointer;
+                        margin-bottom: -38px;
+                        z-index: 999;
+                        position: absolute;
+                        right: -18px;
+                        top: -18px;
+                    }
+
+                    .overlay {
+                        background-color: #252525;
+                        position: absolute;
+                        z-index: 90000;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0.7;
+                        filter: alpha(opacity=70);
+                        -moz-opacity: 0.5;
+                        display: none;
+                    }
+                </style>
+                <!--微信二维码 js事件控制-->
+                <script type="text/javascript">
+                    //微信
+                    $(function () {
+                        ///用户登录或退出
+                        $("#login_btn").click(function () {
+                            var val = $("#login_btn").text();
+
+                            if (val == "登录") {
+                                window.location.href = "/UserAccount/UserLogin";
+                                //$("#login_btn").attr("href", "/UserAccount/UserLogin");
+                                //$('#login_btn').attr("target","_blank");
+                                //window.open("/UserAccount/UserLogin", "_blank")
+                            }
+                            else if (val == "退出") {
+                                if (1) {//confirm("确定退出吗？")
+                                    sessionStorage.removeItem("username");//清除用户名
+
+                                    '@Session["nickName"]=null';
+                                    $.ajax({
+                                        type: 'get',
+                                        dataType: 'text',
+                                        url: '/UserAccount/ClearSession',
+                                        //data: { UserName: UserName, UserPassword: UserPassword },
+                                        success: function (data) {
+                                            //var json = eval("(" + data + ")");
+                                            //alert("退出成功!")
+                                        }
+                                    });
+
+                                    window.location.href = "/Home/Index";
+                                }
+                                else {
+                                    window.location.href = "/Home/Index";
+                                }
+                            }
+                        });
+
+                        ///微信关注二维码
+                        $("#see_weixin").click(function () {
+                            $(".overlay").css({ display: "block", height: $(document).height() });
+                            $(".weixindiag").css({
+                                left: ($("body").width() - $(".weixindiag").width()) / 2 + "px",
+                                top: ($(window).height() - $(".weixindiag").height()) / 2 + $(window).scrollTop() + "px",
+                                display: "block"
+                            });
+                        });
+
+                        $(".weixinclose").click(function () {
+                            $(".overlay,.weixindiag").css("display", "none");
+                            return false;
+                        });
+                    })
+                </script>
+                <!--二维码显示区-->
+                <div class="overlay"></div>
+                <div class="weixindiag"><a class="weixinclose"></a> <img src="/Content/image/handingongzh.png" width="235" height="235" alt="" /></div>
+                <!--二维码结束-->
+            </div>
+            <div id="menudropdowns">
+                <div class="nav-menu-dropdown clearfix" id="nav-design">
+                    <div class="main">
+                        <div class="menu-dropdown-left">
+                            <div class="sidebar-title">
+                                <span class="icon-menu"></span>
+                                <span class="sidebar-fontsize">设计开发 DESIGN</span>
+                            </div>
+                            <a class="sidebar-link hover" data-href="nav-sidebar-compute">
+                                通用计算
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="nav-sidebar-net">
+                                模块设计
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="nav-sidebar-data">
+                                产品设计
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="nav-sidebar-cdn">
+                                软件开发
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="nav-sidebar-uhybrid">
+                                功能开发
+                                <i class="icon-circle-right"></i>
+                            </a>
+                        </div>
+                        <div class="menu-dropdown-middle">
+                            <div class="sidebar-cutover show" id="nav-sidebar-compute">
+                                <div class="menu-content-item">
+                                    <a href="/product/Stiffness">
+                                        <p class="menu-item-title">
+                                            <span class="icon-wanju  item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">弯矩计算&nbsp;Bending Moment</span>
+                                            <span class="dib org nav-font-14 item-title-style "></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">根据受力位置计算出任意截面所受弯矩</p>
+                                    </a>
+                                </div>
+                                <div class="menu-content-item">
+                                    <a href="/product/Strength">
+                                        <p class="menu-item-title">
+                                            <span class="icon-clear-formatting item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">截面特性&nbsp;Section Property</span>
+                                            <span class="dib org nav-font-14 item-title-style "></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">能够计算出任意截面惯性矩等所需特性</p>
+                                    </a>
+                                </div>
+                                <div class="menu-content-item">
+                                    <a href="/product/Stability">
+                                        <p class="menu-item-title">
+                                            <span class="icon-download item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">强度计算&nbsp;Intensity</span>
+                                            <span class="dib org nav-font-14 item-title-style "></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">根据受力状况计算出任意结构件强度</p>
+                                    </a>
+                                </div>
+                                <div class="menu-content-item">
+                                    <a href="/Product/Fatigue">
+                                        <p class="menu-item-title">
+                                            <span class="icon-download3 item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">刚度计算&nbsp;Stiffness</span>
+                                            <span class="dib org nav-font-14 item-title-style "></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">根据截面特性计算出机构件刚度</p>
+                                    </a>
+                                </div>
+                                @*<div class="menu-content-item">
+                                        <a href="/Product/Drum">
+                                            <p class="menu-item-title">
+                                                <span class="icon-spinner4 item-title-icon  item-title-icon-hover"></span>
+                                                <span class="item-title-style item-title-hover nav-font-14">车轮计算&nbsp;Endurance</span>
+                                                <span class="dib org nav-font-14 item-title-style "></span>
+                                            </p>
+                                            <p class="item-remark nav-font-12 nav-font-color-9gray">根据已知推算特定部件机械寿命</p>
+                                        </a>
+                                    </div>*@
+                                <div class="menu-content-item">
+                                    <a href="/Product/Bearing">
+                                        <p class="menu-item-title">
+                                            <span class="icon-bearing item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">轴承计算&nbsp;Bearing </span>
+                                            <span class="dib org nav-font-14 item-title-style "></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">根据已知计算出轴承寿命</p>
+                                    </a>
+                                </div>
+                                @*
+                                    <div class="menu-content-item">
+                                    <a href="/site/product/udhost.html">
+                                    <p class="menu-item-title">
+                                    <span class="icon__udhost item-title-icon  item-title-icon-hover"></span>
+                                    <span class="item-title-style item-title-hover nav-font-14">整机&nbsp;Crane</span>
+                                    <span class="dib org nav-font-14 item-title-style "></span>
+                                    </p>
+                                    <p class="item-remark nav-font-12 nav-font-color-9gray">整机推荐计算，提供完整计算书</p>
+                                    </a>
+                                    </div>
+                                    <div class="menu-content-item">
+                                    <a href="/site/product/ucf.html">
+                                    <p class="menu-item-title">
+                                    <span class="icon__ucf item-title-icon  item-title-icon-hover"></span>
+                                    <span class="item-title-style item-title-hover nav-font-14">其它&nbsp;About</span>
+                                    </p>
+                                    <p class="item-remark nav-font-12 nav-font-color-9gray">暂未开通</p>
+                                    </a>
+                                    </div>*@
+
+                            </div>
+                            <div class="sidebar-cutover " id="nav-sidebar-net">
+                                <div class="menu-content-item">
+                                    <a href="/Product/Drum">
+                                        <p class="menu-item-title">
+                                            <span class="icon-wheel  item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">车轮组模块&nbsp;Wheel Block</span>
+                                            <span class="dib org nav-font-14 item-title-style"></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">提供车轮模块标准设计、车轮多种格式图纸以及询价功能</p>
+                                    </a>
+                                </div>
+                                <div class="menu-content-item">
+                                    <a href="/Product/Endbeam">
+                                        <p class="menu-item-title">
+                                            <span class="icon-endbeam  item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">端梁模块&nbsp;EndBeam Block</span>
+                                            <span class="dib org nav-font-14 item-title-style"></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">提供端梁模块设计和图纸下载功能。</p>
+                                    </a>
+                                </div>
+                                <div class="menu-content-item">
+                                    <a href="/Product/Girder">
+                                        <p class="menu-item-title">
+                                            <span class="icon-girder  item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">主梁模块&nbsp;Girder Block</span>
+                                            <span class="dib org nav-font-14 item-title-style"></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">提供智能推荐主梁截面以及优化设计和图纸下载功能。</p>
+                                    </a>
+                                </div>
+                                <div class="menu-content-item">
+                                    <a href="/Product/Lifting">
+                                        <p class="menu-item-title">
+                                            <span class="icon-lifting  item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">起升模块&nbsp;Lifting Block </span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">
+                                            提供以欧式卷扬为模型的电机、减速器等等零部件设计和选取以及图纸下载功能。
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="menu-content-item">
+                                    <a href="/Product/Hoisting">
+                                        <p class="menu-item-title">
+                                            <span class="icon-hoist  item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">葫芦模块&nbsp;Hoist Block </span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">
+                                            提供以欧式葫芦为模型的电机等零部件设计和选取以及图纸下载功能。
+                                        </p>
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+                            <div class="sidebar-cutover " id="nav-sidebar-data">
+                                <div class="menu-content-item">
+                                    <a href="/Product/Bridge">
+                                        <p class="menu-item-title">
+                                            <span class="icon-brigecrane item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">桥式起重机&nbsp;Bridge Crane</span>
+                                            <span class="dib org nav-font-14 item-title-style "></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">采用智能优化算法和推荐值简洁快速的设计产品</p>
+                                    </a>
+                                </div>
+                                <div class="menu-content-item">
+                                    <a href="/Product/Gantry">
+                                        <p class="menu-item-title">
+                                            <span class="icon-gantrycrane item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">门式起重机&nbsp;Gantry Crane</span>
+                                            <span class="dib org nav-font-14 item-title-style "></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">采用智能优化算法和推荐值简洁快速的设计产品</p>
+                                    </a>
+                                </div>
+                                @*
+                                    <div class="menu-content-item">
+                                    <a href="/site/product/udb4pgsql.html">
+                                    <p class="menu-item-title">
+                                    <span class="icon__udb item-title-icon  item-title-icon-hover"></span>
+                                    <span class="item-title-style item-title-hover nav-font-14">端梁截面&nbsp;End Beam</span>
+                                    <span class="dib org nav-font-14 item-title-style "></span>
+                                    </p>
+                                    <p class="item-remark nav-font-12 nav-font-color-9gray">采用智能优化算法、优化安全可靠、简单方便</p>
+                                    </a>
+                                    </div>
+                                    <div class="menu-content-item">
+                                    <a href="/site/product/udb4mongodb.html">
+                                    <p class="menu-item-title">
+                                    <span class="icon__udb item-title-icon  item-title-icon-hover"></span>
+                                    <span class="item-title-style item-title-hover nav-font-14">支腿截面&nbsp;Outrigger</span>
+                                    <span class="dib org nav-font-14 item-title-style "></span>
+                                    </p>
+                                    <p class="item-remark nav-font-12 nav-font-color-9gray">采用智能优化算法、优化安全可靠、简单方便</p>
+                                    </a>
+                                    </div>
+                                    <div class="menu-content-item">
+                                    <a href="/site/product/uddb.html">
+                                    <p class="menu-item-title">
+                                    <span class="icon__uddb item-title-icon  item-title-icon-hover"></span>
+                                    <span class="item-title-style item-title-hover nav-font-14">其它&nbsp;About</span>
+                                    <span class="dib org nav-font-14 item-title-style "></span>
+                                    </p>
+                                    <p class="item-remark nav-font-12 nav-font-color-9gray">新产品正在开发中...</p>
+                                    </a>
+                                    </div>*@
+
+                            </div>
+                            <div class="sidebar-cutover " id="nav-sidebar-cdn">
+                                <div class="menu-content-item">
+                                    <a href="/Product/HDProduce">
+                                        <p class="menu-item-title">
+                                            <span class="icon-file-text item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">HD报价系统&nbsp;HDQuotation</span>
+                                            <span class="dib org nav-font-14 item-title-style"></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">采用C/S架构，集成Handing产品价格，支持扩展，快速报价</p>
+                                    </a>
+                                </div>
+                                <div class="menu-content-item">
+                                    <a href="/Product/HDQuotation">
+                                        <p class="menu-item-title">
+                                            <span class="icon-produce item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">生产辅助设计系统&nbsp;Produce</span>
+                                            <span class="dib org nav-font-14 item-title-style"></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">采用C/S架构，自动出图，提取BOM，快捷方便</p>
+                                    </a>
+                                </div>
+                                @*
+                                    <div class="menu-content-item">
+                                    <a href="/site/product/udataark.html">
+                                    <p class="menu-item-title">
+                                    <span class="icon__udataark item-title-icon  item-title-icon-hover"></span>
+                                    <span class="item-title-style item-title-hover nav-font-14">欧式电悬&nbsp;European Jib</span>
+                                    <span class="dib org nav-font-14 item-title-style"></span>
+                                    </p>
+                                    <p class="item-remark nav-font-12 nav-font-color-9gray">欧式电悬价格由葫芦、钢构和经营成本组成</p>
+                                    </a>
+                                    </div>
+                                    <div class="menu-content-item">
+                                    <a href="/site/product/uodn.html">
+                                    <p class="menu-item-title">
+                                    <span class="icon__uodn item-title-icon  item-title-icon-hover"></span>
+                                    <span class="item-title-style item-title-hover nav-font-14">其它&nbsp;About</span>
+                                    <span class="dib org nav-font-14 item-title-style"></span>
+                                    </p>
+                                    <p class="item-remark nav-font-12 nav-font-color-9gray">新产品正在开发中...</p>
+                                    </a>
+                                    </div>*@
+
+                            </div>
+                            <div class="sidebar-cutover " id="nav-sidebar-uhybrid">
+                                <div class="menu-content-item">
+                                    <a href="/Product/FreeDevelopment">
+                                        <p class="menu-item-title">
+                                            <span class="icon-display item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">自由开发&nbsp;Free Development</span>
+                                            <span class="dib org nav-font-14 item-title-style "></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">根据格式自由开发功能，具备发布功能</p>
+                                    </a>
+                                </div>
+                                @*
+                                    <div class="menu-content-item">
+                                    <a href="/site/product/userver.html">
+                                    <p class="menu-item-title">
+                                    <span class="icon__userver item-title-icon  item-title-icon-hover"></span>
+                                    <span class="item-title-style item-title-hover nav-font-14">设计系统&nbsp;HDDesign</span>
+                                    <span class="dib org nav-font-14 item-title-style "></span>
+                                    </p>
+                                    <p class="item-remark nav-font-12 nav-font-color-9gray">采用C/S架构，提供专业的计算、优化，可生成图纸</p>
+                                    </a>
+                                    </div>*@
+                            </div>
+                        </div>
+                        @*
+                            <video class="menu-dropdown-right" width="600" height="300" controls="controls" autoplay="autoplay" loop="loop">
+                            <source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" type="video/mp4">
+                            <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/ogg">
+
+                            <source src="/Content/Movies/movie.ogg" type="video/ogg">
+                            </video>*@
+                        @*<img class="menu-dropdown-right" src="../Content/image/075f84b69ef524e445e1e26b02a55018.png" />*@
+                    </div>
+                </div>
+
+                <div class="nav-menu-dropdown clearfix" id="nav-product">
+                    <div class="main">
+                        <div class="menu-dropdown-left">
+                            <div class="sidebar-title">
+                                <span class="icon-menu"></span>
+                                <span class="sidebar-fontsize">产品中心 PRODUCT</span>
+                            </div>
+                            <a class="sidebar-link hover" data-href="nav-sidebar-gather">
+                                智能起重系统
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="nav-sidebar-dataanalysis">
+                                智能输送系统
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="nav-sidebar-safe">
+                                智能定位系统
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="nav-sidebar-mon">
+                                远程监控系统
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            @*
+                                <a class="sidebar-link" data-href="nav-sidebar-uhybrid">
+                                其它
+                                <i class="icon__right"></i>
+                                </a>*@
+                        </div>
+                        <div class="menu-dropdown-middle">
+
+
+                            <div class="sidebar-cutover show" id="nav-sidebar-gather">
+                                <div class="menu-content-item">
+                                    <p class="menu-item-title">
+                                        <span class="item-title-style nav-font-18">智能起重系统</span>
+                                    </p>
+                                    <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                        针对于机械制造行业，我们提供安全可靠的硬件模块，来保障客户在各种应用场景中的数据采集高效和稳定。
+                                    </p>
+                                    <ul class="item-content-link">
+                                        <li>
+                                            <a href="../Content/HTML5/Doing.html">
+                                                了解详情
+                                                <i class="icon-arrow-right2"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="sidebar-cutover " id="nav-sidebar-dataanalysis">
+                                <div class="menu-content-item">
+                                    <p class="menu-item-title">
+                                        <span class="item-title-style nav-font-18">智能输送系统</span>
+                                    </p>
+                                    <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                        针对于机械制造行业，我们提供安全可靠的硬件模块，来保障客户在各种应用场景中的数据采集高效和稳定。
+                                    </p>
+                                    <ul class="item-content-link">
+                                        <li>
+                                            <a href="../Content/HTML5/Doing.html">
+                                                了解详情
+                                                <i class="icon-arrow-right2"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover " id="nav-sidebar-safe">
+                                <div class="menu-content-item">
+                                    <p class="menu-item-title">
+                                        <span class="item-title-style nav-font-18">智能定位系统</span>
+                                    </p>
+                                    <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                        针对于机械制造行业，我们提供安全可靠的硬件模块，来保障客户在各种应用场景中的数据采集高效和稳定。
+                                    </p>
+                                    <ul class="item-content-link">
+                                        <li>
+                                            <a href="../Content/HTML5/Doing.html">
+                                                了解详情
+                                                <i class="icon-arrow-right2"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover " id="nav-sidebar-mon">
+                                <div class="menu-content-item">
+                                    <p class="menu-item-title">
+                                        <span class="item-title-style nav-font-18">远程监控系统</span>
+                                    </p>
+                                    <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                        针对于机械制造行业，我们提供安全可靠的硬件模块，来保障客户在各种应用场景中的数据采集高效和稳定。
+                                    </p>
+                                    <ul class="item-content-link">
+                                        <li>
+                                            <a href="../Content/HTML5/Doing.html">
+                                                了解详情
+                                                <i class="icon-arrow-right2"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover " id="nav-sidebar-uhybrid">
+                                <div class="menu-content-item">
+                                    <a href="/site/product/ucabinet.html">
+                                        <p class="menu-item-title">
+                                            <span class="icon__ucabinet item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">报价系统&nbsp;HDQuotation</span>
+                                            <span class="dib org nav-font-14 item-title-style "></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">采用C/S架构，仅能够提供Handing公司产品价格</p>
+                                    </a>
+                                </div>
+                                <div class="menu-content-item">
+                                    <a href="/site/product/userver.html">
+                                        <p class="menu-item-title">
+                                            <span class="icon__userver item-title-icon  item-title-icon-hover"></span>
+                                            <span class="item-title-style item-title-hover nav-font-14">设计系统&nbsp;HDDesign</span>
+                                            <span class="dib org nav-font-14 item-title-style "></span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-9gray">采用C/S架构，提供专业的计算、优化，可生成图纸</p>
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <a class="menu-dropdown-right" href="" target="_blank">
+                            <img src="../Content/image/075f84b69ef524e445e1e26b02a55018.png" />
+                        </a>
+
+                    </div>
+                </div>
+                <div class="nav-menu-dropdown clearfix" id="nav-service">
+                    <div class="main">
+                        <div class="menu-dropdown-left">
+                            <a class="sidebar-link hover" data-href="nav-sidebar-base">
+                                技术支持
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="nav-sidebar-zhuanjia">
+                                备案备检
+                                <i class="icon-circle-right"></i>
+                            </a>
+                        </div>
+                        <div class="menu-dropdown-middle">
+                            <div class="sidebar-cutover show" id="nav-sidebar-base">
+                                <div class="menu-content-list-two">
+                                    <div class="menu-content-item-two">
+                                        <p class="menu-item-title">
+                                            <span class="icon-books item-title-icon"></span>
+                                            <span class="item-title-style nav-font-16">技术支持</span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-6gray">
+                                            专业技术支持团队，为您提供起重机设计、起重黑匣子和起重大数据等全方位技术保障服务，助您打造智能设备。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/service.html">
+                                                    在线联系
+                                                    <i class="icon-phone"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-content-item-two">
+                                        <p class="menu-item-title">
+                                            <span class="icon-question item-title-icon"></span>
+                                            <span class="item-title-style nav-font-16">工单中心</span>
+                                        </p>
+                                        <p class="item-remark nav-font-12 nav-font-color-6gray">
+                                            提供各类产品使用指南，可以提交任何跟产品有关问题，专业团队会及时认真答复。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="">
+                                                    进入中心
+                                                    <i class="icon-bubbles2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="menu-content-list-two">
+
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="nav-sidebar-zhuanjia">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="icon-clipboard item-title-icon"></span>
+                                            <span class="item-title-style nav-font-18">设备备案</span>
+                                        </p>
+                                        <p class="item-remark-autoheight nav-font-12 nav-font-color-6gray">
+                                            Handing技术支持团队与特种设备检验所商定，向设备提供设备备案服务，费用根据特种设备检验所规定收取
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/services/base/">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="icon-file-text2 item-title-icon"></span>
+                                            <span class="item-title-style nav-font-18">设备备检</span>
+                                        </p>
+                                        <p class="item-remark-autoheight nav-font-12 nav-font-color-6gray">
+                                            Handing技术支持团队与特种设备检验所商定，向设备提供设备备检服务，费用根据特种设备检验所规定收取
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/services/vip/">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="menu-dropdown-right" href="" target="_blank">
+                            <img src="../Content/image/075f84b69ef524e445e1e26b02a55019.png" />
+                        </a>
+
+                    </div>
+                </div>
+                <div class="nav-menu-dropdown clearfix" id="nav-solution">
+                    <div class="main">
+                        <div class="menu-dropdown-left">
+                            <a class="sidebar-link hover" data-href="sidebar-solution-video">
+                                机械制造行业
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-solution-electricity">
+                                桥梁建筑行业
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-solution-financial ">
+                                飞机制造行业
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-solution-pass ">
+                                冶金铸造行业
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-solution-education">
+                                垃圾处理行业
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-solution-games">
+                                食品加工行业
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-solution-social">
+                                电梯行业
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-solution-bigdata">
+                                压力容器行业
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-solution-privatecloud">
+                                专用设备行业
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-solution-mixedcloud">
+                                其它行业
+                                <i class="icon-circle-right"></i>
+                            </a>
+                        </div>
+                        <div class="menu-dropdown-middle">
+                            <div class="sidebar-cutover show" id="sidebar-solution-video">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">机械制造行业</span>
+                                        </p>
+                                        <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                            针对于机械制造行业，我们提供安全可靠的硬件模块，来保障客户在各种应用场景中的数据采集高效和稳定。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/active/yunhan.html#xuanwu">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-solution-electricity">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">桥梁建筑行业</span>
+                                        </p>
+                                        <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                            针对于桥梁建筑行业，我们提供的硬件模块防雨，耐高温，易安装，以维护，来保障客户在各种应用场景中的数据采集高效和稳定。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/active/yunhan.html#wenqu">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-solution-financial">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">飞机制造行业</span>
+                                        </p>
+                                        <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                            针对于飞机制造行业，我们提供的硬件具备放摇摆和精确定位功能，来保障客户在各种应用场景中的数据采集高效和稳定。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/active/yunhan.html#wuqu">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-solution-pass">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">冶金铸造行业</span>
+                                        </p>
+                                        <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                            针对于冶金铸造行业，我们提供的硬件能够抵御60℃的高温，来保障客户在各种应用场景中的数据采集高效和稳定。
+                                        </p>
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/active/yunhan.html#tiangang">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-solution-education">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">垃圾处理行业</span>
+                                        </p>
+                                        <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                            针对于垃圾处理行业，我们提供的硬件具备自动控制，定点巡航等功能，来保障客户在各种应用场景中的数据采集高效和稳定。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/active/yunhan.html#kaiyang">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-solution-games">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">食品加工行业</span>
+                                        </p>
+                                        <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                            针对于食品加工行业，我们提供的硬件具备环境清洁度检测等功能，充分保障客户在各种应用场景中的数据采集高效和稳定。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/active/yunhan.html#qiming">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-solution-social">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">电梯行业</span>
+                                        </p>
+                                        <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                            针对于电梯行业，我们提供安全可靠的硬件模块，充分保障客户在各种应用场景中的数据采集高效和稳定。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/active/yunhan.html#yaoguang">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-solution-bigdata">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">压力容器行业</span>
+                                        </p>
+                                        <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                            针对于压力容器行业，我们提供安全可靠的硬件模块，充分保障客户在各种应用场景中的数据采集高效和稳定。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/active/yunhan.html#yuheng">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-solution-privatecloud">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">专用设备行业</span>
+                                        </p>
+                                        <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                            针对于专用设备行业，我们提供安全可靠的硬件模块，充分保障客户在各种应用场景中的数据采集高效和稳定。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/active/yunhan.html#baiju">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!--<div class="menu-content-item-img">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">客户案例</span>
+                                        </p>
+                                        <ul class="item-content-link-img item-content-link-margin">
+                                            <li class="icon-ebay">
+                                                <a href="https://ucloud.cn/site/cases/video/"></a>
+                                            </li>
+                                            <li class="icon-emc">
+                                                <a href="https://ucloud.cn/site/cases/video/"></a>
+                                            </li>
+                                            <li class="icon-intel">
+                                                <a href="https://ucloud.cn/site/cases/video/"></a>
+                                            </li>
+                                            <li class="icon-dianwang">
+                                                <a href="https://ucloud.cn/site/cases/video/"></a>
+                                            </li>
+                                        </ul>
+                                    </div>-->
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-solution-mixedcloud">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">其它行业</span>
+                                        </p>
+                                        <p class="item-remark-maxheight nav-font-12 nav-font-color-6gray">
+                                            带扩展其它行业，敬请期待。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/active/yunhan.html#ziwei">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="menu-dropdown-right" href="" target="_blank">
+                            <img src="../Content/image/075f84b69ef524e445e1e26b02a55019.png" />
+                        </a>
+
+                    </div>
+                </div>
+                <div class="nav-menu-dropdown clearfix" id="nav-safe">
+                    <div class="main">
+                        <div class="menu-dropdown-left">
+                            <a class="sidebar-link hover" data-href="sidebar-datacenter">
+                                起重大数据
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-rz">
+                                其它智能设备大数据
+                                <i class="icon-circle-right"></i>
+                            </a>
+                        </div>
+                        <div class="menu-dropdown-middle">
+                            <div class="sidebar-cutover show" id="sidebar-datacenter">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">起重大数据</span>
+                                        </p>
+                                        <p class="item-remark-autoheight nav-font-12 nav-font-color-6gray">
+                                            Handing公司常年在智能设备和物联网方面努力，积累了丰富的经验，能够满足用户国内及海外的业务需求，起重机数据采集模块十分成熟，已经初步建立了以起重机为中心的大数据模型，数据存放在云端服务器。
+
+                                            Handing整个大数据中心依靠联通工业云平台，有专业技术团队不间断维护，能够确保采集数据完整和实时性，为用户提供最优的物联网解决方案。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="http://192.168.0.188:8088/" target="_blank">
+                                                    进入管理平台
+                                                    <i class="icon-stats-dots"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-rz">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">其它智能设备大数据</span>
+                                        </p>
+                                        <p class="item-remark-autoheight nav-font-12 nav-font-color-6gray">
+                                            Hanidng公司致力于搭建工业互联共享网络：以起重机为首，建立工厂局域网，将车间所有设备接入该局域网，通过4G或GPRS等网络联接到物联网。实现远端检测和控制。
+                                            通过采集的庞大数据，分析处理各设备工作循环关系，打通各设备之间联系，再集成信息软件技术，使设备互联互通。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/rz/">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="menu-dropdown-right" href="" target="_blank">
+                            <img src="../Content/image/075f84b69ef524e445e1e26b02a55017.png" />
+                        </a>
+
+                    </div>
+                </div>
+                <div class="nav-menu-dropdown clearfix" id="nav-information">
+                    <div class="main">
+                        <div class="menu-dropdown-left">
+                            <a class="sidebar-link hover" data-href="nav-sidebar-umarket">
+                                公司动态
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="nav-sidebar-industryReport">
+                                行业资讯
+                                <i class="icon-circle-right"></i>
+                            </a>
+                        </div>
+                        <div class="menu-dropdown-middle">
+                            <div class="sidebar-cutover show" id="nav-sidebar-umarket">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <a href="">
+                                            <p class="menu-item-title">
+                                                <span class="icon__circle item-title-icon-small  nav-font-color-d9gray item-title-icon-hover"></span>
+                                                <span class="item-title-style item-title-hover nav-font-14">Handing-20160530:起重机大数据云平台合作会议召开</span>
+                                            </p>
+                                        </a>
+                                        <p class="item-remark-single nav-font-12 nav-font-color-9gray font-overflowhidden">由Handing公司、中国联通洛阳分公司、河南科技大学和特检所等四家单位共同参与</p>
+                                        <a href="">
+                                            <p class="menu-item-title">
+                                                <span class="icon__circle item-title-icon-small  nav-font-color-d9gray item-title-icon-hover"></span>
+                                                <span class="item-title-style item-title-hover nav-font-14">Handing-20160830:Handing内部工作会议召开</span>
+                                            </p>
+                                        </a>
+                                        <p class="item-remark-single nav-font-12 nav-font-color-9gray font-overflowhidden">公司组织人员对该项目进行验证，正式启动测试1.0</p>
+                                        <a href="">
+                                            <p class="menu-item-title">
+                                                <span class="icon__circle item-title-icon-small  nav-font-color-d9gray item-title-icon-hover"></span>
+                                                <span class="item-title-style item-title-hover nav-font-14">Handing-201601030:Handing普通桥机报价项目启动</span>
+                                            </p>
+                                        </a>
+                                        <p class="item-remark-single nav-font-12 nav-font-color-9gray font-overflowhidden">采用C/S架构，能够根据自己需求选用不同配件，并产生报价单、设备计算书以及方案图</p>
+                                        <a href="">
+                                            <p class="menu-item-title">
+                                                <span class="icon__circle item-title-icon-small  nav-font-color-d9gray item-title-icon-hover"></span>
+                                                <span class="item-title-style item-title-hover nav-font-14">Handing-201705030:Handing四方工作会议首次召开</span>
+                                            </p>
+                                        </a>
+                                        <p class="item-remark-single nav-font-12 nav-font-color-9gray font-overflowhidden">论证测试通过，积极开展硬件开发工作</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="nav-sidebar-industryReport">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <a href="">
+                                            <p class="menu-item-title">
+                                                <span class="icon__circle item-title-icon-small  nav-font-color-d9gray item-title-icon-hover"></span>
+                                                <span class="item-title-style item-title-hover nav-font-14">中国云生态年度综合报告2016</span>
+                                            </p>
+                                        </a>
+                                        <p class="item-remark-single nav-font-12 nav-font-color-9gray font-overflowhidden">U市场、+U合作伙伴计划、U.E.P和“加U站”孵化器代表着UCloud生态版图的全方位战略</p>
+                                        <a href="">
+                                            <p class="menu-item-title">
+                                                <span class="icon__circle item-title-icon-small  nav-font-color-d9gray item-title-icon-hover"></span>
+                                                <span class="item-title-style item-title-hover nav-font-14">中国视频云专题研究报告2016</span>
+                                            </p>
+                                        </a>
+                                        <p class="item-remark-single nav-font-12 nav-font-color-9gray font-overflowhidden">Handing已经能够提供较为成熟的解决方案，并服务众多直播平台业务</p>
+                                        <a href="">
+                                            <p class="menu-item-title">
+                                                <span class="icon__circle item-title-icon-small  nav-font-color-d9gray item-title-icon-hover"></span>
+                                                <span class="item-title-style item-title-hover nav-font-14">2016年第一期云测评报告</span>
+                                            </p>
+                                        </a>
+                                        <p class="item-remark-single nav-font-12 nav-font-color-9gray font-overflowhidden">实测结果显示，阿里云、腾讯云、UCloud在技术与服务综合评分下，表现突出</p>
+                                        <a href="">
+                                            <p class="menu-item-title">
+                                                <span class="icon__circle item-title-icon-small  nav-font-color-d9gray item-title-icon-hover"></span>
+                                                <span class="item-title-style item-title-hover nav-font-14">2015公有云安全年度报告</span>
+                                            </p>
+                                        </a>
+                                        <p class="item-remark-single nav-font-12 nav-font-color-9gray font-overflowhidden">Handing安全防护体系“优盾”全年共成功拦截各类攻击总数高到达395亿次</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="menu-dropdown-right" href="" target="_blank">
+                            <img src="../Content/image/075f84b69ef524e445e1e26b02a55019.png" />
+                        </a>
+
+                    </div>
+                </div>
+                <div class="nav-menu-dropdown clearfix" id="nav-umarket">
+                    <div class="main">
+                        <div class="menu-dropdown-left">
+                            <a class="sidebar-link hover" data-href="sidebar-umarket">
+                                技术交流
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-partner">
+                                资源共享
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-uep">
+                                创意创新
+                                <i class="icon-circle-right"></i>
+                            </a>
+                        </div>
+                        <div class="menu-dropdown-middle">
+                            <div class="sidebar-cutover show" id="sidebar-umarket">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">技术交流</span>
+                                        </p>
+                                        <p class="item-remark-autoheight nav-font-12 nav-font-color-6gray">
+                                            技术交流是以Handing提供的一个关于起重设备或其他设备设计的交流论坛，也可在线提交工单资讯我们，也可提出自己的理解，我们根据需求可以开发出新的产品，供大家免费使用。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="http://192.168.0.188:8078/" target="_blank">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-partner">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">资源共享</span>
+                                        </p>
+                                        <p class="item-remark-autoheight nav-font-12 nav-font-color-6gray">
+                                            资源共享板块是我们提供一个供大家下载和上传文件论坛，我们会随时更新相关软件及其源码，供大家学习和开发。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/upn/">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-uep">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">创意创新</span>
+                                        </p>
+                                        <p class="item-remark-autoheight nav-font-12 nav-font-color-6gray">
+                                            创意创新板块向大众提供一个提交创意创新的地方，由我们专业技术团队帮您实现
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="/site/uep.html">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="menu-dropdown-right" href="" target="_blank">
+                            <img src="../Content/image/075f84b69ef524e445e1e26b02a55019.png" />
+                        </a>
+
+                    </div>
+                </div>
+                <div class="nav-menu-dropdown clearfix" id="nav-aboutus">
+                    <div class="main">
+                        <div class="menu-dropdown-left">
+                            <a class="sidebar-link hover" data-href="sidebar-introduce">
+                                关于我们
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-contactus">
+                                联系我们
+                                <i class="icon-circle-right"></i>
+                            </a>
+                            <a class="sidebar-link" data-href="sidebar-joinus">
+                                加入我们
+                                <i class="icon-circle-right"></i>
+                            </a>
+                        </div>
+                        <div class="menu-dropdown-middle">
+                            <div class="sidebar-cutover show" id="sidebar-introduce">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">关于我们</span>
+                                        </p>
+                                        <p class="item-remark-autoheight nav-font-12 nav-font-color-6gray">
+                                            Handing（洛阳汉鼎起重机械有限公司），是国内首个共享服务商，自主研发并提供计算资源、存储资源、网络资源等企业必需的基础技术服务，并深入了解互联网、移动互联网、传统企业不同场景下的业务需求，提供全局解决方案。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="../Content/HTML5/Aboutour.html">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-contactus">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">联系我们</span>
+                                        </p>
+                                        <p class="item-remark-autoheight nav-font-12 nav-font-color-6gray">
+                                            Handing（洛阳汉鼎起重机械有限公司）总部位于中国洛阳，在北京、大连有合作研发机构，同时在河南、山东、苏州等全国多个城市开设业务。除基础数据采集检测外，还提供企业物联网计划、车间大数据合作伙伴计划等多种合作渠道。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="../Content/HTML5/Aboutour.html">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-cutover" id="sidebar-joinus">
+                                <div class="menu-content-list-one">
+                                    <div class="menu-content-item-one">
+                                        <p class="menu-item-title">
+                                            <span class="item-title-style nav-font-18">加入我们</span>
+                                        </p>
+                                        <p class="item-remark-autoheight nav-font-12 nav-font-color-6gray">
+                                            Handing（洛阳汉鼎起重机械有限公司）总部位于中国洛阳，拥有各类技术人员40人，跟多家院校有长期合作协议，同时跟中科院具有合作研发机制。
+                                        </p>
+                                        <ul class="item-content-link">
+                                            <li>
+                                                <a href="../Content/HTML5/Aboutour.html">
+                                                    了解详情
+                                                    <i class="icon-arrow-right2"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="menu-dropdown-right" href="" target="_blank">
+                            <img src="../Content/image/075f84b69ef524e445e1e26b02a55019.png" />
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*相关页内容http://wpa.qq.com/pa?p=2:756750380:53*@
+    <div class="container body-content">
+        @RenderBody()
+        <footer>
+            <div class="service-tool">
+                <div class="content">
+                    <div>
+                        @*<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3202944407&site=qq&menu=yes">
+                            <img border="0" src="/Content/image/zhifubao_1.png" alt="点击这里给我发消息" title="点击这里给我发消息" />
+                            </a>*@
+                        @*<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3202944407&site=qq&menu=yes">
+                            <img border="0" src="http://wpa.qq.com/pa?p=2:3202944407:41" alt="点击这里给我发消息" title="点击这里给我发消息" />
+                            </a>*@
+
+                    </div>
+                    <a target="_blank" href="/UserAccount/UserReg" class="ser-tool-list">
+                        <div class="link-wrap button">
+                            注册
+                        </div>
+                        <div class="tips">
+                            欢迎您注册！
+                        </div>
+                    </a>
+                    <a target="_blank" href="/site/calculator.html#!/uhost" class="ser-tool-list">
+                        <div class="link-wrap button">
+                            建议
+                        </div>
+                        <div class="tips">
+                            欢迎您建议！
+                        </div>
+                    </a>
+                    <div href="#" class="ser-tool-list">
+                        <div class="link-wrap button">
+                            管理
+                        </div>
+                        <div class="tips">
+                            <a target="_blank" href="http://192.168.0.188:8088/" class="service">
+                                <i class="icon-stats-dots icon-16px"></i>
+                                进入管理平台
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ser-tool-list">
+                        <div class="link-wrap back-to-top">
+                            <span class="icon-arrow-up2">TOP</span>
+                        </div>
+                        <div class="tips">
+                            返回顶部
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-footer-main">
+                <div class="foot-nav-right">
+                    <div class="columns">
+                        <h3>Handing服务</h3>
+                        <ul>
+                            <li>
+                                <a href="/site/about/intro/enter/" target="_blank">了解Handing</a>
+                            </li>
+                            <li>
+                                <a href="/site/about/report/" target="_blank">行业报告</a>
+                            </li>
+                            <li>
+                                <a href="/site/about/contact/" target="_blank">联系我们</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="columns">
+                        <h3>快速入口</h3>
+                        <ul>
+                            <li>
+                                <a href="" target="_blank">控制台</a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank">文档中心</a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank">加入我们</a>
+                            </li>
+                            <li>
+                                <a href="/site/usafe/" target="_blank">安全中心</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="columns">
+                        <h3>常见问题</h3>
+                        <ul>
+                            <li>
+                                <a href="" target="_blank">设计相关</a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank">产品相关</a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank">登录相关</a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank">服务相关</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="columns">
+                        <h3>诚邀合作</h3>
+                        <ul>
+                            <li>
+                                <a href="" target="_blank">创意创新</a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank">功能扩展</a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank">技术市场</a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank">合作伙伴</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="columns">
+                        <h3>关注我们</h3>
+                        <ul class="icon-col">
+                            <li>
+                                <a id="footWeixin">
+                                    Handing 微信
+                                    <span class="weixin"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://handingtech.lofter.com/" target="_blank">
+                                    <i class="icon-footer weibo"></i>
+                                    Handing 微博
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank">Handing QQ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-footer-copyright">
+                <a target="_blank" href="#">豫公网安备 01111111</a>
+                |
+                <a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank"> 豫ICP备12023671号-1</a> |
+                <a href="http://www.emhcranes.com.cn/" target="_blank">DESING BY HANDING 2016</a>
+            </div>
+        </footer>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
+</body>
+</html>
+
+@*<!--google-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-48580821-1', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+
+    </script>
+    <!--baidu-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?413fdc5943040809ed0703eabd01f173";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!--AG-->
+    <script>
+        (function (a, b, c, d, e) {
+            var s = b.createElement(c); s.async = 1; s.src = '//t.agrantsem.com/tg.js?c=' + d + '&t=' + e;
+            var r = b.getElementsByTagName(c)[0]; r.parentNode.insertBefore(s, r);
+        })(window, document, 'script', 'AG_164770_GWNM', '1');
+    </script>
+    <!--growingio-->
+    <script type='text/javascript'>
+        var _vds = _vds || []; (function () { _vds.push(['setAccountId', '6b767e7fa13640a48f97e18e8045c9dc']); _vds.push(['enableHT', true]); _vds.push(['setOrigin', ('https:' == document.location.protocol ? 'https://' : 'http://') + 'ucloud.growing.io']); (function () { var vds = document.createElement('script'); vds.type = 'text/javascript'; vds.async = true; vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(vds, s); })(); })();
+    </script>
+    <!--das-->
+    <script>
+        (function (w, d, t, u, n, i, s, a) {
+            w[n] = w[n] || {
+                q: [['set', 'aid', i]],
+                set: function () { this.q.push(['set'].concat(Array.prototype.slice.apply(arguments))) },
+                send: function () { this.q.push(['send'].concat(Array.prototype.slice.apply(arguments))) }
+            };
+
+            s = d.createElement(t);
+            a = d.getElementsByTagName(t)[0];
+            s.async = true;
+            s.crossorigin = true;
+            s.src = u;
+            a.parentNode.insertBefore(s, a)
+        })(window, document, 'script', ('https:' == document.location.protocol ? 'https://' : 'http://') + '//das-rpt.ucloud.cn/das.js?v=' + Math.random(), 'das', 'iywtleaa');
+    </script>*@

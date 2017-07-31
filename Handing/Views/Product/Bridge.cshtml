@@ -1,0 +1,535 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<script>
+    function OpenWind() {
+        window.open("/Product/Bridge_Form", "newwindow", "height=560, width=800") //写成一行
+
+    }
+    function OpenWind1() {
+       // window.open("/Product/BridgeForm1.aspx", "newwindow", "height=560, width=800") //写成一行
+        window.open("/Reports/BridgeForm1.aspx", "newwindow", "height=560, width=800") //写成一行
+
+    }
+    function OpenWind2() {
+        // window.open("/Product/BridgeForm1.aspx", "newwindow", "height=560, width=800") //写成一行
+        window.open("/Reports/BridgeForm2.aspx", "newwindow", "height=560, width=800") //写成一行
+
+    }
+
+ 
+</script>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Handing-中国首个起重机械开放性服务平台</title>
+    <meta name="baidu-site-verification" content="2Lkh1N0Y9U" />
+    <meta name="keywords" content="安全检测、云数据、智能报价、云计算" />
+    <meta name="description" content="Handing是中国最先建立的监控服务商,专注于提供可靠的起重监控,数据采集、载荷分析等服务。" />
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/scripts/jquery-1.10.2.js"></script>*@
+
+    <!-- 下拉菜单特效 葫芦单梁、葫芦双梁、卷扬双梁 -->
+    @*<script src="../Content/js/jquery-1.9.1.min"></script>
+    <script src="../Content/js/jquery.zlight.menu.1.0.min.js"></script>*@
+    <link rel="stylesheet" href="../Content/css/zlight.menu.css" media="screen">
+
+</head>
+<body data-spy="scroll" data-target="#navbar-example" style="position: relative;">
+    <div class="mobile-wrapper">
+        @***************产品设计-葫芦式起重机*****************@
+        <div class="submain-navbg"></div>
+        <div class="main">
+            <div class="sub-main product">
+                <div class="nav-wrap">
+                    <h2>设计开发<span class="en">DESIGN</span></h2>
+                    <ul class="main-nav">
+                        <li class="first-node father ">
+                            通用计算
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 弯矩计算">
+                                    <a href="/Product/Stiffness">
+                                        <i class="icon-wanju"></i>
+                                        弯矩计算 Bending Moment
+                                    </a>
+                                </li>
+                                <li class="截面特性">
+                                    <a href="/Product/Strength">
+                                        <i class="icon-clear-formatting"></i>
+                                        截面特性 Section Property
+                                    </a>
+                                </li>
+                                <li class=" 强度计算">
+                                    <a href="/Product/Stability">
+                                        <i class="icon-download"></i>
+                                        强度计算 Intensity
+                                    </a>
+                                </li>
+                                <li class=" 刚度计算">
+                                    <a href="/Product/Fatigue">
+                                        <i class="icon-download3"></i>
+                                        刚度计算 Stiffness
+                                    </a>
+                                </li>
+                                @*<li class=" 车轮计算">
+                                    <a href="/Product/Drum">
+                                        <i class="icon-spinner4"></i>
+                                        车轮计算 Wheel
+                                    </a>
+                                </li>*@
+                                <li class=" 轴承设计">
+                                    <a href="/Product/Bearing">
+                                        <i class="icon-bearing"></i>
+                                        轴承设计 Bearing
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            模块设计
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 车轮组模块">
+                                    <a href="/Product/Drum">
+                                        <i class="icon-wheel"></i>
+                                        车轮组模块 Wheel Block
+                                    </a>
+                                </li>
+                                <li class=" 端梁模块">
+                                    <a href="/Product/Endbeam">
+                                        <i class="icon-endbeam"></i>
+                                        端梁模块 EndBeam Block
+                                    </a>
+                                </li>
+                                <li class=" 主梁模块">
+                                    <a href="/Product/Girder">
+                                        <i class="icon-girder"></i>
+                                        主梁模块 Girder Block
+                                    </a>
+                                </li>
+                                <li class=" 起升模块">
+                                    <a href="/Product/Lifting">
+                                        <i class="icon-lifting"></i>
+                                        起升模块 Lifting Block
+                                    </a>
+                                </li>
+                                <li class=" 葫芦模块">
+                                    <a href="/Product/Hoisting">
+                                        <i class="icon-hoist"></i>
+                                        葫芦模块 Hoist Block
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            产品设计
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" focus">
+                                    <a href="/Product/Bridge">
+                                        <i class="icon-brigecrane"></i>
+                                        桥式起重机 Bridge Crane
+                                    </a>
+                                </li>
+                                <li class=" 门式起重机">
+                                    <a href="/Product/Gantry">
+                                        <i class="icon-gantrycrane"></i>
+                                        门式起重机 Gantry Crane
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="first-node father">
+                            软件开发
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" HD报价系统">
+                                    <a href="/Product/HDQuotation">
+                                        <i class="icon-file-text"></i>
+                                        HD报价系统 HDQuotation
+                                    </a>
+                                </li>
+                                <li class=" 生产辅助设计系统">
+                                    <a href="/Product/HDProduce">
+                                        <i class="icon-produce"></i>
+                                        生产辅助设计系统 HDProduce
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        @*<li class="first-node father">
+                                数据采集
+                                <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                                <ul class="nav">
+                                    <li class=" 视频云">
+                                        <a href="/site/product/uvideo.html">
+                                            <i class="icon__uvideo prod"></i>
+                                            视频云 UVideo
+                                        </a>
+                                    </li>
+                                    <li class=" 直播云">
+                                        <a href="/site/product/ulive.html">
+                                            <i class="icon__ulive prod"></i>
+                                            直播云 ULive
+                                        </a>
+                                    </li>
+                                    <li class=" 移动应用加速">
+                                        <a href="/site/product/umaa.html">
+                                            <i class="icon__umaa prod"></i>
+                                            移动应用加速 UMAA
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="first-node father">
+                                数据分析
+                                <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                                <ul class="nav">
+                                    <li class=" AI在线服务">
+                                        <a href="/site/product/uaiservice.html">
+                                            <i class="icon__uai prod"></i>
+                                            AI在线服务 UAI-Service
+                                        </a>
+                                    </li>
+                                    <li class=" 数据仓库">
+                                        <a href="/site/product/udw.html">
+                                            <i class="icon__udw prod"></i>
+                                            数据仓库 UDW
+                                        </a>
+                                    </li>
+                                    <li class=" 分布式消息系统">
+                                        <a href="/site/product/ukafka.html">
+                                            <i class="icon__ukafka prod"></i>
+                                            分布式消息系统 UKafka
+                                        </a>
+                                    </li>
+                                    <li class=" 托管集群">
+                                        <a href="/site/product/uhadoop.html">
+                                            <i class="icon__uhadoop prod"></i>
+                                            托管集群 UHadoop
+                                        </a>
+                                    </li>
+                                    <li class=" 分布式数据处理">
+                                        <a href="/site/product/uddp.html">
+                                            <i class="icon__uddp prod"></i>
+                                            分布式数据处理 UDDP
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="first-node father">
+                                管理&监控
+                                <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                                <ul class="nav">
+                                    <li class=" 基础安全服务">
+                                        <a href="/site/product/usec.html">
+                                            <i class="icon__usec prod"></i>
+                                            基础安全服务 USec
+                                        </a>
+                                    </li>
+                                    <li class=" 企业应用防火墙">
+                                        <a href="/site/product/uewaf.html">
+                                            <i class="icon__uewaf prod"></i>
+                                            企业应用防火墙 UEWAF
+                                        </a>
+                                    </li>
+                                    <li class=" 高防服务">
+                                        <a href="/site/product/uads.html">
+                                            <i class="icon__uads prod"></i>
+                                            高防服务 UADS
+                                        </a>
+                                    </li>
+                                    <li class=" 云加密服务">
+                                        <a href="/site/product/uencrypt.html">
+                                            <i class="icon__clock prod"></i>
+                                            云加密服务 UEncrypt
+                                        </a>
+                                    </li>
+                                    <li class=" 运维审计系统">
+                                        <a href="/site/product/uhas.html">
+                                            <i class="icon__uhas prod"></i>
+                                            运维审计系统 UHAS
+                                        </a>
+                                    </li>
+                                    <li class=" Web漏洞扫描">
+                                        <a href="/site/product/uws.html">
+                                            <i class="icon__uws prod"></i>
+                                            Web漏洞扫描 UWS
+                                        </a>
+                                    </li>
+                                    <li class=" SSL证书管理">
+                                        <a href="/site/product/ussl.html">
+                                            <i class="icon__ussl prod"></i>
+                                            SSL证书管理 USSL
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="first-node father">
+                                黑匣子
+                                <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                                <ul class="nav">
+                                    <li class=" 开放API">
+                                        <a href="/site/product/api.html">
+                                            <i class="icon__apikey prod"></i>
+                                            开放API UAPI
+                                        </a>
+                                    </li>
+                                    <li class=" 云监控">
+                                        <a href="/site/product/umon.html">
+                                            <i class="icon__umon prod"></i>
+                                            云监控 UMon
+                                        </a>
+                                    </li>
+                                    <li class=" 账号与权限管理">
+                                        <a href="/site/product/uam.html">
+                                            <i class="icon__qr-code prod"></i>
+                                            账号与权限管理 UAM
+                                        </a>
+                                    </li>
+                                    <li class=" 自动伸缩">
+                                        <a href="/site/product/uas.html">
+                                            <i class="icon__uas prod"></i>
+                                            自动伸缩 UAS
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>*@
+                        <li class="first-node father">
+                            功能开发
+                            <span class="black-top mini left-nav-prod-pos"><i class="black-top1"></i></span>
+                            <ul class="nav">
+                                <li class=" 自由开发">
+                                    <a href="/Product/FreeDevelopment">
+                                        <i class="icon-display"></i>
+                                        自由开发 Free Development
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <script>
+                    (function () {
+                        function foucs(i) {
+                            if (i != null) {
+                                $('.main-nav .first-node').eq(i).addClass('active').find('.nav li').hasClass('focus');
+                            } else {
+                                $('.main-nav .first-node').eq(i).addClass('focus')
+                            }
+                        }
+                        foucs({
+                            118: 0,
+                            229: 1,
+                            230: 2,
+                            119: 3,
+                            215: 4,
+                            120: 5,
+                            217: 6,
+                            121: 7,
+                            122: 8,
+                            123: 9,
+                            128: 10,
+                            307: 11
+                        }[230]);
+                    })();
+                </script>
+
+                <div class="content-wrap">
+                    <div class="product-dash">
+                        @*<div class="prod-img"><img src='/uploads/160919/5-1609191S0411M.png' /></div>*@
+                        <h2>
+                            <i class="icon-brigecrane"></i>
+                            桥式起重机
+                            Bridge Crane
+                        </h2>
+                        <hr />
+                        <p>
+                            桥式起重机（Bridge Crane）：是起重机械中应用最广泛的一种，适用于各种车间工况，集成度和标准化程度高，此计算旨在标准化起重机设计，降低起重机设计难度。
+                        </p>
+                        <hr />
+                        <p>
+                            欢迎您进入我们的论坛，针对此功能提供您的宝贵建议，我们将为您提供所需服务！      
+                        </p>
+                        <div class="prod-operating">
+                            <a href="http://192.168.0.188:8078/forum.php?mod=viewthread&tid=8&extra=page%3D1" class='button1 white'>立即进入</a>
+                            @*<a href="/Reports/WholeDesign/WholeDesignFirst.aspx">完整设计</a>*@
+                        </div>
+                    </div>
+                    <form class="form-horizontal" role="form" id="form1" action="Strength" method="post">
+
+                        <div id="top-wear-middle">
+                            <nav id="zlight-nav">
+                                <ul class="sub-tabs-x anchor nav nav-tabs" id="zlight-main-nav" role="tablist" >
+                                    <li class="zlight-dropdown">
+                                        <a href="#">葫芦式&emsp;<i class=""></i></a>
+                                        @*<ul class="zlight-submenu" style="background-color:rgb(255,255,255)">
+                                            <li class="zlight-dropdown">
+                                                <a href="#">自由设计</a>
+                                                <ul class="zlight-submenu" style="width:150px;background-color:rgb(255,255,255)">
+                                                    <li><a href="#">小车模块</a></li>
+                                                    <li><a href="#">桥架模块</a></li>
+                                                    <li><a href="#">运行模块</a></li>
+                                                    <li><a href="#">电控模块</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="" onclick=window.open("/Reports/WholeDesign/WholeDesignFirst.aspx")>完整设计</a>
+                                            </li>
+                                        </ul>*@
+                                    </li>
+
+                                    <li class="zlight-dropdown">
+                                        <a href="#jiage" >卷扬式&emsp;<i class=""></i></a>
+                                        @*<ul class="zlight-submenu" style="width:150px;background-color:rgb(255,255,255)">
+                                            <li class="zlight-dropdown">
+                                                <a href="#">自由设计</a>
+                                                <ul class="zlight-submenu" style="width:150px;background-color:rgb(255,255,255)">
+                                                    <li><a href="#">小车模块</a></li>
+                                                    <li><a href="#">桥架模块</a></li>
+                                                    <li><a href="#">运行模块</a></li>
+                                                    <li><a href="#">电控模块</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li><a href="/Reports/WholeDesign/WholeDesignFirst">完整设计</a></li>
+                                        </ul>*@
+                                    </li>
+
+                                    @*<li class="zlight-dropdown">
+                                        <a href="#jiage" >卷扬双梁&emsp;<i class=""></i></a>
+                                        <ul class="zlight-submenu" style="width:150px;background-color:rgb(255,255,255)">
+                                            <li class="zlight-dropdown">
+                                                <a href="#">自由设计</a>
+                                                <ul class="zlight-submenu" style="width:150px;background-color:rgb(255,255,255)">
+                                                    <li><a href="#">小车模块</a></li>
+                                                    <li><a href="#">桥架模块</a></li>
+                                                    <li><a href="#">运行模块</a></li>
+                                                    <li><a href="#">电控模块</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="/Reports/WholeDesign/WholeDesignFirst">完整设计</a></li>
+                                        </ul>
+                                    </li>*@
+
+                                    @*<li>
+                                        <a href='#docs-log'>计算报告</a>
+                                    </li>*@
+
+                                    <li>
+                                        <a href='#case'>更新说明</a>
+                                    </li>
+
+                                </ul>
+                                </nav>
+                        </div>
+                        <script>
+                            $('.sub-tabs-x li:eq(0)').addClass('active');
+                        </script>
+                        <div class="tab-content sub-tab-cont" id="viewDiv">
+                            <div id="odds">
+                                <h2 class="h2">
+                                    葫芦式
+                                </h2>
+                                <div class="prod-anchor">
+                                    <h5 class="h5">
+                                        简要说明
+                                    </h5>
+                                    <p class="text">
+                                        此计算依据欧式葫芦设计，仅在桥架结构分为葫芦单梁和葫芦双梁；采用智能匹配参数，去除繁琐的参数输入，仅需要用户输入简单的已知参数，譬如：起重量、起升高度等即可，使设计方便快捷。
+                                        计算参照《起重机设计手册》、《起重机设计规范》等权威书籍，并依据大量实际生产经验，使结果更准确。最后出具完整计算书。
+                                    </p>                                                                      
+                                    <br/>
+                                    <div class="prod-operating">
+                                        <a href="/Reports/WholeDesign/WholeDesignFirst.aspx" class='button1 white'>立即设计</a>
+                                    </div>
+                                </div>                               
+
+                            </div>                          
+
+                            <div id="jiage">
+                                <h2 class="h2">
+                                    卷扬式
+                                </h2>
+                                <div class="prod-anchor">
+                                    <h5 class="h5">
+                                        智能便捷
+                                    </h5>
+                                    <p class="text">
+                                        此计算依据欧式卷扬双梁结构设计；采用智能匹配参数，去除繁琐的参数输入，仅需要用户输入简单的已知参数，譬如：起重量、起升高度等即可，使设计方便快捷。
+                                        计算参照《起重机设计手册》、《起重机设计规范》等权威书籍，并依据大量实际生产经验，使结果更准确。最后出具完整计算书。
+                                    </p>                                    
+                                    <br />
+                                    <div class="prod-operating">
+                                        <a href="/Reports/WholeDesign/WholeDesignFirst" class='button1 white'>立即设计</a>
+                                    </div>
+                                </div>                           
+                            </div>
+           
+                            @*<div id="docs-log">
+                                <h2 class="h2">
+                                    运行模块
+                                </h2>
+                                <div class="prod-anchor">
+                                    <div class="form-group">
+                                        <table>
+                                            <tr>
+                                                <th>循环次数/使用寿命：</th>
+                                                <th><input id="txt_showresult" type="text" name="txt_showresult" placeholder="次/小时" /></th>
+                                            </tr>
+                                        </table>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+
+                            <div id="docs-log">
+                                <h2 class="h2">
+                                    更新说明
+                                </h2>
+                                <div class="prod-anchor">
+                                    <div class="form-group">
+                                        <table>
+                                            <tr>
+                                                <th>循环次数/使用寿命：</th>
+                                                <th><input id="txt_showresult" type="text" name="txt_showresult" placeholder="次/小时" /></th>
+                                            </tr>
+                                        </table>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>*@
+
+                            <div id="jiage">
+                                <h2 class="h2">
+                                    更新说明
+                                </h2>
+                                <div class="prod-anchor">
+                                    <p class="text">
+                                        暂未更新，敬请期待。
+                                    </p>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

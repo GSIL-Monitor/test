@@ -1,0 +1,277 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title> jQ + ajax</title>
+    <script src="~/Content/js/jquery/jquery-2.1.1.min.js"></script>
+
+    <script>
+        //$(document).ready(function () {
+        //    $("button").click(function () {
+        //        $("p").hide();
+        //    });
+
+
+        //    $("#test3").val("Dolly ddddd");
+
+        //});
+        $(function () {
+            $("#btn_iphone").click(function () {
+                alert("jjj");
+                $.ajax({
+                    type: 'get',
+                    dataType: 'text',
+                    url: '/UserAccount/Main',
+                    success: function (data) {
+                        //var json = eval("(" + data + ")");
+                        alert("成功：");
+                    }
+
+                });
+            });
+        })
+        $(function () {
+           
+            $("#divbtn10000").click(function () {
+
+                $.ajax({
+                    type: 'get',
+                    dataType: 'text',
+                    url: '/Designer/Crane5D/FirstLine',//请求数据的地址CADD
+                    success: function (data) {
+
+                        var json = eval("(" + data + ")");
+
+                    }
+                });
+
+            });
+        });
+        //点击MD5
+        $(function () {
+
+            $("#divbtn1").click(function () {
+                var keyvalue = $("#keyvalue").val().trim();//获取文本值
+
+                $.ajax({
+                    type: 'get',
+                    dataType: 'text',
+                    url: '/Designer/Crane5D/Mymd5',//请求数据的地址SendMail
+                    //url: '/Designer/Crane5D/SendMail',//请求数据的地址
+                    data: { keyvalue: keyvalue },
+                    success: function (data) {
+                        //var json = eval("(" + data + ")");
+                        alert("加密后：" + data);
+                    }
+
+                });
+                $.ajax({
+                    type: 'get',
+                    dataType: 'text',
+                    url: '/Designer/Crane5D/SendMail0000000000000000000',//请求数据的地址
+                    success: function (data) {
+                        //var json = eval("(" + data + ")");
+                        alert("邮件：成功：" + data);
+                    }
+
+                });
+            });
+           
+        });
+        //点击60秒显示数据
+        $(function () {
+            $("#send").click(function () {
+
+                var str = "操作"
+                $.ajax({
+                    type: 'get',
+                    dataType: 'html',
+                    url: '/Designer/Crane5D/GetFormJson',//请求数据的地址
+                    success: function (data) {
+
+                        var json = eval("(" + data + ")");
+                        //.write("<h2>显示页面测试</h2>");//能不能不用document.write();
+                        for (var i = 0; i <= json.length - 178; i++) {
+                            //var lab = "<h3>"+ json[i].ClientIP +"</h3>"
+                            //document.write("<h3>IP=" + json[i].ClientIP + "</h3>");
+                            //$("p").append("</br><b>Hello==" + json[i].ClientIP + "</b>");
+                            $("#chi").append("<tr><td><input type='text' value='" + json[i].ClientIP + "'/></td></tr>");
+                            $("#chi1").append("<tr><td><input type='text' value='" + json[i].StartYear + "'/></td></tr>");
+                            $("#chi2").append("<tr><td><input type='text' value='" + json[i].StopYear + "'/></td></tr>");
+
+                            $("#chin").append("<tr><td align='center' width='100'><input type='text' value='" + json[i].OverLoad + "'/></td></tr>");
+                            $("#LiftingCapacity").append("<tr><td align='center' width='100'><input type='text' value='" + json[i].LiftingCapacity + "'/></td></tr>");
+
+                            //$("#chaoL").append("<tr><td><a href='#'><input type='text' value='" + str + "'/></a></td></tr>");
+
+                            //$("#text").attr("value", json[99].ClientIP) = "text";
+
+                        }
+                    }
+                });
+                //
+            });
+        });
+        // 函数
+        //$(function () {
+        //    var str="操作"
+        //    $.ajax({
+        //        type: 'get',
+        //        dataType:'html',
+        //        url: '/Designer/Crane5D/GetFormJson',//请求数据的地址
+        //        success: function (data) {
+
+        //            var json = eval("(" + data + ")");
+        //            //.write("<h2>显示页面测试</h2>");//能不能不用document.write();
+        //            for (var i = 0; i <= json.length-178; i++) {
+        //                //var lab = "<h3>"+ json[i].ClientIP +"</h3>"
+        //                //document.write("<h3>IP=" + json[i].ClientIP + "</h3>");
+        //                //$("p").append("</br><b>Hello==" + json[i].ClientIP + "</b>");
+        //                $("#chi").append("<tr><td><input type='text' value='" + json[i].ClientIP + "'/></td></tr>");
+        //                $("#chi1").append("<tr><td><input type='text' value='" + json[i].StartYear + "'/></td></tr>");
+        //                $("#chi2").append("<tr><td><input type='text' value='" + json[i].StopYear + "'/></td></tr>");
+
+        //                $("#chin").append("<tr><td align='center' width='100'><input type='text' value='" + json[i].OverLoad + "'/></td></tr>");
+        //                $("#LiftingCapacity").append("<tr><td align='center' width='100'><input type='text' value='" + json[i].LiftingCapacity + "'/></td></tr>");
+
+        //                //$("#chaoL").append("<tr><td><a href='#'><input type='text' value='" + str + "'/></a></td></tr>");
+
+        //                //$("#text").attr("value", json[99].ClientIP) = "text";
+
+        //            }
+        //        }
+
+        //    });
+        //});
+    </script>
+</head>
+<body>
+    选择省份:<input type="text" name="cname" list="cities0" /><br />
+    <datalist id="cities0"></datalist>
+    选择城市:<input type="text" name="cname" list="cities" /><br />
+    <datalist id="cities"></datalist>
+
+    <input type="button" id="send" value="发送验证码">
+
+</body>
+</html>
+<script type="text/javascript">
+    //需要添加的数据内容,可以通过ajax请求获取
+    var cities = [
+    { label: "xian", value: "西安" },
+    { label: "hubei", value: "湖北" },
+    { label: "wuhai", value: "武汉" }
+    ];
+    //获取datalist的dom
+    var ss = document.getElementById("cities");
+    //定义加载城市的函数
+    function loadcities() {
+        for (var i = 0; i < cities.length; i++) {
+            var city = cities[i];
+
+            //纯js实现的方式
+            var op = document.createElement("option");
+            op.setAttribute("label", city.label);
+            op.setAttribute("value", city.value);
+            ss.appendChild(op);
+        }
+    }
+    //页面加载完时加载此函数
+    //window.onload = function () {
+    //    //loadcities();
+    //}
+    window.onload = function () {
+        var send = document.getElementById('send'),
+          times = 60,
+          timer = null;
+        send.onclick = function () {
+            // 计时开始
+            var that = this;
+            this.disabled = true;
+            timer = setInterval(function () {
+                times--;
+                that.value = times + "秒后重试";
+                if (times <= 0) {
+                    that.disabled = false;
+                    that.value = "发送验证码";
+                    clearInterval(timer);
+                    times = 60;
+                }
+                //console.log(times);
+            }, 1000);
+        }
+    }
+</script>
+<form autocomplete="off" action="/Designer/Crane5D" oninvalid="true" method="post">
+    <h2 style="text-align:center"> 运行信息数据展示</h2>
+    <input name="keyvalue" id="keyvalue" type="text" required oninvalid="setCustomValidity('请输入QQ号码！');m2m();" oninput="setCustomValidity('');" />
+    <button id="divbtn1" type="button">按钮OK</button>
+
+    <input name="iphone" id="txt_iphone" type="text" />
+    <button id="btn_iphone" type="button">发送手机</button>
+    <script type="text/javascript">
+        function showCustomer(str) {
+            var xmlhttp;
+            if (str == "") {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            }
+            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {// code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+                }
+            }
+            //xmlhttp.open("GET", "/ajax/getcustomer.asp?q=" + str, true);
+            xmlhttp.open("GET", "/Designer/Crane5D/Index?q=" + str, true);
+            xmlhttp.send();
+        }
+    </script>
+    <br />
+    <label>
+        请选择一IP：
+        <select name="customers" onchange="showCustomer000000000000000000000000000000(this.value)" style="font-family:Verdana, Arial, Helvetica, sans-serif;">
+            <option value="127.0.0.1">127.0.0.1	</option>
+            <option value="117.136.61.3 ">117.136.61.3</option>
+            <option value="223.104.19.111">223.104.19.111	</option>
+            <option value="223.104.19.74">223.104.19.74</option>
+            <option value="223.104.19.5">223.104.19.5	</option>
+            <option value="117.136.44.186">117.136.44.186	</option>
+        </select>
+    </label>
+    <table border="0" align="center" style="color-interpolation-filters:auto">
+        <tr id="chin1">
+            <td id="chi" style="background-color:lightgray">
+                IP
+                @*此处怎么显示AJAX数据XMLHttpRequest
+                    <input required oninvalid="setCustomValidity('请输入猪222')" oninput="setCustomValidity('');" type="text" id="test3"><button type="submit" id="divbtn" onclick="mm();">点我</button>
+                    <input id='qq' type='text' name='qq' required oninvalid="setCustomValidity('请输入QQ号码！');" oninput="setCustomValidity('');" />*@
+                @*//通过添加2个语句就可以在校验的时候自定义错误提示.oninvalid="setCustomValidity('在这里输入自定义的表单验证提示!');"*@
+            </td>
+            <td id="chi1" style="background-color:lightgray" align="center" width="100">StartYear</td>
+            <td id="chi2" style="background-color:lightgray" align="center" width="100">StopYear</td>
+            <td id="chin" style="background-color:lightgray" align="center" width="100">OverLoad</td>
+            <td id="LiftingCapacity" style="background-color:lightgray" width="100">LiftingCapacity</td>
+            @*<td id="chaoL" style="background-color:lightgray" align="center" width="100"><a href="#">Opt</a></td>*@
+
+        </tr>
+
+    </table>
+
+</form>
+
+<div id="txtHint">客户信息将在此处列出 ...</div>
+
+        </body>
+</html>

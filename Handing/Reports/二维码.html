@@ -1,0 +1,82 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>js弹出层,js遮住层</title>
+    <style type="text/css">
+        .weixindiag {
+            position: absolute;
+            height: auto;
+            z-index: 90001;
+            padding: 1px;
+            display: none;
+            width: 235px;
+            background-color: none;
+        }
+
+            .weixindiag img {
+                border-radius: 5px;
+            }
+
+        .weixinclose {
+            background: url(http://www.daixiaorui.com/Public/images/weixinclose.png) no-repeat;
+            width: 38px;
+            height: 38px;
+            display: inline-block;
+            margin-bottom: -50px;
+            cursor: pointer;
+            margin-bottom: -38px;
+            z-index: 999;
+            position: absolute;
+            right: -18px;
+            top: -18px;
+        }
+
+        .overlay {
+            background-color: #252525;
+            position: absolute;
+            z-index: 90000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+            filter: alpha(opacity=70);
+            -moz-opacity: 0.5;
+            display: none;
+        }
+    </style>
+    <!--不要忘了引入jquery库哦-->
+    <script type="text/javascript" src="http://www.daixiaorui.com/Public/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        //微信
+        $(function () {
+            $(".weixin").click(function () {
+                $(".overlay").css({ display: "block", height: $(document).height() });
+                $(".weixindiag").css({
+                    left: ($("body").width() - $(".weixindiag").width()) / 2 + "px",
+                    top: ($(window).height() - $(".weixindiag").height()) / 2 + $(window).scrollTop() + "px",
+                    display: "block"
+                });
+            });
+
+            $(".weixinclose").click(function () {
+                $(".overlay,.weixindiag").css("display", "none");
+                return false;
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="weixindiag"><a class="weixinclose"></a> <img src="/Content/image/zhifubao.png" width="235" height="235" alt="" /></div>
+    <script type="text/javascript">
+        //Just for full screen
+        for (i = 0; i < 2; i++) {
+            document.write('<a href="#" class="weixin"> 关注微信</a>@ daixiaorui.com');
+        }
+    </script>
+    <a href="mailto:1002110484@qq.com">QQ邮箱</a> 
+</body>
+</html>

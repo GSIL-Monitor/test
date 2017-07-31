@@ -1,0 +1,631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B3086DF2-EAD3-4F5F-94C6-F97FEF8E48FD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Handing</RootNamespace>
+    <AssemblyName>Handing</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.Entity.EF5, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\MySQL\Connector.NET 6.9\Assemblies\v4.5\MySql.Data.Entity.EF5.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Fabric.Plugin, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\MySQL\Connector.NET 6.9\Assemblies\v4.5\MySql.Fabric.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\MySQL\Connector.NET 6.9\Assemblies\v4.5\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\C#libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin">
+      <HintPath>..\..\..\C#libs\Senparc.Weixin.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin.MP">
+      <HintPath>..\..\..\C#libs\Senparc.Weixin.MP.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WeChat">
+      <HintPath>..\..\..\C#libs\WeChat.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\01 Handler\HandlerAjaxOnlyAttribute.cs" />
+    <Compile Include="App_Start\01 Handler\HandlerAuthorizeAttribute.cs" />
+    <Compile Include="App_Start\01 Handler\HandlerErrorAttribute.cs" />
+    <Compile Include="App_Start\01 Handler\HandlerLoginAttribute.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Designer\Controllers\Crane5DController.cs" />
+    <Compile Include="Areas\Designer\DesignerAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\UserAccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\WeiXinController.cs" />
+    <Compile Include="error\403Page.aspx.cs">
+      <DependentUpon>403Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error\403Page.aspx.designer.cs">
+      <DependentUpon>403Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error\404Page.aspx.cs">
+      <DependentUpon>404Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error\404Page.aspx.designer.cs">
+      <DependentUpon>404Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error\500Page.aspx.cs">
+      <DependentUpon>500Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error\500Page.aspx.designer.cs">
+      <DependentUpon>500Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error\customerrorpage.aspx.cs">
+      <DependentUpon>customerrorpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error\customerrorpage.aspx.designer.cs">
+      <DependentUpon>customerrorpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\OAuthToken.cs" />
+    <Compile Include="Models\WxMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\BridgeForm2.aspx.cs">
+      <DependentUpon>BridgeForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\BridgeForm2.aspx.designer.cs">
+      <DependentUpon>BridgeForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StiffnessRec.aspx.cs">
+      <DependentUpon>StiffnessRec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\StiffnessRec.aspx.designer.cs">
+      <DependentUpon>StiffnessRec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StiffnessBox.aspx.cs">
+      <DependentUpon>StiffnessBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\StiffnessBox.aspx.designer.cs">
+      <DependentUpon>StiffnessBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StrengthModel1.aspx.cs">
+      <DependentUpon>StrengthModel1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\StrengthModel1.aspx.designer.cs">
+      <DependentUpon>StrengthModel1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StrengthModel2.aspx.cs">
+      <DependentUpon>StrengthModel2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\StrengthModel2.aspx.designer.cs">
+      <DependentUpon>StrengthModel2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BendingMoment.aspx.cs">
+      <DependentUpon>BendingMoment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\BendingMoment.aspx.designer.cs">
+      <DependentUpon>BendingMoment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\WholeDesignData.cs" />
+    <Compile Include="Reports\WholeDesign\showInfo.aspx.cs">
+      <DependentUpon>showInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\WholeDesign\showInfo.aspx.designer.cs">
+      <DependentUpon>showInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\WholeDesign\testbtb.aspx.cs">
+      <DependentUpon>testbtb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\WholeDesign\testbtb.aspx.designer.cs">
+      <DependentUpon>testbtb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\WholeDesign\WholeDesignSecond.aspx.cs">
+      <DependentUpon>WholeDesignSecond.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\WholeDesign\WholeDesignSecond.aspx.designer.cs">
+      <DependentUpon>WholeDesignSecond.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="Reports\BridgeForm1.aspx.cs">
+      <DependentUpon>BridgeForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\BridgeForm1.aspx.designer.cs">
+      <DependentUpon>BridgeForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\WholeDesign\WholeDesignFirst.aspx.cs">
+      <DependentUpon>WholeDesignFirst.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\WholeDesign\WholeDesignFirst.aspx.designer.cs">
+      <DependentUpon>WholeDesignFirst.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\Doing\animate.min.css" />
+    <Content Include="Content\css\Doing\bicolor.min.css" />
+    <Content Include="Content\css\Doing\bootstrap.min.css" />
+    <Content Include="Content\css\Doing\font-awesome.min.css" />
+    <Content Include="Content\css\Doing\style.css" />
+    <Content Include="Content\css\emailAutoComplete.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\userinfo.css" />
+    <Content Include="Content\HTML5\Aboutour.html" />
+    <Content Include="Content\HTML5\Doing.html" />
+    <Content Include="Content\HTML5\system0.html" />
+    <Content Include="Content\image\20170725092020.png" />
+    <Content Include="Content\image\201707251212.png" />
+    <Content Include="Content\image\201707251432.png" />
+    <Content Include="Content\image\baby.png" />
+    <Content Include="Content\image\endbeam170729.png" />
+    <Content Include="Content\image\endbeam17072917.png" />
+    <Content Include="Content\image\endbeam1707291714.png" />
+    <Content Include="Content\image\girder170729.png" />
+    <Content Include="Content\image\handing201706030304.png" />
+    <Content Include="Content\image\header_hd.png" />
+    <Content Include="Content\image\kongfuliang.png" />
+    <Content Include="Content\image\shifuliang.png" />
+    <Content Include="Content\js\Doing\main.js" />
+    <Content Include="Content\js\Doing\options.js" />
+    <Content Include="Content\js\Doing\vendor.js" />
+    <Content Include="Content\js\jquery.particleground\app.js" />
+    <Content Include="Content\js\jquery.particleground\particles.min.js" />
+    <Content Include="Content\js\jquery\emailAutoComplete.js" />
+    <Content Include="Content\js\jquery\jquery.min.js" />
+    <Content Include="Content\txt\agreement.txt" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\common.css" />
+    <Content Include="Content\css\index.css" />
+    <Content Include="Content\css\jquery.slider.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\mob.css" />
+    <Content Include="Content\css\Mytabs.css" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Content\css\wholedesign.css" />
+    <Content Include="Content\css\wholedesignform.css" />
+    <Content Include="Content\css\zlight.menu.css" />
+    <Content Include="Content\fonts\icomoon.svg" />
+    <Content Include="Content\image\075f84b69ef524e445e1e26b02a55017.png" />
+    <Content Include="Content\image\075f84b69ef524e445e1e26b02a55018.png" />
+    <Content Include="Content\image\075f84b69ef524e445e1e26b02a55019.png" />
+    <Content Include="Content\image\5aa02f4b68d20c9d8ed9caf527e3ba.png" />
+    <Content Include="Content\image\Bauhaus.png" />
+    <Content Include="Content\image\Bauhaus1.png" />
+    <Content Include="Content\image\bendingcal\bending-jianzhi-1.png" />
+    <Content Include="Content\image\bendingcal\bending-jianzhi-2-gray.png" />
+    <Content Include="Content\image\bendingcal\bending-jianzhi-2.png" />
+    <Content Include="Content\image\bendingcal\bending-jianzhi-3-gray.png" />
+    <Content Include="Content\image\bendingcal\bending-jianzhi-3.png" />
+    <Content Include="Content\image\bendingcal\bending-jianzhi-4-gray.png" />
+    <Content Include="Content\image\bendingcal\bending-jianzhi-4.png" />
+    <Content Include="Content\image\bendingcal\bending-jianzhi-5-gray.png" />
+    <Content Include="Content\image\bendingcal\bending-jianzhi-5.png" />
+    <Content Include="Content\image\bendingcal\bending-xuanbi-1.png" />
+    <Content Include="Content\image\bendingcal\bending-xuanbi-2-gray.png" />
+    <Content Include="Content\image\bendingcal\bending-xuanbi-2.png" />
+    <Content Include="Content\image\bendingcal\bending-xuanbi-3-gray.png" />
+    <Content Include="Content\image\bendingcal\bending-xuanbi-3.png" />
+    <Content Include="Content\image\bendingcal\bending-xuanbi-4-gray.png" />
+    <Content Include="Content\image\bendingcal\bending-xuanbi-4.png" />
+    <Content Include="Content\image\cal_sti.png" />
+    <Content Include="Content\image\cal_sti1.png" />
+    <Content Include="Content\image\design_step\arrow_right.png" />
+    <Content Include="Content\image\design_step\buttons.png" />
+    <Content Include="Content\image\design_step\design_step_1.png" />
+    <Content Include="Content\image\design_step\design_step_11.png" />
+    <Content Include="Content\image\design_step\design_step_2.png" />
+    <Content Include="Content\image\design_step\design_step_22.png" />
+    <Content Include="Content\image\design_step\design_step_3.png" />
+    <Content Include="Content\image\design_step\design_step_33.png" />
+    <Content Include="Content\image\design_step\design_step_4.png" />
+    <Content Include="Content\image\design_step\design_step_44.png" />
+    <Content Include="Content\image\erwei.jpg" />
+    <Content Include="Content\image\H.ico" />
+    <Content Include="Content\image\H140.png" />
+    <Content Include="Content\image\handing1.jpg" />
+    <Content Include="Content\image\handing201706030259.png" />
+    <Content Include="Content\image\handing201706030427.png" />
+    <Content Include="Content\image\handing201706030429.png" />
+    <Content Include="Content\image\handingdesign.png" />
+    <Content Include="Content\image\handinglogo.png" />
+    <Content Include="Content\image\handingongzh.png" />
+    <Content Include="Content\image\in.png" />
+    <Content Include="Content\image\morelogin-email.png" />
+    <Content Include="Content\image\morelogin-weixin.png" />
+    <Content Include="Content\image\morelogin.png" />
+    <Content Include="Content\image\productdecription.png" />
+    <Content Include="Content\image\slider.png" />
+    <Content Include="Content\image\success.png" />
+    <Content Include="Content\image\wangxin.png" />
+    <Content Include="Content\image\weixinclose.png" />
+    <Content Include="Content\image\wheel-125.gif" />
+    <Content Include="Content\image\wheel_1.png" />
+    <Content Include="Content\image\wheel_2.png" />
+    <Content Include="Content\image\zhanglefei.jpg" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\common.min.js" />
+    <Content Include="Content\js\jqgrid\grid.locale-cn.js" />
+    <Content Include="Content\js\jqgrid\jqgrid.css" />
+    <Content Include="Content\js\jqgrid\jqgrid.min.js" />
+    <Content Include="Content\js\jquery.slider.min.js" />
+    <Content Include="Content\js\jquery\jquery-2.1.1.min.js" />
+    <Content Include="Content\js\jquery\jquery.cookie.js" />
+    <Content Include="Content\js\scrollable.js" />
+    <Content Include="Content\js\jquery-1.9.1.min.js" />
+    <Content Include="Content\js\jQuery.rTabs.js" />
+    <Content Include="Content\js\jquery.zlight.menu.1.0.min.js" />
+    <Content Include="Content\js\main.min.js" />
+    <Content Include="Content\js\modernizr.custom.79639.js" />
+    <Content Include="Content\js\npm.js" />
+    <Content Include="Content\js\XDomainRequest.js" />
+    <Content Include="Content\js_sunfa\suanfa1.js" />
+    <Content Include="Content\Movies\H.ico" />
+    <Content Include="error\403Page.aspx" />
+    <Content Include="error\404Page.aspx" />
+    <Content Include="error\500Page.aspx" />
+    <Content Include="error\customerrorpage.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Reports\BridgeForm2.aspx" />
+    <Content Include="Reports\gangdu.aspx" />
+    <Content Include="Reports\二维码.html" />
+    <Content Include="Reports\StiffnessRec.aspx" />
+    <Content Include="Reports\StiffnessBox.aspx" />
+    <Content Include="Reports\StrengthModel1.aspx" />
+    <Content Include="Reports\StrengthModel2.aspx" />
+    <Content Include="Reports\WebForm1.aspx" />
+    <Content Include="Reports\BendingMoment.aspx" />
+    <Content Include="Reports\WholeDesign\showInfo.aspx" />
+    <Content Include="Reports\WholeDesign\WholeDesignSecond.aspx" />
+    <Content Include="Reports\WholeDesign\testbtb.aspx" />
+    <Content Include="Content\css\bootstrap-theme.css.map" />
+    <Content Include="Content\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\css\bootstrap.css.map" />
+    <Content Include="Content\css\bootstrap.min.css.map" />
+    <Content Include="Reports\inet.html" />
+    <Content Include="Content\fonts\icomoon.eot" />
+    <Content Include="Content\fonts\icomoon.ttf" />
+    <Content Include="Content\fonts\icomoon.woff" />
+    <Content Include="Areas\Designer\Views\Crane5D\Index.cshtml" />
+    <Content Include="Areas\Designer\Views\Web.config" />
+    <Content Include="download\handing\DWG\BW125.00.rar" />
+    <Content Include="download\handing\DWG\BW160.00.rar" />
+    <Content Include="download\handing\DWG\BW200.00.rar" />
+    <Content Include="download\handing\DWG\BW250.00.rar" />
+    <Content Include="download\handing\DWG\BW315.00.rar" />
+    <Content Include="download\handing\DWG\BW400.00.rar" />
+    <Content Include="download\handing\DWG\BW500.00.rar" />
+    <Content Include="download\handing\PDF\BW125.00.pdf" />
+    <Content Include="download\handing\PDF\BW160.00.pdf" />
+    <Content Include="download\handing\PDF\BW200.00.pdf" />
+    <Content Include="download\handing\PDF\BW250.00.pdf" />
+    <Content Include="download\handing\PDF\BW315.00.pdf" />
+    <Content Include="download\handing\PDF\BW400.00.pdf" />
+    <Content Include="download\handing\PDF\BW500.00.pdf" />
+    <Content Include="download\sovewel\DWG\SWA125.rar" />
+    <Content Include="download\sovewel\DWG\SWA140.rar" />
+    <Content Include="download\sovewel\DWG\SWA160.rar" />
+    <Content Include="download\sovewel\DWG\SWA200.rar" />
+    <Content Include="download\sovewel\DWG\SWA250.rar" />
+    <Content Include="download\sovewel\DWG\SWA315.rar" />
+    <Content Include="download\sovewel\DWG\SWA400.rar" />
+    <Content Include="download\sovewel\IGS\SWA125.rar" />
+    <Content Include="download\sovewel\PDF\SWA125.pdf" />
+    <Content Include="download\sovewel\PDF\SWA140.pdf" />
+    <Content Include="download\sovewel\PDF\SWA160.pdf" />
+    <Content Include="download\sovewel\PDF\SWA200.pdf" />
+    <Content Include="download\sovewel\PDF\SWA250.pdf" />
+    <Content Include="download\sovewel\PDF\SWA320.pdf" />
+    <Content Include="download\sovewel\PDF\SWA400.pdf" />
+    <Content Include="Reports\BridgeForm1.aspx" />
+    <Content Include="Reports\WholeDesign\WholeDesignFirst.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Product\Stiffness.cshtml" />
+    <Content Include="Views\Product\Strength.cshtml" />
+    <Content Include="Views\Product\Fatigue.cshtml" />
+    <Content Include="Views\Product\Stability.cshtml" />
+    <Content Include="Views\Product\Drum.cshtml" />
+    <Content Include="Views\Product\Bridge.cshtml" />
+    <Content Include="Views\Product\Bearing.cshtml" />
+    <Content Include="Views\Product\Girder.cshtml" />
+    <Content Include="Views\Product\Lifting.cshtml" />
+    <Content Include="Views\Product\Hoisting.cshtml" />
+    <Content Include="Views\Product\Gantry.cshtml" />
+    <Content Include="Views\Product\HDQuotation.cshtml" />
+    <Content Include="Views\Product\HDProduce.cshtml" />
+    <Content Include="Views\Product\FreeDevelopment.cshtml" />
+    <Content Include="Views\UserAccount\UserReg.cshtml" />
+    <Content Include="Views\UserAccount\UserLogin.cshtml" />
+    <Content Include="Views\UserAccount\GetUserPass.cshtml" />
+    <Content Include="Views\UserAccount\UserPassForm.cshtml" />
+    <Content Include="Views\UserAccount\OAuthSnsApiUserInfo.cshtml" />
+    <Content Include="Views\UserAccount\UserInfo.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Designer\Views\Default1\" />
+    <Folder Include="download\handing\IGES\" />
+    <Folder Include="fonts\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Handing.data\Handing.Data.csproj">
+      <Project>{eea4d59a-96b1-439c-b224-6ff5ac7a0916}</Project>
+      <Name>Handing.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NFine.Application\NFine.Application.csproj">
+      <Project>{f2035ee2-b73d-4fb8-a433-cab465de6a2a}</Project>
+      <Name>NFine.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NFine.Code\NFine.Code.csproj">
+      <Project>{db19ce03-c307-43fe-a209-08aa4ae10e21}</Project>
+      <Name>NFine.Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NFine.Data\NFine.Data.csproj">
+      <Project>{f71003e8-a836-48f4-9df6-df9095cebd18}</Project>
+      <Name>NFine.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NFine.Domain\NFine.Domain.csproj">
+      <Project>{7dc886cd-b8a0-44e8-aadd-57fcb0cfecb8}</Project>
+      <Name>NFine.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NFine.Mapping\NFine.Mapping.csproj">
+      <Project>{4e642cbe-f6c5-4cb9-9474-6b349652fe77}</Project>
+      <Name>NFine.Mapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NFine.Repository\NFine.Repository.csproj">
+      <Project>{875233bf-ea15-49e0-9a9c-77884a897ff6}</Project>
+      <Name>NFine.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\Endbeam.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7318</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7318/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://www.hdmes.com</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,204 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>找回密码</title>
+    <script src="~/Content/js/jquery/jquery-2.1.1.min.js"></script>
+    <link rel="shortcut icon" href="~/Content/image/H140.png" type="image/vnd.microsoft.icon">
+
+    <link rel="stylesheet" href="/Content/css/emailAutoComplete.css" />
+    <script src="/Content/js/jquery/emailAutoComplete.js"></script>
+    <style>
+        body {
+            font-family: inherit;
+            font-size: 16px;
+            /*color: rgb(200,200,200);*/
+        }
+
+        p {
+            text-align: center;
+            font-family: inherit;
+            font-size: 25px;
+            color: #0f0f0f;
+        }
+
+        input {
+            width: 250px;
+            height: 40px;
+            border-radius: 2px;
+            border: 1px solid rgb(200,200,200);
+            padding-left: 5px;
+        }
+
+        #div1 {
+            text-align: center;
+            margin: 0 auto;
+            width: 45%;
+            height: 50%;
+            /*padding:200px 234px 23px 90px;*/
+        }
+
+        #table1 td {
+            padding-top: 10px;
+        }
+
+        #btn_tjsq {
+            width: 260px;
+            height: 40px;
+            border: 1px solid rgb(200,200,200);
+            border-radius: 3px;
+            background-color: #007acc;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(function () {
+            $("#txt_user").bind('input propertychange', function () {
+
+                $("#spanEmail").html("");
+                $("#spanEmail").css("color", "");
+
+            })
+
+            $("#btn_tjsq").click(function () {
+                //var sel = document.getElementById("sel_user");
+                //var a = sel.options[sel.selectedIndex].value;
+                //var obj = $("#sel_user option:selected");
+                var Email = $("#txt_user").val();//用户名或邮箱!
+                // var UserName = obj.val().trim();
+                if (Email == "") {
+                    //alert("请输入已注册邮箱或用户名!");
+                    $("#txt_user").css("borderColor", "red");
+                    $("#spanEmail").html("<h3>请输入已注册账号/邮箱！</h3>");
+                    $("#spanEmail").css("color", "red");
+                    $("#txt_user").focus();
+                    return false;
+                }
+                else {
+                    $.ajax({
+                        type: 'get',
+                        dataType: 'text',
+                        url: '/UserAccount/GetUserPassw',
+                        data: { Email: Email },
+                        success: function (data) {
+                            //var json = eval("(" + data + ")");
+                            if (data != "") {
+                                //alert(data);//输出邮箱不存在提示
+                                $("#spanEmail").html("<h3>账号/邮箱不存在！</h3>");
+                                $("#spanEmail").css("color", "red");
+                                $("#txt_user").focus();
+                                return;
+                            }
+                            else {
+                                alert("链接已发送到您的邮箱！\n请注意登录你的邮箱");
+                                $("spanEmail").text("");
+                                $("#spanEmail").css("color", "");
+                                $.ajax({
+                                    type: 'get',
+                                    dataType: 'text',
+                                    url: '/UserAccount/MailSend',
+                                    data: { Email: Email },
+                                    success: function (data2) {
+                                        //var json = eval("(" + data + ")");
+                                        var myEmail = data2;//返回用户邮箱地址:
+                                        //alert(myEmail);
+                                        if (table1.rows.length == 3) {
+                                            return
+                                        }
+                                        else {
+                                            if (myEmail == "qq.com") {
+                                                $("#table1").append("<tr><td><a href='http://mail.qq.com' target ='_blank'><h2>立即登录QQ邮箱<h2></a></td></tr>");
+
+                                            }
+                                            if (myEmail == "163.com") {
+                                                $("#table1").append("<tr><td><a href='http://mail.163.com' target ='_blank'><h2>立即登录网易邮箱<h2></a></td></tr>");
+
+                                            }
+                                            if (myEmail == "126.com") {
+                                                $("#table1").append("<tr><td><a href='http://mail.126.com' target ='_blank'><h2>立即登录网易邮箱<h2></a></td></tr>");
+
+                                            }
+                                            if (myEmail == "yeah.com") {
+                                                $("#table1").append("<tr><td><a href='http://mail.yeah.com' target ='_blank'><h2>立即登录网易邮箱<h2></a></td></tr>");
+
+                                            }
+                                            if (myEmail == "sina.com") {
+                                                $("#table1").append("<tr><td><a href='http://mail.sina.com' target ='_blank'><h2>立即登录新浪邮箱<h2></a></td></tr>");
+
+                                            }
+                                            if (myEmail == "yahoo.com") {
+                                                $("#table1").append("<tr><td><a href='http://mail.yahoo.com' target ='_blank'><h2>立即登录雅虎邮箱<h2></a></td></tr>");
+
+                                            }
+                                            if (myEmail == "yahoo.com.cn") {
+                                                $("#table1").append("<tr><td><a href='http://mail.yahoo.com.cn' target ='_blank'><h2>立即登录雅虎邮箱<h2></a></td></tr>");
+
+                                            }
+                                            if (myEmail == "sohu.com") {
+                                                $("#table1").append("<tr><td><a href='http://mail.sohu.com' target ='_blank'><h2>立即登录搜狐邮箱<h2></a></td></tr>");
+
+                                            }
+                                            if (myEmail == "gmail.com") {
+                                                $("#table1").append("<tr><td><a href='http://mail.google.com' target ='_blank'><h2>立即登录Google邮箱<h2></a></td></tr>");
+
+                                            }
+                                            if (myEmail == "hotmail.com") {
+                                                $("#table1").append("<tr><td><a href='http://mail.hotmail.com' target ='_blank'><h2>立即登录hotmail邮箱<h2></a></td></tr>");
+
+                                            }
+                                            if (myEmail == "foxmail.com") {
+                                                $("#table1").append("<tr><td><a href='http://mail.foxmail.com' target ='_blank'><h2>立即登录foxmail邮箱<h2></a></td></tr>");
+
+                                            }
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+            })
+        })
+    </script>
+    <a href="/Home/Index">
+        <img src="../Content/image/handinglogo.png" width="120" height="30" style="padding-top:10px;padding-left:20px;" />
+    </a>
+    <hr />
+    <div id="div1">
+        <p>找回密码</p>
+        <table align="center" id="table1" border="0">
+            <tr>
+                @*<td>
+                        <select id="sel_user">
+                            <option value="用户名">用户名</option>
+                            <option value="邮箱">邮箱</option>
+                        </select>
+                    </td>*@
+                <td>
+                    <div class="parentCls">
+                        <input style="font-size:larger" class="inputElem" type="text" id="txt_user" placeholder="请输入邮箱或用户名" />
+                    </div>
+                    <span id="spanEmail"></span>
+
+                </td>
+            </tr>
+            <tr id="btn_tjsq0">
+                <td>
+                    <input id="btn_tjsq" type="button" style="font-size:larger" value="提交申请" />
+                </td>
+            </tr>
+        </table>
+        <a href="/UserAccount/UserLogin">返回登录</a>
+    </div>
+    @*<div class="parentCls"> <input class="inputElem" type="text" id="txt_user" placeholder="请输入邮箱或用户名" /></div>*@
+
+</body>
+</html>

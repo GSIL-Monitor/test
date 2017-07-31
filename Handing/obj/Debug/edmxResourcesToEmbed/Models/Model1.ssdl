@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="loginModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="yhm" Type="varchar" MaxLength="255" />
+    <Property Name="psw" Type="varchar" MaxLength="255" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="RegisterAuthority" Type="varchar" MaxLength="255" />
+    <Property Name="priceAuthority" Type="varchar" MaxLength="255" />
+    <Property Name="drawingAuthority" Type="varchar" MaxLength="255" />
+    <Property Name="countAuthority" Type="varchar" MaxLength="255" />
+    <Property Name="qrCodeAuthority" Type="varchar" MaxLength="255" />
+    <Property Name="productAuthority" Type="varchar" MaxLength="40" />
+    <Property Name="computerMAC" Type="varchar" MaxLength="255" />
+    <Property Name="computerIP" Type="varchar" MaxLength="255" />
+    <Property Name="tel" Type="varchar" MaxLength="40" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegisterDate" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityContainer Name="loginModelStoreContainer">
+    <EntitySet Name="login" EntityType="Self.login" Schema="login" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,586 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Content/js/jquery/jquery-2.1.1.min.js"></script>
+    <title>注册账号</title>
+    <link rel="shortcut icon" href="~/Content/image/H140.png" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="~/Content/css/main.css" />
+    @*<script type="text/javascript" src="~/Content/js/jquery-1.9.1.min.js"></script>*@
+    @*<link rel="stylesheet" href="~/Content/css/bootstrap.min.css" />*@
+
+    <link rel="stylesheet" href="/Content/css/emailAutoComplete.css" />
+    <script src="/Content/js/jquery/emailAutoComplete.js"></script>
+    <style>
+        body {
+            font-family: inherit;
+            font-size: 14px;
+            /*color: rgb(200,200,200);*/
+        }
+
+        p {
+            font-family: inherit;
+            font-size: 25px;
+            color: #0f0f0f;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        input {
+            width: 250px;
+            height: 40px;
+            font-size: larger;
+            border-radius: 2px;
+            border: 1px solid rgb(200,200,200);
+            padding-left: 5px;
+        }
+
+        #agreenment {
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            border: 1px solid rgb(200,200,200);
+            padding-left: 5px;
+            vertical-align: middle;
+        }
+
+        #tabel2 td {
+            padding: 10px;
+        }
+
+        #tabel2 {
+        }
+
+        #div2 {
+            /*text-align:center;*/
+            margin: 0 auto;
+            width: 50%;
+            padding-left: 310px;
+        }
+
+        .textleft {
+            text-align: left;
+        }
+
+        #send {
+            width: 80px;
+            height: 40px;
+            border: 1px solid rgb(200,200,200);
+            border-radius: 3px;
+            background-color: #007acc;
+            color: white;
+            cursor: pointer;
+        }
+
+        #btn_reg {
+            width: 260px;
+            height: 40px;
+            border: 1px solid rgb(200,200,200);
+            border-radius: 3px;
+            background-color: #007acc;
+            color: white;
+            cursor: pointer;
+        }
+
+        #a_back {
+            margin-left: 210px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+
+        ///发送验证码
+        var cod = "";
+        var times = "";
+        //计时功能60秒      例子
+        function second60() {
+            times = 60,
+            timer = null;
+            var that = this;
+            this.disabled = true;
+            //document.getElementById("btn_reg").disabled = "disabled";
+            $("#send").attr("disabled", "disabled");
+            $("#send").css("background-color", "#e5e5d4");
+            timer = setInterval(function () {
+                times--;
+                that.value = times + "秒后重试";
+                if (times <= 0) {
+                    that.disabled = false;
+                    that.value = "发送验证码";
+                    clearInterval(timer);
+                    times = 60;
+                }
+                //console.log(times);
+            }, 1000);
+        }
+
+        //取消用户协议
+        function agreement() {
+            var str = document.getElementById("agreenment").checked;
+
+            if (str == false) {
+                document.getElementById("btn_reg").disabled = "disabled";
+                $("#btn_reg").css("background-color", "gray");
+            }
+            else {
+                document.getElementById("btn_reg").disabled = "";
+                $("#btn_reg").css("background-color", "");
+            }
+
+        }
+        //方法1====发送手机验证码
+        $(function () {
+            $("#sendIphone").click(function () {
+                alert("已发送");
+                var IPhone = $("#txt_phone").val();
+                $.ajax({
+                    type: 'get',
+                    dataType: 'text',
+                    url: '/UserAccount/Main',
+                    data: { IPhone: IPhone },
+                    success: function (data) {
+                        alert(data);
+                        var json = eval("(" + data + ")");
+                        alert("成功：" + json[1]);
+                    }
+
+                });
+            });
+        })
+        $(function () {
+            //方法2=====发送邮箱验证码
+            $("#send").click(function () {
+                var Email = $("#Email").val().trim();
+                if (Email == "") {
+                    //alert("请输入正确邮箱地址！");
+                    $("#Email").css("borderColor", "red");
+                    return false;
+                }
+                else {
+                    // 计时开始
+                    times = 60,
+                    timer = null;
+                    var that = this;
+                    //this.disabled = true;
+                    $("#send").attr("disabled", "disabled");
+                    $("#send").css("background-color", "gray");
+                    timer = setInterval(function () {
+                        times--;
+                        that.value = times + "秒后重试";
+                        if (times <= 0) {
+                            //that.disabled = false;
+                            $("#send").removeAttr("disabled");
+                            $("#send").css("background-color", "");
+                            that.value = "发送验证码";
+                            clearInterval(timer);
+                            times = 60;
+                        }
+                        //console.log(times);
+                    }, 1000);
+                    //先判断邮箱是否被注册
+                    $.ajax({
+                        type: 'get',
+                        dataType: 'text',
+                        url: '/UserAccount/CheckUSerEmail',
+                        data: { Email: Email },
+                        success: function (data) {
+                            //var json = eval("(" + data + ")");
+                            if (data == "checked") {
+
+                                //发送验证码到用户邮箱
+                                $.ajax({
+                                    type: 'get',
+                                    dataType: 'text',
+                                    url: '/UserAccount/SendMail',
+                                    data: { Email: Email },
+                                    success: function (code) {
+                                        //var json = eval("(" + data + ")");
+                                        alert("验证码，已发送到您的邮箱：" + Email + "\n\n请注意登录邮箱查看！");
+                                        cod = code.toLowerCase();
+                                    }
+                                });
+                            }
+                            else {
+                                times = 0;
+                                alert(data);
+                                return false
+                            }
+                        }
+                    });
+                }
+            });
+        });
+
+        //注册用户
+
+        $(function () {
+            ///文本框事件绑定
+            $("#sp1").css("display", "none");//初始化提示 tuodong
+            $("#sp2").css("display", "none");//初始化提示 tuodong
+            $("#sp3").css("display", "none");//初始化提示 tuodong
+            $("#sp4").css("display", "none");//初始化提示 tuodong
+            $("#sp5").css("display", "none");//初始化提示 tuodong
+            ///文本框校验
+            function check_user() {
+                var UserName = $("#UserName").val().trim();
+                var UserPassword = $("#UserPassword").val().trim();
+                var CUserPassword = $("#CUserPassword").val().trim();
+                var yzm_email = $("#yzm_email").val().trim();
+                //alert("\u6211\u7231\u4f60");
+                if (UserName == "" || UserPassword == "" || CUserPassword == "" || yzm_email == "") {
+                    if (UserName == "") {
+                        $("#sp1").css("color", "red");
+                        $("#sp1").css("display", "");
+                        $("#UserName").focus();
+                        return false;
+
+                    } else {
+                        $("#sp1").css("color", "");
+                        $("#sp1").css("display", "none");
+
+                    }
+                    if (UserPassword == "") {
+                        $("#sp2").css("color", "red");
+                        $("#sp2").css("display", "");
+                        $("#UserPassword").focus();
+
+                        return false;
+
+
+                    } else {
+                        $("#sp2").css("color", "");
+                        $("#sp2").css("display", "none");
+
+                    }
+
+                    if (CUserPassword != UserPassword) {
+                        $("#sp3").css("color", "red");
+                        $("#sp3").text("\u4e24\u6b21\u5bc6\u7801\u4e0d\u4e00\u81f4!");
+                        $("#sp3").css("display", "");
+                        $("#UserPassword").focus();
+                        return false;
+                    } else {
+                        $("#sp3").css("color", "");
+                        $("#sp3").text("");
+
+                    }
+
+                    if (yzm_email == "") {
+                        $("#sp4").css("color", "red");
+                        $("#sp4").css("display", "");
+                        $("#yzm_email").focus();
+
+                        return false;
+
+                    } else {
+                        $("#sp4").css("color", "");
+                        $("#sp4").css("display", "none");
+                        return false;
+
+                    }
+                } else {
+                    return true
+                }
+            }
+            //绑定input 事件txt_user
+            $("#UserName").bind('input propertychange', function () {
+                var UserName = $("#UserName").val().trim();
+                if (UserName == "") {
+                    $("#sp1").css("color", "red");
+                    $("#sp1").css("display", "");
+
+
+                } else {
+                    $("#sp1").css("color", "");
+                    $("#sp1").css("display", "none");
+
+                }
+
+            });
+            $("#UserPassword").bind('input propertychange', function () {
+                var UserPassword = $("#UserPassword").val().trim();
+                var CUserPassword = $("#CUserPassword").val().trim();
+
+                if (UserPassword == "") {
+                    $("#sp2").css("color", "red");
+                    $("#sp2").css("display", "");
+
+                } else {
+                    $("#sp2").css("color", "");
+                    $("#sp2").css("display", "none");
+
+                }
+                if (CUserPassword != UserPassword) {
+                    $("#sp3").css("color", "red");
+                    $("#sp3").text("\u4e24\u6b21\u5bc6\u7801\u4e0d\u4e00\u81f4!");
+                    $("#sp3").css("display", "");
+
+                } else {
+                    $("#sp3").css("color", "");
+                    $("#sp3").text("");
+
+                }
+            });
+            $("#CUserPassword").bind('input propertychange', function () {
+                var UserPassword = $("#UserPassword").val().trim();
+                var CUserPassword = $("#CUserPassword").val().trim();
+                if (CUserPassword != UserPassword) {
+                    $("#sp3").css("color", "red");
+                    $("#sp3").text("\u4e24\u6b21\u5bc6\u7801\u4e0d\u4e00\u81f4!");
+                    $("#sp3").css("display", "");
+
+                } else {
+                    $("#sp3").css("color", "");
+                    $("#sp3").text("");
+
+                }
+
+            });
+            $("#yzm_email").bind('input propertychange', function () {
+                var yzm_email = $("#yzm_email").val().trim();
+                if (yzm_email == "") {
+                    $("#sp4").css("color", "red");
+                    $("#sp4").css("display", "");
+
+                } else {
+                    $("#sp4").css("color", "");
+                    $("#sp4").css("display", "none");
+
+                }
+
+            });
+
+            $("#UserPassword").focus(function () {
+
+            })
+            $("#UserName").blur(function () {
+
+            })
+
+            $("#UserPassword").blur(function () {
+
+            })
+            //注册用户
+            $("#btn_reg").click(function () {
+                var UserName = $("#UserName").val().trim();
+                var UserPassword = $("#UserPassword").val().trim();
+                var CUserPassword = $("#CUserPassword").val().trim();
+                var Email = $("#Email").val().trim();
+
+                var yzm_email = $("#yzm_email").val().trim().toLowerCase();
+
+                if (check_user()) {
+                    if (cod != yzm_email) {
+                        $("#sp4").css("color", "red");
+                        $("#sp4").text("\u9a8c\u8bc1\u7801\u4e0d\u6b63\u786e\uff01");//验证码不正确！
+                        $("#sp4").css("display", "");
+                        $("#yzm_email").focus();
+                        return false;
+                    }
+                    else {
+                        //用户注册成功
+                        $.ajax({
+                            type: 'get',
+                            dataType: 'text',
+                            url: '/UserAccount/UserRegister',//请求数据的地址SendMail
+                            data: { UserName: UserName, UserPassword: UserPassword, Email: Email },
+                            success: function (user) {
+                                //var json = eval("(" + data + ")");
+                                var u1 = "温馨提示:\n\n注册成功!\n请牢记用户名:" + UserName;
+                                //alert(user);
+                                if (user == u1) {
+                                    //注册成功发送欢迎邮箱
+                                    alert(ul);
+                                    $.ajax({
+                                        type: 'get',
+                                        dataType: 'text',
+                                        url: '/UserAccount/SendMailToUser',//请求数据的地址SendMailToUser
+                                        data: { UserName: UserName, Email: Email },
+                                        success: function (data) {
+                                            //什么也不做
+                                        }
+                                    });
+                                    window.location.href = "/UserAccount/UserLogin";//注册成功，返回登录界面
+                                }
+                                else {
+                                    //用户吗存在！
+                                    $("#sp5").css("color", "red");
+                                    $("#sp5").text("\u7528\u6237\u540d\uff0c\u5df2\u5b58\u5728\uff01");
+                                    $("#sp5").css("display", "");
+                                }
+                            }
+                        });
+                    }
+                }
+                //}
+            });
+        });
+
+        $(function () {
+            //alert($(window).height());
+            $('#ClickMe').click(function () {
+                $('#code').center();
+                $('#goodcover').show();
+                $('#code').fadeIn();
+            });
+            $('#closebt').click(function () {
+                $('#code').hide();
+                $('#goodcover').hide();
+            });
+            $('#goodcover').click(function () {
+                $('#code').hide();
+                $('#goodcover').hide();
+            });
+            /*var val=$(window).height();
+            var codeheight=$("#code").height();
+            var topheight=(val-codeheight)/2;
+            $('#code').css('top',topheight);*/
+            jQuery.fn.center = function (loaded) {
+                var obj = this;
+                body_width = parseInt($(window).width());
+                body_height = parseInt($(window).height());
+                block_width = parseInt(obj.width());
+                block_height = parseInt(obj.height());
+
+                left_position = parseInt((body_width / 2) - (block_width / 2) + $(window).scrollLeft());
+                if (body_width < block_width) {
+                    left_position = 0 + $(window).scrollLeft();
+                };
+
+                top_position = parseInt((body_height / 2) - (block_height / 2) + $(window).scrollTop());
+                if (body_height < block_height) {
+                    top_position = 0 + $(window).scrollTop();
+                };
+
+                if (!loaded) {
+
+                    obj.css({
+                        'position': 'absolute'
+                    });
+                    obj.css({
+                        'top': ($(window).height() - $('#code').height()) * 0.5,
+                        'left': left_position
+                    });
+                    $(window).bind('resize', function () {
+                        obj.center(!loaded);
+                    });
+                    $(window).bind('scroll', function () {
+                        obj.center(!loaded);
+                    });
+
+                } else {
+                    obj.stop();
+                    obj.css({
+                        'position': 'absolute'
+                    });
+                    obj.animate({
+                        'top': top_position
+                    }, 200, 'linear');
+                }
+            }
+
+        })
+
+
+    </script>
+    <a href="/Home/Index">
+        <img src="../Content/image/handinglogo.png" width="120" height="30" style="padding-top:10px;padding-left:20px;" />
+    </a>
+    <hr />
+    <p align="center">欢迎注册汉鼎云</p>
+    <div id="div2">
+        <form name="form_reg" oninvalid="true" method="post" target="_self" autocomplete="off">
+            <table id="tabel2">
+                <tr>
+                    <td class="textleft">用户名:</td>
+                    <td>
+                        <input type="text" id="UserName" name="UserName" onkeyup='this.value=this.value.replace()' placeholder="请输入用户名或邮箱">
+                        <span id="sp1">由字母和数字组成</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textleft">设置密码:</td>
+                    <td>
+                        <input type="password" id="UserPassword" name="UserPassword" placeholder="设置密码">
+                        <span id="sp2">请输入密码!</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textleft">确认密码：</td>
+                    <td>
+                        <input type="password" id="CUserPassword" name="CUserPassword" placeholder="确认密码">
+                        <span id="sp3">请输入确认密码！</span>
+
+                    </td>
+                </tr>
+
+                @*<tr>
+                        <td width="50%" align="right" height="25">请选择性别：</td>
+                        <td width="50%" align="left" height="25"> <input type="radio" name="Sex" value="0" checked>男 <input type="radio" name="Sex" value="1">女</td>
+                    </tr>*@
+                @*<tr>
+                        <td class="textleft">手机号：</td>
+                        <td>
+                            <input type="text" id="txt_phone" placeholder="请输正确手机号" name="txt_phone"><input type="button" id="sendIphone" value="获取验证码">
+                        </td>
+                    </tr>*@
+                <tr>
+                    <td class="textleft">Email地址：</td>
+                    <td>
+                        <div class="parentCls"><input type="email" required id="Email" class="inputElem" name="Email" placeholder="请输入正确邮箱地址"><input type="button" id="send" style="font-size:inherit" value="获取验证码"></div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="textleft">验证码：</td>
+                    <td>
+                        <input type="text" id="yzm_email" placeholder="请输入邮箱验证码" name="yzm_email">
+                        <span id="sp4">请输入验证码</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="justify">
+                        <span id="sp5">用户名已存在</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" checked="checked" id="agreenment" onclick="agreement();" />同意并接受<button type="button" id="ClickMe">《汉鼎用户协议》</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input style="font-size:larger" type="button" id="btn_reg" name="btn_reg" value="现在注册">
+                    </td>
+                </tr>
+            </table>
+            <a id="a_back" name="btn_reg" href="/UserAccount/UserLogin" style="font-size:larger">返回登录</a>
+
+            <div id="goodcover"></div>
+            <div id="code">
+                <div class="goodtxt">
+                    <p>汉鼎用户协议</p>
+                </div>
+                <div id="agreement">
+                    <iframe src="../Content/txt/agreement.txt" name="about" style="width:100%;height:400px;border:0px;" marginwidth="0" marginheight="0" align="top" scrolling="yes"></iframe>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
